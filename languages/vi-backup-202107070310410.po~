@@ -1,0 +1,759 @@
+# Copyright (C) 2020 UX-Themes
+# This file is distributed under the http://themeforest.net/licenses.
+msgid ""
+msgstr ""
+"Project-Id-Version: Flatsome 3.11.3\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/flatsome\n"
+"Last-Translator: \n"
+"Language-Team: Tiếng Việt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2020-04-25T18:17:07+00:00\n"
+"PO-Revision-Date: 2021-07-07 03:05+0000\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Domain: flatsome\n"
+"Language: vi\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Loco-Version: 2.5.3; wp-5.7.2"
+
+#. Theme Name of the theme
+msgid "Flatsome"
+msgstr "Flatsome"
+
+#. Theme URI of the theme
+msgid "http://flatsome.uxthemes.com/"
+msgstr ""
+
+#. Description of the theme
+msgid "Multi-Purpose Responsive WooCommerce Theme"
+msgstr ""
+
+#. Author of the theme
+msgid "UX-Themes"
+msgstr ""
+
+#. Author URI of the theme
+msgid "http://www.uxthemes.com/"
+msgstr ""
+
+#: 404.php:24
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Rất tiếc! Trang đó không thể được tìm thấy."
+
+#: 404.php:27
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+"Có vẻ như không có gì được tìm thấy tại vị trí này. Có thể thử một trong các "
+"liên kếtbên dưới hoặc một tìm kiếm?"
+
+#: comments.php:33
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "Một suy nghĩ về &ldquo;%2$s&rdquo;"
+msgstr[1] ""
+
+#: comments.php:48
+msgid "Comment navigation"
+msgstr "Điều hướng bình luận"
+
+#: comments.php:50
+msgid "Older Comments"
+msgstr "Nhận xét cũ hơn"
+
+#: comments.php:51
+msgid "Newer Comments"
+msgstr "Nhận xét mới hơn"
+
+#: comments.php:62
+msgid "Comments are closed."
+msgstr "Bình luận đã bị đóng."
+
+#: header.php:18
+msgid "Bỏ qua nội dung"
+msgstr ""
+
+#: image.php:26
+msgid ""
+"Published <span class=\"entry-date\"><time class=\"entry-date\" "
+"datetime=\"%1$s\">%2$s</time></span> at <a href=\"%3$s\" title=\"Link to "
+"full-size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return "
+"to %7$s\" rel=\"gallery\">%8$s</a>"
+msgstr ""
+"Đã xuất bản <span class=\"entry-date\"><time class=\"entry-date\" "
+"datetime=\"%1$s\">%2$s</time></span> at <a href=\"%3$s\" title=\"Link to "
+"full-size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return "
+"to %7$s\" rel=\"gallery\">%8$s</a>"
+
+#: image.php:38 image.php:108 inc/structure/structure-posts.php:168
+#: inc/structure/structure-posts.php:197
+msgid "Edit"
+msgstr "Chỉnh sửa"
+
+#: image.php:100
+msgid ""
+"<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a "
+"comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" "
+"title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr ""
+
+#: image.php:102
+msgid ""
+"Comments are closed, but you can leave a trackback: <a class=\"trackback-"
+"link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">"
+"Trackback URL</a>."
+msgstr ""
+"Nhận xét đã bị đóng, nhưng bạn có thể để lại một trackback: <a "
+"class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" "
+"rel=\"trackback\">Trackback URL</a>."
+
+#: image.php:104
+msgid ""
+"Trackbacks are closed, but you can <a class=\"comment-link\" "
+"href=\"#respond\" title=\"Post a comment\">post a comment</a>."
+msgstr ""
+
+#: image.php:106
+msgid "Both comments and trackbacks are currently closed."
+msgstr ""
+
+#: image.php:113
+msgid "<span class=\"meta-nav\">&larr;</span> Previous"
+msgstr ""
+
+#: image.php:114
+msgid "Next <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: inc/admin/gutenberg/class-gutenberg.php:104
+msgid "Edit with UX Builder"
+msgstr ""
+
+#: inc/admin/options/portfolio/options-portfolio.php:76
+msgid "Show share icons"
+msgstr "Hiển thị biểu tượng chia sẻ"
+
+#: inc/admin/options/shop/options-shop-cart-checkout.php:46
+msgid "Boxed Shipping labels"
+msgstr "Nhãn vận chuyển đóng hộp"
+
+#: inc/admin/options/shop/options-shop-cart-checkout.php:54
+msgid "Show shipping estimate destination"
+msgstr "Hiển thị điểm đến ước tính vận chuyển"
+
+#: inc/extensions/flatsome-infinite-scroll/templates/button.php:2
+msgid "View more"
+msgstr "Xem thêm"
+
+#: inc/extensions/flatsome-live-search/flatsome-live-search.php:198
+msgid "No matches found"
+msgstr "Không tìm thấy kết quả phù hợp"
+
+#: inc/extensions/flatsome-wc-quick-view/flatsome-quick-view.php:15
+msgid "Quick View"
+msgstr "Xem nhanh"
+
+#: inc/functions/function-custom-css.php:622
+#: inc/woocommerce/structure-wc-product-box.php:29
+msgid "New"
+msgstr "Mới"
+
+#: inc/functions/function-custom-css.php:623
+msgid "Hot"
+msgstr ""
+
+#: inc/functions/function-custom-css.php:624
+msgid "Sale"
+msgstr ""
+
+#: inc/functions/function-custom-css.php:625
+msgid "Popular"
+msgstr "Phổ biến"
+
+#: inc/functions/function-setup.php:53
+msgid "Main Menu"
+msgstr "Menu chính"
+
+#: inc/functions/function-setup.php:54
+msgid "Main Menu - Mobile"
+msgstr "Menu chính - Di động"
+
+#: inc/functions/function-setup.php:55
+msgid "Footer Menu"
+msgstr "Menu chân trang"
+
+#: inc/functions/function-setup.php:56
+msgid "Top Bar Menu"
+msgstr "Menu thanh trên cùng"
+
+#: inc/functions/function-setup.php:57
+msgid "My Account Menu"
+msgstr "Menu tài khoản của tôi"
+
+#: inc/functions/function-setup.php:77
+msgid "Sidebar"
+msgstr "Thanh bên"
+
+#: inc/functions/function-setup.php:87
+msgid "Footer 1"
+msgstr "Chân trang 1"
+
+#: inc/functions/function-setup.php:97
+msgid "Footer 2"
+msgstr "Chân trang 2"
+
+#: inc/integrations/wc-yith-wishlist/yith-wishlist.php:61
+#: inc/integrations/wc-yith-wishlist/yith-wishlist.php:82
+msgid "Wishlist"
+msgstr "Danh sách mong muốn"
+
+#. translators: %s: comment count
+#: inc/shortcodes/blog_posts.php:276
+msgid "%s Comment"
+msgid_plural "%s Comments"
+msgstr[0] "Nhận xét %s"
+msgstr[1] ""
+
+#: inc/shortcodes/portfolio.php:146 woocommerce/product-searchform.php:38
+msgid "All"
+msgstr "Tất cả sản phẩm"
+
+#: inc/shortcodes/share_follow.php:77
+msgid "Share on WhatsApp"
+msgstr "Chia sẻ trên WhatsApp"
+
+#: inc/shortcodes/share_follow.php:79
+msgid "Share on Facebook"
+msgstr "Chia sẻ trên Facebook"
+
+#: inc/shortcodes/share_follow.php:81
+msgid "Share on Twitter"
+msgstr ""
+
+#: inc/shortcodes/share_follow.php:83
+msgid "Email to a Friend"
+msgstr "Email cho bạn bè"
+
+#: inc/shortcodes/share_follow.php:85
+msgid "Pin on Pinterest"
+msgstr "Ghim trên Pinterest"
+
+#: inc/shortcodes/share_follow.php:87
+msgid "Share on VKontakte"
+msgstr ""
+
+#: inc/shortcodes/share_follow.php:89
+msgid "Share on LinkedIn"
+msgstr "Chia sẻ trên LinkedIn"
+
+#: inc/shortcodes/share_follow.php:91
+msgid "Share on Tumblr"
+msgstr "Chia sẻ trên Tumblr"
+
+#: inc/shortcodes/share_follow.php:177
+msgid "Follow on Facebook"
+msgstr "Theo dõi trên Facebook"
+
+#: inc/shortcodes/share_follow.php:181
+msgid "Follow on Instagram"
+msgstr "Theo dõi trên Instagram"
+
+#: inc/shortcodes/share_follow.php:185
+msgid "Follow on TikTok"
+msgstr "Theo dõi trên TikTok"
+
+#: inc/shortcodes/share_follow.php:189
+msgid "Follow on SnapChat"
+msgstr "Theo dõi trên SnapChat"
+
+#: inc/shortcodes/share_follow.php:194
+msgid "Point the SnapChat camera at this to add us to SnapChat."
+msgstr "Chỉ camera SnapChat vào đây để thêm chúng tôi vào SnapChat."
+
+#: inc/shortcodes/share_follow.php:199
+msgid "Follow on Twitter"
+msgstr "Theo dõi trên Twitter"
+
+#: inc/shortcodes/share_follow.php:203
+msgid "Send us an email"
+msgstr "Gửi email cho chúng tôi"
+
+#: inc/shortcodes/share_follow.php:207
+msgid "Call us"
+msgstr "Gọi cho chúng tôi"
+
+#: inc/shortcodes/share_follow.php:211
+msgid "Follow on Pinterest"
+msgstr "Theo dõi trên Pinterest"
+
+#: inc/shortcodes/share_follow.php:215
+msgid "Subscribe to RSS"
+msgstr "Đăng ký RSS"
+
+#: inc/shortcodes/share_follow.php:218
+msgid "Follow on LinkedIn"
+msgstr ""
+
+#: inc/shortcodes/share_follow.php:221
+msgid "Follow on YouTube"
+msgstr "Theo dõi trên YouTube"
+
+#: inc/shortcodes/share_follow.php:225
+msgid "Flickr"
+msgstr "Flickr"
+
+#: inc/shortcodes/share_follow.php:229
+msgid "Follow on 500px"
+msgstr "Theo dõi trên Zalo"
+
+#: inc/shortcodes/share_follow.php:233
+msgid "Follow on VKontakte"
+msgstr "Theo dõi trên VKontakte"
+
+#: inc/structure/structure-portfolio.php:50
+msgctxt "breadcrumb"
+msgid "Home"
+msgstr ""
+
+#: inc/structure/structure-posts.php:139
+msgid "<span class=\"icon-angle-left\"></span> Older posts"
+msgstr "<span class=\"icon-angle-left\"></span> Bài viết cũ hơn"
+
+#: inc/structure/structure-posts.php:144
+msgid "Newer posts <span class=\"icon-angle-right\"></span>"
+msgstr "Bài viết mới hơn <span class=\"icon-angle-right\"></span>"
+
+#: inc/structure/structure-posts.php:168
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#: inc/structure/structure-posts.php:184
+msgid "%s <span class=\"says\">says:</span>"
+msgstr "%s <span class=\"says\">nói:</span>"
+
+#: inc/structure/structure-posts.php:186
+msgid "Your comment is awaiting moderation."
+msgstr "Nhận xét của bạn đang chờ kiểm duyệt."
+
+#: inc/structure/structure-posts.php:195
+msgctxt "1: date, 2: time"
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: inc/structure/structure-posts.php:235
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr "Ngày đăng %s"
+
+#: inc/structure/structure-posts.php:240
+msgctxt "post author"
+msgid "by %s"
+msgstr "Tác giả %s"
+
+#: inc/widgets/widget-blocks.php:17
+msgid "A widget that displays a Block "
+msgstr "Một widget hiển thị một khối"
+
+#: inc/widgets/widget-blocks.php:21
+msgid "Flatsome Blocks"
+msgstr "Flatsome Blocks"
+
+#: inc/widgets/widget-blocks.php:85 inc/widgets/widget-recent-posts.php:129
+msgid "Title:"
+msgstr "Tiêu đề:"
+
+#: inc/widgets/widget-blocks.php:88
+msgid "Block:"
+msgstr ""
+
+#: inc/widgets/widget-recent-posts.php:18
+msgid "A widget that displays recent posts "
+msgstr "Một widget hiển thị các bài viết gần đây"
+
+#: inc/widgets/widget-recent-posts.php:22
+msgid "Flatsome Recent Posts"
+msgstr "Flatsome Bài viết gần đây"
+
+#: inc/widgets/widget-recent-posts.php:49
+msgid "Bài viết gần đây"
+msgstr ""
+
+#: inc/widgets/widget-recent-posts.php:86
+#: template-parts/posts/partials/entry-footer-single.php:24
+#: template-parts/posts/partials/entry-footer.php:24
+msgid "<strong>1</strong> Comment"
+msgstr ""
+
+#: inc/widgets/widget-recent-posts.php:86
+#: template-parts/posts/partials/entry-footer-single.php:24
+#: template-parts/posts/partials/entry-footer.php:24
+msgid "<strong>%</strong> Comments"
+msgstr ""
+
+#: inc/widgets/widget-recent-posts.php:132
+msgid "Number of posts to show:"
+msgstr "Số lượng bài viết để hiển thị:"
+
+#: inc/widgets/widget-recent-posts.php:136
+msgid "Show thumbnail"
+msgstr ""
+
+#: inc/widgets/widget-recent-posts.php:139
+msgid "Show date stamp on thumbnail"
+msgstr "Hiển thị tem ngày trên hình thu nhỏ"
+
+#: inc/widgets/widget-recent-posts.php:140
+msgid ""
+"* If a featured image is not set or the \"Show Thumbnail\" option is "
+"disabled, the date stamp will always be displayed."
+msgstr ""
+
+#: inc/widgets/widget-upsell.php:20
+msgid "Add upsell products to product page"
+msgstr "Thêm sản phẩm upell vào trang sản phẩm"
+
+#: inc/widgets/widget-upsell.php:48 inc/widgets/widget-upsell.php:116
+msgid "Complete the look"
+msgstr ""
+
+#: inc/woocommerce/structure-wc-category-page.php:97
+#: inc/woocommerce/structure-wc-product-page-fields.php:93
+msgid "Top Content"
+msgstr "Nội dung hàng đầu"
+
+#: inc/woocommerce/structure-wc-category-page.php:102
+msgid ""
+"Enter a value for this field. Shortcodes are allowed. This will be displayed "
+"at top of the category."
+msgstr ""
+
+#: inc/woocommerce/structure-wc-category-page.php:119
+#: inc/woocommerce/structure-wc-product-page-fields.php:103
+msgid "Bottom Content"
+msgstr "Nội dung dưới cùng"
+
+#: inc/woocommerce/structure-wc-category-page.php:124
+msgid ""
+"Enter a value for this field. Shortcodes are allowed. This will be displayed "
+"at bottom of the category."
+msgstr ""
+"Nhập một giá trị cho trường này. Mã ngắn được cho phép. Điều này sẽ được "
+"hiển thị ở dưới cùng của danh mục."
+
+#: inc/woocommerce/structure-wc-checkout.php:166
+msgid "I have read and agree"
+msgstr "Tôi đã đọc và đồng ý"
+
+#: inc/woocommerce/structure-wc-global.php:90
+msgid "Shop Sidebar"
+msgstr "Shop Sidebar"
+
+#: inc/woocommerce/structure-wc-global.php:99
+msgid "Product Sidebar"
+msgstr "Product Sidebar"
+
+#: inc/woocommerce/structure-wc-global.php:258
+msgid "Posts found"
+msgstr "Bài viết được tìm thấy"
+
+#: inc/woocommerce/structure-wc-global.php:271
+msgid "Pages found"
+msgstr "Tìm thấy trang"
+
+#: inc/woocommerce/structure-wc-product-page-fields.php:11
+msgid "Extra"
+msgstr ""
+
+#: inc/woocommerce/structure-wc-product-page-fields.php:18
+msgid "Enable a custom bubble on this product."
+msgstr "Kích hoạt bong bóng tùy chỉnh trên sản phẩm này."
+
+#: inc/woocommerce/structure-wc-product-page-fields.php:49
+msgid "Custom Tab Content"
+msgstr "Nội dung tab tùy chỉnh"
+
+#: inc/woocommerce/structure-wc-product-page-fields.php:52
+msgid "Enter content for custom product tab here. Shortcodes are allowed"
+msgstr ""
+"Nhập nội dung cho tab sản phẩm tùy chỉnh tại đây. Mã ngắn được cho phép"
+
+#: inc/woocommerce/structure-wc-product-page-fields.php:61
+msgid "Product Video"
+msgstr "Video sản phẩm"
+
+#: inc/woocommerce/structure-wc-product-page-fields.php:63
+msgid ""
+"Enter a Youtube or Vimeo Url of the product video here. We recommend "
+"uploading your video to Youtube."
+msgstr ""
+"Nhập Url Youtube hoặc Vimeo của video sản phẩm tại đây. Chúng tôi khuyên bạn "
+"nên tải video của bạn lên Youtube."
+
+#: inc/woocommerce/structure-wc-product-page-fields.php:82
+msgid "Select where you want to display product video."
+msgstr " nơi bạn muốn hiển thị video sản phẩm."
+
+#: inc/woocommerce/structure-wc-product-page-fields.php:96
+msgid ""
+"Enter content that will show after the header and before the product. "
+"Shortcodes are allowed"
+msgstr ""
+"Nhập nội dung sẽ hiển thị sau tiêu đề và trước sản phẩm. Mã ngắn được cho "
+"phép"
+
+#: inc/woocommerce/structure-wc-product-page-fields.php:106
+msgid ""
+"Enter content that will show after the product info. Shortcodes are allowed"
+msgstr ""
+"Nhập nội dung sẽ hiển thị sau thông tin sản phẩm. Mã ngắn được cho phép"
+
+#: inc/woocommerce/structure-wc-product-page.php:73
+#: inc/woocommerce/structure-wc-product-page.php:137
+msgid "Video"
+msgstr "Video"
+
+#: inc/woocommerce/structure-wc-product-page.php:104
+msgid "Zoom"
+msgstr "Zoom"
+
+#. Template Name of the theme
+msgid "Page - Full Width - Parallax Title"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Page - No Header / No Footer"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Page - Vertical Sub-Nav"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Page - Container - Center Title"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Page - Full Width"
+msgstr ""
+
+#. Template Name of the theme
+msgid "WooCommerce - Cart"
+msgstr ""
+
+#. Template Name of the theme
+msgid "WooCommerce - Checkout"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Portfolio"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Page - Full Width - Header on Scroll"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Page - Left Sidebar"
+msgstr ""
+
+#. Template Name of the theme
+msgid "WooCommerce - My Account"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Page - Right Sidebar"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Page - Single Page Nav - Transparent Header - Light Text"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Page - Single Page Nav - Transparent Header"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Page - Single Page Nav"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Page - Full Width - Transparent Header - Light Text"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Page - Full Width - Transparent Header"
+msgstr ""
+
+#: searchform.php:17
+msgid "Gửi"
+msgstr ""
+
+#: template-parts/header/partials/element-contact-mobile.php:29
+#: template-parts/header/partials/element-contact.php:24
+msgid "Địa điểm"
+msgstr ""
+
+#: template-parts/header/partials/element-contact-mobile.php:38
+#: template-parts/header/partials/element-contact.php:43
+msgid "Contact"
+msgstr "Liên hệ"
+
+#: template-parts/header/partials/element-menu-icon.php:4
+#: template-parts/header/partials/element-menu-icon.php:8
+msgid "Menu"
+msgstr "Menu"
+
+#: template-parts/posts/content-none.php:14
+msgid "Nothing Found"
+msgstr "Không tìm thấy gì"
+
+#: template-parts/posts/content-none.php:20
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+"Sẵn sàng để xuất bản bài đăng đầu tiên của bạn? <a href=\"%1$s\">Bắt đầu ở "
+"đây</a>."
+
+#: template-parts/posts/content-none.php:24
+msgid ""
+"Xin lỗi, nhưng không có gì phù hợp với cụm từ tìm kiếm của bạn. Vui lòng thử "
+"lại với một số các từ khóa khác nhau."
+msgstr ""
+
+#: template-parts/posts/content-none.php:29
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"Có vẻ như chúng tôi không thể tìm thấy những gì bạn đang tìm kiếm. Có lẽ tìm "
+"kiếm có thể giúp đỡ."
+
+#. translators: used between list items, there is a space after the comma
+#: template-parts/posts/content-single.php:22
+#: template-parts/posts/content-single.php:25
+#: template-parts/posts/partials/entry-footer-single.php:5
+#: template-parts/posts/partials/entry-footer-single.php:13
+#: template-parts/posts/partials/entry-footer.php:5
+#: template-parts/posts/partials/entry-footer.php:13
+#: template-parts/posts/partials/entry-title.php:2
+msgid ", "
+msgstr ","
+
+#: template-parts/posts/content-single.php:30
+msgid "This entry was posted in %1$s and tagged %2$s."
+msgstr "Mục nhập này đã được đăng trong %1$s và được gắn thẻ %2$s."
+
+#: template-parts/posts/content-single.php:32
+msgid ""
+"This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" "
+"title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr ""
+
+#: template-parts/posts/content.php:6 template-parts/posts/content.php:10
+#: template-parts/posts/featured-posts.php:23
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Tiếp tục đọc <span class=\"meta-nav\">&rarr;</span>"
+
+#: template-parts/posts/loop/post-simple.php:23
+msgid "%1$s Comment"
+msgid_plural "%1$s Comments"
+msgstr[0] "%1$s Nhận xét"
+msgstr[1] ""
+
+#: template-parts/posts/partials/archive-title.php:8
+msgid "Category Archives: %s"
+msgstr "%s"
+
+#: template-parts/posts/partials/archive-title.php:11
+msgid "Tag Archives: %s"
+msgstr "Thẻ: %s"
+
+#: template-parts/posts/partials/archive-title.php:14
+msgid "Search Results for: %s"
+msgstr "Kết quả tìm kiếm cho: %s"
+
+#: template-parts/posts/partials/archive-title.php:21
+msgid "Author Archives: %s"
+msgstr "Tác giả: %s"
+
+#: template-parts/posts/partials/archive-title.php:29
+msgid "Daily Archives: %s"
+msgstr "Hàng ngày: %s"
+
+#: template-parts/posts/partials/archive-title.php:32
+msgid "Monthly Archives: %s"
+msgstr ""
+
+#: template-parts/posts/partials/archive-title.php:35
+msgid "Yearly Archives: %s"
+msgstr "ưu trữ hàng năm: %s"
+
+#: template-parts/posts/partials/archive-title.php:38
+msgid "Asides"
+msgstr "Asides"
+
+#: template-parts/posts/partials/archive-title.php:41
+msgid "Images"
+msgstr "Hình ảnh"
+
+#: template-parts/posts/partials/archive-title.php:44
+msgid "Videos"
+msgstr "Videos"
+
+#: template-parts/posts/partials/archive-title.php:47
+msgid "Quotes"
+msgstr ""
+
+#: template-parts/posts/partials/archive-title.php:50
+msgid "Links"
+msgstr "Liên kết"
+
+#: template-parts/posts/partials/entry-footer-single.php:8
+#: template-parts/posts/partials/entry-footer.php:8
+msgid "Posted in %1$s"
+msgstr "Đã đăng trong %1$s"
+
+#: template-parts/posts/partials/entry-footer-single.php:18
+#: template-parts/posts/partials/entry-footer.php:18
+msgid "Tagged %1$s"
+msgstr "Đã gắn thẻ %1$s"
+
+#: template-parts/posts/partials/entry-footer-single.php:24
+#: template-parts/posts/partials/entry-footer.php:24
+msgid "Leave a comment"
+msgstr "Để lại một bình luận"
+
+#: woocommerce/checkout/header-small.php:22 woocommerce/checkout/header.php:22
+msgid "Shopping Cart"
+msgstr "Giỏ hàng"
+
+#: woocommerce/checkout/header-small.php:27 woocommerce/checkout/header.php:27
+msgid "Checkout details"
+msgstr "Chi tiết thanh toán"
+
+#: woocommerce/checkout/header-small.php:32 woocommerce/checkout/header.php:32
+msgid "Order Complete"
+msgstr "Hoàn tất đơn hàng"
+
+#: woocommerce/checkout/social-login.php:8 woocommerce/myaccount/header.php:64
+msgid "Login with <strong>Facebook</strong>"
+msgstr "Đăng nhập bằng <strong>Facebook</strong>"
+
+#: woocommerce/checkout/social-login.php:19 woocommerce/myaccount/header.php:74
+msgid "Login with <strong>Google</strong>"
+msgstr "Đăng nhập bằng <strong>Google</strong>"
+
+#: woocommerce/single-product/up-sells.php:80
+msgid "You may also like&hellip;"
+msgstr "Sản Phẩm Tặng Kèm"
+
+#: woocommerce/single-product/related.php:44
+msgid "Related products"
+msgstr "Khám phá thêm"
+
+#: woocommerce/content-widget-price-filter.php:35
+msgid "Filter"
+msgstr "Áp Dụng"

@@ -1,0 +1,15 @@
+<svg id="md-options" xmlns="http://www.w3.org/2000/svg" width="17.446" height="17.446" viewBox="0 0 17.446 17.446">
+  <path id="Path_4322" data-name="Path 4322" d="M2.25,27H12.842v1.246H2.25Z" transform="translate(-2.25 -13.292)" fill="#fff"/>
+  <path id="Path_4323" data-name="Path 4323" d="M28.125,27H31.24v1.246H28.125Z" transform="translate(-13.794 -13.292)" fill="#fff"/>
+  <path id="Path_4324" data-name="Path 4324" d="M24.992,27.465a1.246,1.246,0,1,1-2.492,0v-3.7a1.246,1.246,0,1,1,2.492,0Z" transform="translate(-11.285 -11.285)" fill="#fff"/>
+  <g id="Group_521" data-name="Group 521" transform="translate(0 5.608)">
+    <path id="Path_4325" data-name="Path 4325" d="M2.25,16.875H5.365v1.246H2.25Z" transform="translate(-2.25 -14.383)" fill="#fff"/>
+    <path id="Path_4326" data-name="Path 4326" d="M14.625,16.875H25.217v1.246H14.625Z" transform="translate(-7.771 -14.383)" fill="#fff"/>
+    <path id="Path_4327" data-name="Path 4327" d="M11.492,17.34A1.246,1.246,0,1,1,9,17.34v-3.7a1.246,1.246,0,1,1,2.492,0Z" transform="translate(-5.262 -12.375)" fill="#fff"/>
+  </g>
+  <g id="Group_522" data-name="Group 522">
+    <path id="Path_4328" data-name="Path 4328" d="M2.25,6.75H12.842V8H2.25Z" transform="translate(-2.25 -4.258)" fill="#fff"/>
+    <path id="Path_4329" data-name="Path 4329" d="M28.125,6.75H31.24V8H28.125Z" transform="translate(-13.794 -4.258)" fill="#fff"/>
+    <path id="Path_4330" data-name="Path 4330" d="M24.992,7.215a1.246,1.246,0,1,1-2.492,0v-3.7a1.246,1.246,0,1,1,2.492,0Z" transform="translate(-11.285 -2.25)" fill="#fff"/>
+  </g>
+</svg>
