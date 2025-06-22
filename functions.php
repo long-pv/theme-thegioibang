@@ -286,3 +286,5 @@ function nt_add_button_dang_ky_tu_van(){
     <?php
 	
 }
+
+require get_theme_file_path('shortcode/index.php');
