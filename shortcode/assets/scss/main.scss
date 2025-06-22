@@ -1,0 +1,128 @@
+#masthead .header-nav-main.nav-left {
+    justify-content: center !important;
+
+    .html_topbar_right {
+        width: 100% !important;
+    }
+}
+
+div#masthead {
+    background: #255144 !important;
+}
+
+// Shortcode: [tgb_search_ui]
+.tgb_search_wrapper {
+    .tgb_search_form {
+        position: relative;
+    }
+
+    .tgb_search_input {
+        height: 48px;
+        width: 100%;
+        border: 1px solid #EAEAEA !important;
+        border-radius: 8px;
+        padding: 12px;
+        padding-left: calc(16px + 8px + 24px);
+        font-family: 'Inter';
+        font-size: 14px;
+        font-weight: 500;
+        background-color: #FFFFFF !important;
+
+        &::placeholder {
+            font-family: 'Inter';
+            font-size: 14px;
+            font-weight: 500;
+        }
+    }
+
+    .tgb_search_icon {
+        position: absolute;
+        left: 16px;
+        display: inline-flex;
+        top: 12px;
+    }
+
+    .tgb_search_button {
+        padding: 10px 20px;
+        background-color: #255144;
+        font-family: 'Inter';
+        font-size: 14px;
+        font-weight: 600;
+        position: absolute;
+        right: 4px;
+        top: 4px;
+        border-radius: 8px;
+        border: none;
+        outline: none !important;
+        height: 40px;
+        align-items: center;
+        display: inline-flex;
+        line-height: 1;
+        margin: 0px;
+        color: #fff !important;
+    }
+
+    .tgb_search_suggestions {
+        display: flex;
+        margin-top: 8px;
+        column-gap: 0px;
+        row-gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .tgb_search_link {
+        font-family: 'Inter';
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.4;
+        color: #FFFFFF;
+        text-decoration: none;
+        padding: 0px 12px;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            right: 0px;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 100%;
+            width: 1px;
+            background-color: #C0C0C0;
+        }
+
+        &:first-child {
+            padding-left: 0px;
+        }
+
+        &:last-child {
+            padding-right: 0px;
+
+            &::after {
+                display: none;
+            }
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+// end
+
+// Shortcode: [tgb_header_bottom]
+#wide-nav>.flex-row>.flex-left {
+    width: 100%;
+    min-width: unset !important;
+    max-width: unset !important;
+    margin-right: 0px !important;
+}
+
+.tgb_header_bottom {
+    .list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+}
