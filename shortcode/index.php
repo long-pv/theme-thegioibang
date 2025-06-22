@@ -32,3 +32,39 @@ add_action('wp_enqueue_scripts', function () {
         true
     );
 }, 99);
+
+// Đăng ký Theme Settings Panel với các menu con
+if (function_exists('acf_add_options_page')) {
+
+    // Trang chính: Theme Settings
+    acf_add_options_page([
+        'page_title'  => 'Theme Settings',
+        'menu_title'  => 'Theme Settings',
+        'menu_slug'   => 'tgb-theme-settings',
+        'capability'  => 'edit_theme_options',
+        'redirect'    => false,
+        'position'    => 80,
+        'icon_url'    => 'dashicons-admin-generic'
+    ]);
+
+    // Sub page: Header Settings
+    acf_add_options_sub_page([
+        'page_title'  => 'Header Settings',
+        'menu_title'  => 'Header',
+        'parent_slug' => 'tgb-theme-settings',
+    ]);
+
+    // Sub page: Footer Settings
+    acf_add_options_sub_page([
+        'page_title'  => 'Footer Settings',
+        'menu_title'  => 'Footer',
+        'parent_slug' => 'tgb-theme-settings',
+    ]);
+
+    // Sub page: Social Settings (ví dụ thêm)
+    acf_add_options_sub_page([
+        'page_title'  => 'Social Settings',
+        'menu_title'  => 'Social',
+        'parent_slug' => 'tgb-theme-settings',
+    ]);
+}
