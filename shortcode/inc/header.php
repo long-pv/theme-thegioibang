@@ -41,7 +41,7 @@ add_shortcode('tgb_header_bottom', function () {
 ?>
     <div class="tgb_header_bottom">
         <div class="list">
-            <div class="item">
+            <div class="item" id="main_product_cat">
                 <div class="icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M8.4 3H4.6C4.03995 3 3.75992 3 3.54601 3.10899C3.35785 3.20487 3.20487 3.35785 3.10899 3.54601C3 3.75992 3 4.03995 3 4.6V8.4C3 8.96005 3 9.24008 3.10899 9.45399C3.20487 9.64215 3.35785 9.79513 3.54601 9.89101C3.75992 10 4.03995 10 4.6 10H8.4C8.96005 10 9.24008 10 9.45399 9.89101C9.64215 9.79513 9.79513 9.64215 9.89101 9.45399C10 9.24008 10 8.96005 10 8.4V4.6C10 4.03995 10 3.75992 9.89101 3.54601C9.79513 3.35785 9.64215 3.20487 9.45399 3.10899C9.24008 3 8.96005 3 8.4 3Z" stroke="#818181" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -52,6 +52,11 @@ add_shortcode('tgb_header_bottom', function () {
                 </div>
                 <div class="text">
                     Danh mục
+                </div>
+                <div class="icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 9L12 15L18 9" stroke="#818181" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
                 </div>
             </div>
 
@@ -111,7 +116,26 @@ add_shortcode('tgb_header_bottom', function () {
                 </div>
             </div>
         </div>
-    </div>
-<?php
+
+        <div class="main_product_cat_show">
+            <div class="container">
+                <div class="grid_row">
+                    <div class="grid_col-6">
+                        <div class="grid_row">
+                            <div class="grid_col-6">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quos impedit exercitationem aliquid quis dignissimos adipisci eum aut itaque ipsam cumque in nisi, a sit, animi cum, iste tenetur distinctio?
+                            </div>
+                            <div class="grid_col-6">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quos impedit exercitationem aliquid quis dignissimos adipisci eum aut itaque ipsam cumque in nisi, a sit, animi cum, iste tenetur distinctio?
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid_col-6">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quos impedit exercitationem aliquid quis dignissimos adipisci eum aut itaque ipsam cumque in nisi, a sit, animi cum, iste tenetur distinctio?
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php
     return ob_get_clean();
 });
