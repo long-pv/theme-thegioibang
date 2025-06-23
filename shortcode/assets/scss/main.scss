@@ -124,6 +124,7 @@ div#masthead {
 
 #wide-nav {
     background-image: unset !important;
+    height: 48px !important;
 
     .nav,
     .html_top_right_text {
@@ -164,10 +165,10 @@ div#masthead {
     }
 
     .main_product_cat_show {
+        display: none;
         position: absolute;
         width: 100%;
-        height: 70vh;
-        max-height: 480px;
+        height: 480px;
         background-color: #fff;
         top: 100%;
         left: 0px;
@@ -186,29 +187,55 @@ div#masthead {
 
             &>li {
                 display: block;
-                position: relative;
+                // position: relative;
                 margin: 0px;
             }
         }
 
         .list_menu {
             width: 25%;
+            position: relative;
 
             .sub_menu {
+                display: none;
                 position: absolute;
                 left: 100%;
                 top: 0px;
                 width: 100%;
+                height: calc(480px - 16px - 32px);
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 0px;
+                    top: 0px;
+                    width: 1px;
+                    height: 100%;
+                    border-left: 1px solid #EAEAEA;
+                    z-index: 100;
+                }
             }
 
             .list_product {
+                display: none;
                 position: absolute;
                 left: 100%;
                 width: 200%;
                 top: 0px;
                 padding: 16px;
                 overflow-y: auto;
-                max-height: calc(480px - 16px - 32px);
+                height: calc(480px - 16px - 32px);
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 0px;
+                    top: 0px;
+                    width: 1px;
+                    height: 100%;
+                    border-left: 1px solid #EAEAEA;
+                    z-index: 100;
+                }
 
                 .title {
                     display: flex;
@@ -267,10 +294,42 @@ div#masthead {
                 color: #2E2E2E;
                 transition: all 0.3s;
                 text-decoration: none !important;
+            }
 
+            &>li {
                 &:hover {
-                    background-color: #F4F4F4;
+                    &>a {
+                        background-color: #F4F4F4;
+                    }
+
+                    &>.sub_menu {
+                        display: block;
+                    }
                 }
+
+                &>ul {
+                    &>li {
+                        &:hover {
+                            &>a {
+                                background-color: #F4F4F4;
+                            }
+
+                            &>.list_product {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #main_product_cat {
+        height: 48px;
+
+        &:hover {
+            .main_product_cat_show {
+                display: block;
             }
         }
     }
