@@ -2,6 +2,7 @@
 // 1. Define paths
 define('TGB_SHORTCODE_URL', get_stylesheet_directory_uri() . '/shortcode');
 define('TGB_SHORTCODE_PATH', get_stylesheet_directory() . '/shortcode');
+define('TGB_IMG_URL', get_stylesheet_directory_uri() . '/shortcode/assets/images/');
 define('TGB_SHORTCODE_VER', '1.0.0');
 
 // 2. Auto load all PHP files in /inc

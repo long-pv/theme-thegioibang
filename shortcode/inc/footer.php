@@ -9,3 +9,14 @@ add_shortcode('tgb_hotline', function () {
 <?php
     return ob_get_clean();
 });
+
+// ===============================
+// Shortcode: [tgb_footer_main]
+// ===============================
+add_shortcode('tgb_footer_main', function () {
+    ob_start();
+?>
+    <img src="<?php echo TGB_IMG_URL . 'logo_footer.svg'; ?>" alt="">
+<?php
+    return ob_get_clean();
+});
