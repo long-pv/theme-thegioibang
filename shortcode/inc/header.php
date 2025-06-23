@@ -123,15 +123,40 @@ add_shortcode('tgb_header_bottom', function () {
                     <div class="grid_col-6">
                         <div class="grid_row">
                             <div class="grid_col-6">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quos impedit exercitationem aliquid quis dignissimos adipisci eum aut itaque ipsam cumque in nisi, a sit, animi cum, iste tenetur distinctio?
+                                <div class="menu_1">
+                                    <a href="#">Bảng Văn Phòng</a>
+                                    <a href="#">Bảng Văn Phòng</a>
+                                    <a href="#">Bảng Văn Phòng</a>
+                                    <a href="#">Bảng Văn Phòng</a>
+                                    <a href="#">Bảng Văn Phòng</a>
+                                    <a href="#">Bảng Văn Phòng</a>
+                                </div>
                             </div>
                             <div class="grid_col-6">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quos impedit exercitationem aliquid quis dignissimos adipisci eum aut itaque ipsam cumque in nisi, a sit, animi cum, iste tenetur distinctio?
+                                <div class="list_menu_2">
+                                    <div class="item">
+                                        <a href="#">Bảng Văn Phòng</a>
+                                        <a href="#">Bảng Văn Phòng</a>
+                                        <a href="#">Bảng Văn Phòng</a>
+                                        <a href="#">Bảng Văn Phòng</a>
+                                        <a href="#">Bảng Văn Phòng</a>
+                                        <a href="#">Bảng Văn Phòng</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="grid_col-6">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quos impedit exercitationem aliquid quis dignissimos adipisci eum aut itaque ipsam cumque in nisi, a sit, animi cum, iste tenetur distinctio?
+                        <div class="list_menu_3">
+                            <div class="item">
+                                <a href="#">Bảng Văn Phòng</a>
+                                <a href="#">Bảng Văn Phòng</a>
+                                <a href="#">Bảng Văn Phòng</a>
+                                <a href="#">Bảng Văn Phòng</a>
+                                <a href="#">Bảng Văn Phòng</a>
+                                <a href="#">Bảng Văn Phòng</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
