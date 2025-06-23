@@ -119,46 +119,199 @@ add_shortcode('tgb_header_bottom', function () {
 
         <div class="main_product_cat_show">
             <div class="container">
-                <div class="grid_row">
-                    <div class="grid_col-6">
-                        <div class="grid_row">
-                            <div class="grid_col-6">
-                                <div class="menu_1">
-                                    <a href="#">Bảng Văn Phòng</a>
-                                    <a href="#">Bảng Văn Phòng</a>
-                                    <a href="#">Bảng Văn Phòng</a>
-                                    <a href="#">Bảng Văn Phòng</a>
-                                    <a href="#">Bảng Văn Phòng</a>
-                                    <a href="#">Bảng Văn Phòng</a>
-                                </div>
-                            </div>
-                            <div class="grid_col-6">
-                                <div class="list_menu_2">
-                                    <div class="item">
-                                        <a href="#">Bảng Văn Phòng</a>
-                                        <a href="#">Bảng Văn Phòng</a>
-                                        <a href="#">Bảng Văn Phòng</a>
-                                        <a href="#">Bảng Văn Phòng</a>
-                                        <a href="#">Bảng Văn Phòng</a>
-                                        <a href="#">Bảng Văn Phòng</a>
+                <ul class="list_menu">
+                    <li>
+                        <a href="#">Bảng Văn Phòng</a>
+
+                        <ul class="sub_menu">
+                            <li>
+                                <a href="#">Bảng Văn Phòng</a>
+
+                                <div class="list_product">
+                                    <div class="title">
+                                        Bảng Từ Trắng
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9 18L15 12L9 6" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <div class="list">
+                                        <div class="grid_row">
+                                            <div class="col_custom">
+                                                <a href="#" class="item">
+                                                    <img src="https://thegioibang.com/wp-content/uploads/2021/07/Clip-1.png" alt="">
+                                                    <div class="text">
+                                                        Bảng từ trắng treo tường
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="col_custom">
+                                                <a href="#" class="item">
+                                                    <img src="https://thegioibang.com/wp-content/uploads/2021/07/Clip-1.png" alt="">
+                                                    <div class="text">
+                                                        Bảng từ trắng treo tường
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="col_custom">
+                                                <a href="#" class="item">
+                                                    <img src="https://thegioibang.com/wp-content/uploads/2021/07/Clip-1.png" alt="">
+                                                    <div class="text">
+                                                        Bảng từ trắng treo tường
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="col_custom">
+                                                <a href="#" class="item">
+                                                    <img src="https://thegioibang.com/wp-content/uploads/2021/07/Clip-1.png" alt="">
+                                                    <div class="text">
+                                                        Bảng từ trắng treo tường
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="col_custom">
+                                                <a href="#" class="item">
+                                                    <img src="https://thegioibang.com/wp-content/uploads/2021/07/Clip-1.png" alt="">
+                                                    <div class="text">
+                                                        Bảng từ trắng treo tường
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="col_custom">
+                                                <a href="#" class="item">
+                                                    <img src="https://thegioibang.com/wp-content/uploads/2021/07/Clip-1.png" alt="">
+                                                    <div class="text">
+                                                        Bảng từ trắng treo tường
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="col_custom">
+                                                <a href="#" class="item">
+                                                    <img src="https://thegioibang.com/wp-content/uploads/2021/07/Clip-1.png" alt="">
+                                                    <div class="text">
+                                                        Bảng từ trắng treo tường
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="col_custom">
+                                                <a href="#" class="item">
+                                                    <img src="https://thegioibang.com/wp-content/uploads/2021/07/Clip-1.png" alt="">
+                                                    <div class="text">
+                                                        Bảng từ trắng treo tường
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="col_custom">
+                                                <a href="#" class="item">
+                                                    <img src="https://thegioibang.com/wp-content/uploads/2021/07/Clip-1.png" alt="">
+                                                    <div class="text">
+                                                        Bảng từ trắng treo tường
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="col_custom">
+                                                <a href="#" class="item">
+                                                    <img src="https://thegioibang.com/wp-content/uploads/2021/07/Clip-1.png" alt="">
+                                                    <div class="text">
+                                                        Bảng từ trắng treo tường
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="col_custom">
+                                                <a href="#" class="item">
+                                                    <img src="https://thegioibang.com/wp-content/uploads/2021/07/Clip-1.png" alt="">
+                                                    <div class="text">
+                                                        Bảng từ trắng treo tường
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="col_custom">
+                                                <a href="#" class="item">
+                                                    <img src="https://thegioibang.com/wp-content/uploads/2021/07/Clip-1.png" alt="">
+                                                    <div class="text">
+                                                        Bảng từ trắng treo tường
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="col_custom">
+                                                <a href="#" class="item">
+                                                    <img src="https://thegioibang.com/wp-content/uploads/2021/07/Clip-1.png" alt="">
+                                                    <div class="text">
+                                                        Bảng từ trắng treo tường
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="col_custom">
+                                                <a href="#" class="item">
+                                                    <img src="https://thegioibang.com/wp-content/uploads/2021/07/Clip-1.png" alt="">
+                                                    <div class="text">
+                                                        Bảng từ trắng treo tường
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="col_custom">
+                                                <a href="#" class="item">
+                                                    <img src="https://thegioibang.com/wp-content/uploads/2021/07/Clip-1.png" alt="">
+                                                    <div class="text">
+                                                        Bảng từ trắng treo tường
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="col_custom">
+                                                <a href="#" class="item">
+                                                    <img src="https://thegioibang.com/wp-content/uploads/2021/07/Clip-1.png" alt="">
+                                                    <div class="text">
+                                                        Bảng từ trắng treo tường
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="col_custom">
+                                                <a href="#" class="item">
+                                                    <img src="https://thegioibang.com/wp-content/uploads/2021/07/Clip-1.png" alt="">
+                                                    <div class="text">
+                                                        Bảng từ trắng treo tường
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="col_custom">
+                                                <a href="#" class="item">
+                                                    <img src="https://thegioibang.com/wp-content/uploads/2021/07/Clip-1.png" alt="">
+                                                    <div class="text">
+                                                        Bảng từ trắng treo tường
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="col_custom">
+                                                <a href="#" class="item">
+                                                    <img src="https://thegioibang.com/wp-content/uploads/2021/07/Clip-1.png" alt="">
+                                                    <div class="text">
+                                                        Bảng từ trắng treo tường
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="col_custom">
+                                                <a href="#" class="item">
+                                                    <img src="https://thegioibang.com/wp-content/uploads/2021/07/Clip-1.png" alt="">
+                                                    <div class="text">
+                                                        Bảng từ trắng treo tường
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="grid_col-6">
-                        <div class="list_menu_3">
-                            <div class="item">
-                                <a href="#">Bảng Văn Phòng</a>
-                                <a href="#">Bảng Văn Phòng</a>
-                                <a href="#">Bảng Văn Phòng</a>
-                                <a href="#">Bảng Văn Phòng</a>
-                                <a href="#">Bảng Văn Phòng</a>
-                                <a href="#">Bảng Văn Phòng</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Bảng Văn Phòng</a>
+                    </li>
+                    <li>
+                        <a href="#">Bảng Văn Phòng</a>
+                    </li>
+                    <li>
+                        <a href="#">Bảng Văn Phòng</a>
+                    </li>
+                </ul>
             </div>
         </div>
     <?php
