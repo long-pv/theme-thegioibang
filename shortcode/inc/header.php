@@ -206,3 +206,71 @@ add_shortcode('tgb_header_bottom', function () {
     <?php
     return ob_get_clean();
 });
+
+
+// Shortcode hiển thị icon giỏ hàng và cập nhật số lượng realtime (jQuery)
+function custom_wc_cart_icon_shortcode()
+{
+    ob_start();
+    ?>
+        <style>
+            .custom-cart-icon {
+                position: relative;
+                display: inline-block;
+            }
+
+            .custom-cart-count {
+                position: absolute;
+                top: -8px;
+                right: -10px;
+                background: #e74c3c;
+                color: #fff;
+                font-size: 12px;
+                border-radius: 50%;
+                width: 18px;
+                height: 18px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: bold;
+            }
+        </style>
+        <a href="<?php echo esc_url(wc_get_cart_url()); ?>" class="custom-cart-icon">
+            <span>
+                <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M6 6h15l-1.5 9h-13z" />
+                    <circle cx="9" cy="20" r="1" />
+                    <circle cx="17" cy="20" r="1" />
+                </svg>
+            </span>
+            <span class="custom-cart-count" id="custom-cart-count"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+        </a>
+        <script>
+            jQuery(function($) {
+                function updateCartCount() {
+                    $.get('<?php echo admin_url('admin-ajax.php?action=get_cart_count'); ?>', function(count) {
+                        $('#custom-cart-count').text(count);
+                    });
+                }
+
+                // Khi thêm vào giỏ hàng
+                $('body').on('added_to_cart', updateCartCount);
+
+                // Khi cập nhật số lượng ở trang giỏ hàng (AJAX)
+                // WooCommerce sẽ trigger event 'updated_cart_totals' sau khi cập nhật xong
+                $('body').on('updated_cart_totals', updateCartCount);
+            });
+        </script>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('tgb_wc_cart_icon', 'custom_wc_cart_icon_shortcode');
+
+// AJAX Handler để trả về số lượng sản phẩm trong giỏ
+add_action('wp_ajax_get_cart_count', 'custom_wc_cart_count_ajax');
+add_action('wp_ajax_nopriv_get_cart_count', 'custom_wc_cart_count_ajax');
+function custom_wc_cart_count_ajax()
+{
+    echo WC()->cart->get_cart_contents_count();
+    wp_die();
+}
