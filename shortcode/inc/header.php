@@ -18,6 +18,29 @@ add_shortcode('tgb_search_ui', function () {
                 class="tgb_search_input"
                 placeholder="Nhập tên hoặc danh mục bạn muốn tìm kiếm" />
             <button type="submit" class="tgb_search_button">Tìm kiếm</button>
+
+            <div class="result">
+                <div class="title">
+                    Từ khoá gợi ý
+                </div>
+
+                <div class="list">
+                    <?php
+                    for ($i = 0; $i < 6; $i++):
+                    ?>
+                        <div class="item">
+                            <div class="icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M21 21L15.0001 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="#818181" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="text">
+                                bảng trắng
+                            </div>
+                        </div>
+                    <?php endfor; ?>
+                </div>
+            </div>
         </form>
 
         <div class="tgb_search_suggestions">
@@ -27,6 +50,24 @@ add_shortcode('tgb_search_ui', function () {
             <a href="/danh-muc/bang-ghim-tropical" class="tgb_search_link">bảng ghim Tropical</a>
             <a href="/danh-muc/bang-truong-hoc" class="tgb_search_link">bảng trường học</a>
         </div>
+
+        <script>
+            jQuery(function($) {
+                $('.tgb_search_input').on('input', function() {
+                    var value = $(this).val().trim();
+                    if (value.length > 0) {
+                        $('.result').show();
+                    } else {
+                        $('.result').hide();
+                    }
+                });
+                $(document).on('click', function(event) {
+                    if (!$(event.target).closest('.tgb_search_form').length) {
+                        $('.result').hide();
+                    }
+                });
+            });
+        </script>
     </div>
 <?php
     return ob_get_clean();
@@ -213,38 +254,31 @@ function custom_wc_cart_icon_shortcode()
 {
     ob_start();
     ?>
-        <style>
-            .custom-cart-icon {
-                position: relative;
-                display: inline-block;
-            }
+        <div class="tgb_header_right">
+            <a href="#" class="promotion">
+                <div class="icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 6V22M12 6H8.46429C7.94332 6 7.4437 5.78929 7.07533 5.41421C6.70695 5.03914 6.5 4.53043 6.5 4C6.5 3.46957 6.70695 2.96086 7.07533 2.58579C7.4437 2.21071 7.94332 2 8.46429 2C11.2143 2 12 6 12 6ZM12 6H15.5357C16.0567 6 16.5563 5.78929 16.9247 5.41421C17.293 5.03914 17.5 4.53043 17.5 4C17.5 3.46957 17.293 2.96086 16.9247 2.58579C16.5563 2.21071 16.0567 2 15.5357 2C12.7857 2 12 6 12 6ZM20 11V18.8C20 19.9201 20 20.4802 19.782 20.908C19.5903 21.2843 19.2843 21.5903 18.908 21.782C18.4802 22 17.9201 22 16.8 22L7.2 22C6.07989 22 5.51984 22 5.09202 21.782C4.71569 21.5903 4.40973 21.2843 4.21799 20.908C4 20.4802 4 19.9201 4 18.8V11M2 7.6L2 9.4C2 9.96005 2 10.2401 2.10899 10.454C2.20487 10.6422 2.35785 10.7951 2.54601 10.891C2.75992 11 3.03995 11 3.6 11L20.4 11C20.9601 11 21.2401 11 21.454 10.891C21.6422 10.7951 21.7951 10.6422 21.891 10.454C22 10.2401 22 9.96005 22 9.4V7.6C22 7.03995 22 6.75992 21.891 6.54601C21.7951 6.35785 21.6422 6.20487 21.454 6.10899C21.2401 6 20.9601 6 20.4 6L3.6 6C3.03995 6 2.75992 6 2.54601 6.10899C2.35785 6.20487 2.20487 6.35785 2.10899 6.54601C2 6.75992 2 7.03995 2 7.6Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div class="text">
+                    Ưu đãi
+                    <br>
+                    Khuyến mại
+                </div>
+            </a>
 
-            .custom-cart-count {
-                position: absolute;
-                top: -8px;
-                right: -10px;
-                background: #e74c3c;
-                color: #fff;
-                font-size: 12px;
-                border-radius: 50%;
-                width: 18px;
-                height: 18px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-weight: bold;
-            }
-        </style>
-        <a href="<?php echo esc_url(wc_get_cart_url()); ?>" class="custom-cart-icon">
-            <span>
-                <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path d="M6 6h15l-1.5 9h-13z" />
-                    <circle cx="9" cy="20" r="1" />
-                    <circle cx="17" cy="20" r="1" />
-                </svg>
-            </span>
-            <span class="custom-cart-count" id="custom-cart-count"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
-        </a>
+            <div class="line"></div>
+
+            <a href="<?php echo esc_url(wc_get_cart_url()); ?>" class="cart_icon">
+                <div class="icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5.00014 14H18.1359C19.1487 14 19.6551 14 20.0582 13.8112C20.4134 13.6448 20.7118 13.3777 20.9163 13.0432C21.1485 12.6633 21.2044 12.16 21.3163 11.1534L21.9013 5.88835C21.9355 5.58088 21.9525 5.42715 21.9031 5.30816C21.8597 5.20366 21.7821 5.11697 21.683 5.06228C21.5702 5 21.4155 5 21.1062 5H4.50014M2 2H3.24844C3.51306 2 3.64537 2 3.74889 2.05032C3.84002 2.09463 3.91554 2.16557 3.96544 2.25376C4.02212 2.35394 4.03037 2.48599 4.04688 2.7501L4.95312 17.2499C4.96963 17.514 4.97788 17.6461 5.03456 17.7462C5.08446 17.8344 5.15998 17.9054 5.25111 17.9497C5.35463 18 5.48694 18 5.75156 18H19M7.5 21.5H7.51M16.5 21.5H16.51M8 21.5C8 21.7761 7.77614 22 7.5 22C7.22386 22 7 21.7761 7 21.5C7 21.2239 7.22386 21 7.5 21C7.77614 21 8 21.2239 8 21.5ZM17 21.5C17 21.7761 16.7761 22 16.5 22C16.2239 22 16 21.7761 16 21.5C16 21.2239 16.2239 21 16.5 21C16.7761 21 17 21.2239 17 21.5Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <span class="count" id="custom-cart-count"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+            </a>
+        </div>
         <script>
             jQuery(function($) {
                 function updateCartCount() {
