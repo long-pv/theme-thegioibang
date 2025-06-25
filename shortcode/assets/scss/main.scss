@@ -965,3 +965,71 @@ div#masthead {
         }
     }
 }
+
+
+.tgb_list_cat {
+    padding: 24px;
+    background-color: #fff;
+    border-radius: 12px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+
+    .heading {
+        .title {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            margin-bottom: 16px;
+
+            .icon {
+                display: inline-flex;
+            }
+
+            .text {
+                font-family: 'Inter';
+                font-size: 20px;
+                font-weight: 600;
+                line-height: 1.4;
+                color: #255144;
+            }
+        }
+    }
+
+
+    .list {
+        .grid_row {
+            --bs-gutter-x: 0px;
+            row-gap: 0px;
+        }
+
+        .col_custom {
+            flex: 0 0 auto;
+            width: 12.5%;
+        }
+
+        .item {
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            img {
+                max-width: 100%;
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+
+            .title {
+                font-family: 'Inter';
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 1.4;
+                color: #1D3F35;
+            }
+        }
+    }
+}
