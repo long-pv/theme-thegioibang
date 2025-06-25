@@ -40,8 +40,8 @@ add_shortcode('tgb_footer_main', function () {
                     </div>
                 </div>
                 <div class="grid_col-lg-8">
-                    <div class="grid_row">
-                        <div class="grid_col-4">
+                    <div class="grid_row grid_row_1">
+                        <div class="grid_col-lg-4">
                             <div class="footer_menu">
                                 <div class="title">
                                     Hỗ trợ khách hàng
@@ -79,7 +79,7 @@ add_shortcode('tgb_footer_main', function () {
                                 </div>
                             </div>
                         </div>
-                        <div class="grid_col-4">
+                        <div class="grid_col-lg-4">
                             <div class="footer_menu">
                                 <div class="title">
                                     Về Chúng tôi
@@ -110,7 +110,7 @@ add_shortcode('tgb_footer_main', function () {
                                 </div>
                             </div>
                         </div>
-                        <div class="grid_col-4">
+                        <div class="grid_col-lg-4">
                             <div class="footer_menu" style="margin-bottom: 24px;">
                                 <div class="title">
                                     Kết nối với chúng tôi
@@ -178,7 +178,7 @@ add_shortcode('tgb_footer_main', function () {
 
         <div class="showroom">
             <div class="grid_row">
-                <div class="grid_col-4">
+                <div class="grid_col-lg-4">
                     <div class="item">
                         <div class="title">
                             <div class="icon">
@@ -245,11 +245,156 @@ add_shortcode('tgb_footer_main', function () {
                         </div>
                     </div>
                 </div>
-                <div class="grid_col-4">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quisquam quae animi. Molestias eveniet nisi quae praesentium esse unde nam quis, eos repellat minima? Ab maiores corrupti labore corporis soluta.
+                <div class="grid_col-lg-4">
+                    <div class="item">
+                        <div class="title">
+                            <div class="icon">
+                                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.86866 15.8218L7 22.3618L11.5884 19.6088C11.7381 19.519 11.8129 19.4741 11.8928 19.4565C11.9634 19.441 12.0366 19.441 12.1072 19.4565C12.1871 19.4741 12.2619 19.519 12.4116 19.6088L17 22.3618L16.1319 15.8189M16.4259 4.6107C16.5803 4.98422 16.8768 5.28111 17.25 5.43612L18.5589 5.9783C18.9325 6.13303 19.2292 6.42981 19.384 6.80336C19.5387 7.17691 19.5387 7.59662 19.384 7.97017L18.8422 9.27817C18.6874 9.65188 18.6872 10.072 18.8427 10.4456L19.3835 11.7532C19.4602 11.9382 19.4997 12.1365 19.4997 12.3368C19.4998 12.5371 19.4603 12.7354 19.3837 12.9204C19.3071 13.1055 19.1947 13.2736 19.0531 13.4152C18.9114 13.5568 18.7433 13.6691 18.5582 13.7457L17.2503 14.2875C16.8768 14.4419 16.5799 14.7384 16.4249 15.1116L15.8827 16.4206C15.728 16.7941 15.4312 17.0909 15.0577 17.2456C14.6841 17.4004 14.2644 17.4004 13.8909 17.2456L12.583 16.7039C12.2094 16.5495 11.7899 16.5498 11.4166 16.7047L10.1077 17.2461C9.73434 17.4005 9.31501 17.4004 8.94178 17.2458C8.56854 17.0912 8.27194 16.7947 8.11711 16.4216L7.57479 15.1123C7.42035 14.7387 7.12391 14.4418 6.75064 14.2868L5.44175 13.7447C5.06838 13.59 4.77169 13.2934 4.61691 12.9201C4.46213 12.5467 4.46192 12.1272 4.61633 11.7537L5.1581 10.4457C5.31244 10.0722 5.31213 9.6526 5.15722 9.27928L4.61623 7.9694C4.53953 7.78439 4.50003 7.58607 4.5 7.38579C4.49997 7.18551 4.5394 6.98718 4.61604 6.80214C4.69268 6.6171 4.80504 6.44898 4.94668 6.30738C5.08832 6.16578 5.25647 6.05348 5.44152 5.97689L6.74947 5.4351C7.12265 5.28079 7.41936 4.98472 7.57448 4.61186L8.11664 3.30292C8.27136 2.92938 8.56813 2.63259 8.94167 2.47786C9.3152 2.32313 9.7349 2.32313 10.1084 2.47786L11.4164 3.01965C11.7899 3.174 12.2095 3.17369 12.5828 3.01878L13.8922 2.4787C14.2657 2.32406 14.6853 2.32409 15.0588 2.47879C15.4322 2.63349 15.729 2.93019 15.8837 3.30364L16.426 4.61296L16.4259 4.6107Z" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="text">
+                                SHOWROOM MIỀN TRUNG
+                            </div>
+                        </div>
+
+                        <div class="list">
+                            <div class="item">
+                                <div class="grid_row">
+                                    <div class="grid_col-3">
+                                        <div class="city">
+                                            Hà Nội:
+                                        </div>
+                                    </div>
+                                    <div class="grid_col-9">
+                                        <div class="address">
+                                            <div class="item">
+                                                <div class="content">
+                                                    Số 10 Ngõ 183/4 Đặng Tiến Đông, Đống Đa
+                                                </div>
+                                                <a href="#" class="phone"> 0936.078.611</a>
+                                            </div>
+                                            <div class="item">
+                                                <div class="content">
+                                                    Số 10 Ngõ 183/4 Đặng Tiến Đông, Đống Đa
+                                                </div>
+                                                <a href="#" class="phone"> 0936.078.611</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="grid_row">
+                                    <div class="grid_col-3">
+                                        <div class="city">
+                                            Hải Phòng:
+                                        </div>
+                                    </div>
+                                    <div class="grid_col-9">
+                                        <div class="address">
+                                            <div class="item">
+                                                <div class="content">
+                                                    Số 10 Ngõ 183/4 Đặng Tiến Đông, Đống Đa
+                                                </div>
+                                                <a href="#" class="phone"> 0936.078.611</a>
+                                            </div>
+                                            <div class="item">
+                                                <div class="content">
+                                                    Số 10 Ngõ 183/4 Đặng Tiến Đông, Đống Đa
+                                                </div>
+                                                <a href="#" class="phone"> 0936.078.611</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="grid_col-4">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quisquam quae animi. Molestias eveniet nisi quae praesentium esse unde nam quis, eos repellat minima? Ab maiores corrupti labore corporis soluta.
+                <div class="grid_col-lg-4">
+                    <div class="item">
+                        <div class="title">
+                            <div class="icon">
+                                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.86866 15.8218L7 22.3618L11.5884 19.6088C11.7381 19.519 11.8129 19.4741 11.8928 19.4565C11.9634 19.441 12.0366 19.441 12.1072 19.4565C12.1871 19.4741 12.2619 19.519 12.4116 19.6088L17 22.3618L16.1319 15.8189M16.4259 4.6107C16.5803 4.98422 16.8768 5.28111 17.25 5.43612L18.5589 5.9783C18.9325 6.13303 19.2292 6.42981 19.384 6.80336C19.5387 7.17691 19.5387 7.59662 19.384 7.97017L18.8422 9.27817C18.6874 9.65188 18.6872 10.072 18.8427 10.4456L19.3835 11.7532C19.4602 11.9382 19.4997 12.1365 19.4997 12.3368C19.4998 12.5371 19.4603 12.7354 19.3837 12.9204C19.3071 13.1055 19.1947 13.2736 19.0531 13.4152C18.9114 13.5568 18.7433 13.6691 18.5582 13.7457L17.2503 14.2875C16.8768 14.4419 16.5799 14.7384 16.4249 15.1116L15.8827 16.4206C15.728 16.7941 15.4312 17.0909 15.0577 17.2456C14.6841 17.4004 14.2644 17.4004 13.8909 17.2456L12.583 16.7039C12.2094 16.5495 11.7899 16.5498 11.4166 16.7047L10.1077 17.2461C9.73434 17.4005 9.31501 17.4004 8.94178 17.2458C8.56854 17.0912 8.27194 16.7947 8.11711 16.4216L7.57479 15.1123C7.42035 14.7387 7.12391 14.4418 6.75064 14.2868L5.44175 13.7447C5.06838 13.59 4.77169 13.2934 4.61691 12.9201C4.46213 12.5467 4.46192 12.1272 4.61633 11.7537L5.1581 10.4457C5.31244 10.0722 5.31213 9.6526 5.15722 9.27928L4.61623 7.9694C4.53953 7.78439 4.50003 7.58607 4.5 7.38579C4.49997 7.18551 4.5394 6.98718 4.61604 6.80214C4.69268 6.6171 4.80504 6.44898 4.94668 6.30738C5.08832 6.16578 5.25647 6.05348 5.44152 5.97689L6.74947 5.4351C7.12265 5.28079 7.41936 4.98472 7.57448 4.61186L8.11664 3.30292C8.27136 2.92938 8.56813 2.63259 8.94167 2.47786C9.3152 2.32313 9.7349 2.32313 10.1084 2.47786L11.4164 3.01965C11.7899 3.174 12.2095 3.17369 12.5828 3.01878L13.8922 2.4787C14.2657 2.32406 14.6853 2.32409 15.0588 2.47879C15.4322 2.63349 15.729 2.93019 15.8837 3.30364L16.426 4.61296L16.4259 4.6107Z" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="text">
+                                SHOWROOM MIỀN NAM
+                            </div>
+                        </div>
+
+                        <div class="list">
+                            <div class="item">
+                                <div class="grid_row">
+                                    <div class="grid_col-3">
+                                        <div class="city">
+                                            Hà Nội:
+                                        </div>
+                                    </div>
+                                    <div class="grid_col-9">
+                                        <div class="address">
+                                            <div class="item">
+                                                <div class="content">
+                                                    Số 10 Ngõ 183/4 Đặng Tiến Đông, Đống Đa
+                                                </div>
+                                                <a href="#" class="phone"> 0936.078.611</a>
+                                            </div>
+                                            <div class="item">
+                                                <div class="content">
+                                                    Số 10 Ngõ 183/4 Đặng Tiến Đông, Đống Đa
+                                                </div>
+                                                <a href="#" class="phone"> 0936.078.611</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="grid_row">
+                                    <div class="grid_col-3">
+                                        <div class="city">
+                                            Hải Phòng:
+                                        </div>
+                                    </div>
+                                    <div class="grid_col-9">
+                                        <div class="address">
+                                            <div class="item">
+                                                <div class="content">
+                                                    Số 10 Ngõ 183/4 Đặng Tiến Đông, Đống Đa
+                                                </div>
+                                                <a href="#" class="phone"> 0936.078.611</a>
+                                            </div>
+                                            <div class="item">
+                                                <div class="content">
+                                                    Số 10 Ngõ 183/4 Đặng Tiến Đông, Đống Đa
+                                                </div>
+                                                <a href="#" class="phone"> 0936.078.611</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom">
+            <div class="grid_row">
+                <div class="grid_col-lg-8">
+                    <div class="copyright">
+                        Copyright 2025 ©Thế Giới Bảng. All right Reserved. Web Design & Optimization by.
+                        <br>
+                        Sử dụng nội dung và dịch vụ tại thegioibang.com có nghĩa là bạn đồng ý với Thỏa thuật sử dụng và Chính sách bảo mật của chúng tôi.Công ty Cổ phần
+                    </div>
+                </div>
+                <div class="grid_col-lg-4">
+                    <div class="location">
+                        <?php echo do_shortcode('[nc_change_location]'); ?>
+                    </div>
                 </div>
             </div>
         </div>

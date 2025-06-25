@@ -520,7 +520,33 @@ div#masthead {
 
         .grid_row {
             --bs-gutter-x: 16px;
-            row-gap: 16px;
+            row-gap: 24px;
+        }
+    }
+
+    .bottom {
+        .grid_row {
+            --bs-gutter-x: 8px;
+            row-gap: 8px;
+        }
+
+        .copyright {
+            color: #000000;
+            font-family: 'Inter';
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        .location {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            height: 100%;
+
+            @media screen and (max-width: 849px) {
+                justify-content: flex-start;
+            }
         }
     }
 
@@ -531,10 +557,15 @@ div#masthead {
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
+        margin-bottom: 16px;
+
+        @media screen and (max-width: 849px) {
+            padding: 32px 16px;
+        }
 
         .grid_row {
             --bs-gutter-x: 24px;
-            row-gap: 24px;
+            row-gap: 32px;
         }
 
         .item {
@@ -554,6 +585,57 @@ div#masthead {
                     font-weight: 600;
                     line-height: 1.4;
                     color: #2E2E2E;
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+        .list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            .item {
+                .grid_row {
+                    --bs-gutter-x: 8px;
+                    row-gap: 8px;
+                }
+
+                .city {
+                    font-family: 'Inter';
+                    font-size: 12px;
+                    font-weight: 500;
+                    line-height: 1.4;
+                    color: #2E2E2E;
+                }
+
+                .address {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+
+                    .item {
+                        .content {
+                            font-family: 'Inter';
+                            font-size: 12px;
+                            font-weight: 500;
+                            line-height: 1.4;
+                            color: #2E2E2E;
+                        }
+
+                        .phone {
+                            font-family: 'Inter';
+                            font-size: 12px;
+                            font-weight: 600;
+                            line-height: 1.4;
+                            color: #2E2E2E;
+                            text-decoration: none;
+
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -561,8 +643,11 @@ div#masthead {
 
     .footer_main_col_1 {
         padding-right: 30px;
-    }
 
+        @media screen and (max-width: 849px) {
+            padding-right: 0px;
+        }
+    }
 
 
     .logo {
