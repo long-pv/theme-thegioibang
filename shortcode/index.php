@@ -16,9 +16,9 @@ if (!empty($inc_files)) {
 // 3. Enqueue assets
 add_action('wp_enqueue_scripts', function () {
     // slick
-    wp_enqueue_style('tgb-style-slick-theme', TGB_SHORTCODE_PATH . '/assets/slick/slick-theme.css', array(), '1.0.0');
-    wp_enqueue_style('tgb-style-slick', TGB_SHORTCODE_PATH . '/assets/slick/slick.css', array(), '1.0.0');
-    wp_enqueue_script('tgb-script-slick', TGB_SHORTCODE_PATH . '/assets/slick/slick.min.js', array('jquery'), '1.0.0', true);
+    wp_enqueue_style('tgb-style-slick-theme', TGB_SHORTCODE_URL . '/assets/slick/slick-theme.css', array(), '1.0.0');
+    wp_enqueue_style('tgb-style-slick', TGB_SHORTCODE_URL . '/assets/slick/slick.css', array(), '1.0.0');
+    wp_enqueue_script('tgb-script-slick', TGB_SHORTCODE_URL . '/assets/slick/slick.min.js', array('jquery'), '1.0.0', true);
 
     $css_path = TGB_SHORTCODE_PATH . '/assets/css/main.css';
     $js_path  = TGB_SHORTCODE_PATH . '/assets/js/main.js';
