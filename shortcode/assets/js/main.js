@@ -7,4 +7,11 @@
 		arrows: true,
 		dots: false,
 	});
+	$(".product_slider").slick({
+		slidesToShow: 5,
+		slidesToScroll: 3,
+		infinite: true,
+		arrows: false,
+		dots: false,
+	});
 })(jQuery, window);
