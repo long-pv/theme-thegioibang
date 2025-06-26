@@ -14,4 +14,11 @@
 		arrows: false,
 		dots: false,
 	});
+	$(".list_product").slick({
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		infinite: false,
+		arrows: true,
+		dots: false,
+	});
 })(jQuery, window);
