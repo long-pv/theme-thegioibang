@@ -7,7 +7,6 @@ add_shortcode('tgb_livestream_video', function () {
 
     $livestream = get_field('livestream', 'option') ?? [];
     $now = current_time('Y-m-d H:i:s');
-    write_log($livestream);
 ?>
     <div class="tgb_livestream_video">
         <div class="heading">

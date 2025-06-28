@@ -4,6 +4,11 @@
 // ===============================
 add_shortcode('tgb_list_cat', function () {
     ob_start();
+
+    // list_category
+    $list_category = get_field('list_category', 'option') ?? [];
+
+    write_log($list_category);
 ?>
     <div class="tgb_list_cat">
         <div class="heading">
@@ -14,23 +19,32 @@ add_shortcode('tgb_list_cat', function () {
                     </svg>
                 </div>
                 <div class="text">
-                    Danh mục
+                    <?php _e('Danh mục'); ?>
                 </div>
             </div>
         </div>
 
         <div class="list">
             <div class="grid_row">
-                <?php for ($i = 0; $i < 8; $i++) : ?>
+                <?php foreach ($list_category as $cat_id) :
+                    $cat = get_term($cat_id, 'product_cat');
+                    if (is_wp_error($cat) || !$cat) continue;
+                    $cat_name = $cat->name;
+                    $cat_link = get_term_link($cat);
+
+                    // Lấy ảnh thumbnail của category
+                    $thumbnail_id = get_term_meta($cat_id, 'thumbnail_id', true);
+                    $image_url = $thumbnail_id ? wp_get_attachment_url($thumbnail_id) : (TGB_IMG_URL . 'img3.png');
+                ?>
                     <div class="col_custom">
-                        <a href="#" class="item">
-                            <img src="<?php echo TGB_IMG_URL . 'img3.png'; ?>" alt="">
+                        <a href="<?php echo $cat_link; ?>" class="item">
+                            <img src="<?php echo $image_url; ?>" alt="<?php echo $cat_name; ?>">
                             <h3 class="title line-1">
-                                Bảng văn phòng
+                                <?php echo $cat_name; ?>
                             </h3>
                         </a>
                     </div>
-                <?php endfor; ?>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>
