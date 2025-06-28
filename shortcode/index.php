@@ -69,6 +69,13 @@ if (function_exists('acf_add_options_page')) {
         'parent_slug' => 'tgb-theme-settings',
     ]);
 
+    // Sub page: Home page
+    acf_add_options_sub_page([
+        'page_title'  => 'Home page',
+        'menu_title'  => 'Home page',
+        'parent_slug' => 'tgb-theme-settings',
+    ]);
+
     // Sub page: Social Settings (ví dụ thêm)
     acf_add_options_sub_page([
         'page_title'  => 'Social Settings',

@@ -7,14 +7,14 @@
 		arrows: true,
 		dots: false,
 	});
-	$(".product_slider").slick({
+	$(".tgb_top_deal .product_slider").slick({
 		slidesToShow: 5,
 		slidesToScroll: 3,
 		infinite: true,
 		arrows: false,
 		dots: false,
 	});
-	$(".list_product").slick({
+	$(".tgb_featured .list_product").slick({
 		slidesToShow: 3,
 		slidesToScroll: 1,
 		infinite: false,
