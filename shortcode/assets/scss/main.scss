@@ -1158,7 +1158,8 @@ div#masthead {
             margin-bottom: 4px;
         }
 
-        .price {
+        .price,
+        .price * {
             font-family: 'Inter';
             font-size: 16px;
             font-weight: 600;
@@ -1185,7 +1186,8 @@ div#masthead {
                 border-radius: 999px;
             }
 
-            .old_price {
+            .old_price,
+            .old_price * {
                 color: #2E2E2E;
                 text-decoration: line-through;
                 font-size: 12px;

@@ -7,8 +7,6 @@ add_shortcode('tgb_list_cat', function () {
 
     // list_category
     $list_category = get_field('list_category', 'option') ?? [];
-
-    write_log($list_category);
 ?>
     <div class="tgb_list_cat">
         <div class="heading">
