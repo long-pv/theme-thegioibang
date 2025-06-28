@@ -1,20 +1,19 @@
 <?php
 // ===============================
-// Shortcode: [tgb_hotline]
-// ===============================
-add_shortcode('tgb_hotline', function () {
-    ob_start();
-?>
-    <div class="tgb-hotline">Hotline: <a href="tel:0909999999">0909 999 999</a></div>
-<?php
-    return ob_get_clean();
-});
-
-// ===============================
 // Shortcode: [tgb_footer_main]
 // ===============================
 add_shortcode('tgb_footer_main', function () {
     ob_start();
+
+    $company_name = get_field('company_name', 'option') ?? null;
+    $short_introduction = get_field('short_introduction', 'option') ?? null;
+    $customer_support = get_field('customer_support', 'option') ?? null;
+    $about_us = get_field('about_us', 'option') ?? null;
+    $copyright = get_field('copyright', 'option') ?? '';
+    $connect_with_us = get_field('connect_with_us', 'option') ?? null;
+    $facebook = get_field('connect_with_us_facebook', 'option') ?? '';
+    $instagram = get_field('connect_with_us_instagram', 'option') ?? '';
+    $youtube = get_field('connect_with_us_youtube', 'option') ?? '';
 ?>
 
     <div class="tgb_footer_main">
@@ -26,137 +25,106 @@ add_shortcode('tgb_footer_main', function () {
                             <img src="<?php echo TGB_IMG_URL . 'logo_footer.svg'; ?>" alt="">
                         </a>
                         <div class="intro">
-                            <div class="title">
-                                CÔNG TY CỔ PHẦN THẾ GIỚI BẢNG
-                            </div>
-                            <div class="desc">
-                                Giấy phép kinh doanh số: 0106129645 cấp ngày 21/03/2013 bở
-                                Sở Kế Hoạch và Đầu Tư TP.Hà Nội.
-                                <br>
-                                (Nhà phân phối Bảng chuyên nghiệp hàng đầu Việt Nam,
-                                Thành viên của Tân Hà)
-                            </div>
+                            <?php if ($company_name) : ?>
+                                <div class="title">
+                                    <?php echo $company_name; ?>
+                                </div>
+                            <?php endif; ?>
+
+                            <?php if ($short_introduction) : ?>
+                                <div class="desc">
+                                    <?php echo $short_introduction; ?>
+                                </div>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
                 <div class="grid_col-lg-8">
                     <div class="grid_row grid_row_1">
                         <div class="grid_col-lg-4">
-                            <div class="footer_menu">
-                                <div class="title">
-                                    Hỗ trợ khách hàng
+                            <?php if ($customer_support) : ?>
+                                <div class="footer_menu">
+                                    <div class="title">
+                                        <?php _e('Hỗ trợ khách hàng'); ?>
+                                    </div>
+                                    <div class="content">
+                                        <?php echo $customer_support; ?>
+                                    </div>
                                 </div>
-                                <div class="content">
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                Hotline: <strong>1900.6035.919 - 0243.8737.303</strong>
-                                                <br>
-                                                (7-17h kể cả T7, CN)
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Câu hỏi thường gặp
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Hướng dẫn đặt hàng
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Hướng dẫn tạo tài khoản
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Chính sách và quy định chung
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                            <?php endif; ?>
                         </div>
                         <div class="grid_col-lg-4">
-                            <div class="footer_menu">
-                                <div class="title">
-                                    Về Chúng tôi
+                            <?php if ($about_us) : ?>
+                                <div class="footer_menu">
+                                    <div class="title">
+                                        <?php _e('Về Chúng tôi'); ?>
+                                    </div>
+                                    <div class="content">
+                                        <?php echo $about_us; ?>
+                                    </div>
                                 </div>
-                                <div class="content">
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                Giới thiệu
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Tuyển dụng
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Tin tức
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Hỗ trợ khách hàng
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                            <?php endif; ?>
                         </div>
                         <div class="grid_col-lg-4">
-                            <div class="footer_menu" style="margin-bottom: 24px;">
-                                <div class="title">
-                                    Kết nối với chúng tôi
+                            <?php
+                            if ($facebook || $instagram || $youtube) :
+                            ?>
+                                <div class="footer_menu" style="margin-bottom: 24px;">
+                                    <div class="title">
+                                        <?php _e('Kết nối với chúng tôi'); ?>
+                                    </div>
+                                    <div class="social">
+                                        <?php if ($facebook) : ?>
+                                            <a href="<?php echo $facebook; ?>" class="link">
+                                                <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <g clip-path="url(#clip0_6181_1623)">
+                                                        <path d="M21.4455 0.361816H3.55455C2.74443 0.361816 1.96749 0.683634 1.39466 1.25647C0.821817 1.82931 0.5 2.60625 0.5 3.41636V21.3073C0.5 22.1174 0.821817 22.8943 1.39466 23.4672C1.96749 24.04 2.74443 24.3618 3.55455 24.3618H12.3184V14.3759H10.3212V10.3815H12.3018V8.57636C12.3018 6.94262 13.0801 4.39022 16.5051 4.39022L19.5904 4.4026V7.82483H17.3498C16.9855 7.82483 16.4671 8.00625 16.4671 8.7844V10.3818H19.6414L19.277 14.3761H16.3127V24.3618H21.4455C21.8466 24.3618 22.2438 24.2828 22.6144 24.1293C22.985 23.9758 23.3217 23.7508 23.6053 23.4672C23.889 23.1835 24.114 22.8468 24.2675 22.4762C24.421 22.1056 24.5 21.7084 24.5 21.3073V3.41636C24.5 3.01523 24.421 2.61803 24.2675 2.24744C24.114 1.87684 23.889 1.54011 23.6053 1.25647C23.3217 0.972831 22.985 0.747835 22.6144 0.59433C22.2438 0.440824 21.8466 0.361816 21.4455 0.361816Z" fill="#1877F2" />
+                                                    </g>
+                                                    <defs>
+                                                        <clipPath id="clip0_6181_1623">
+                                                            <rect width="24" height="24" fill="white" transform="translate(0.5 0.361816)" />
+                                                        </clipPath>
+                                                    </defs>
+                                                </svg>
+                                            </a>
+                                        <?php endif; ?>
+
+                                        <?php if ($instagram) : ?>
+                                            <a href="<?php echo $instagram; ?>" class="link">
+                                                <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <g clip-path="url(#clip0_6181_1625)">
+                                                        <path d="M18.125 4.62744H6.875C5.71191 4.62744 4.76562 5.57373 4.76562 6.73682V17.9868C4.76562 19.1499 5.71191 20.0962 6.875 20.0962H18.125C19.2881 20.0962 20.2344 19.1499 20.2344 17.9868V6.73682C20.2344 5.57373 19.2881 4.62744 18.125 4.62744ZM12.5 17.2837C9.78638 17.2837 7.57812 15.0754 7.57812 12.3618C7.57812 9.64819 9.78638 7.43994 12.5 7.43994C15.2136 7.43994 17.4219 9.64819 17.4219 12.3618C17.4219 15.0754 15.2136 17.2837 12.5 17.2837ZM17.4219 8.84619C16.6466 8.84619 16.0156 8.21521 16.0156 7.43994C16.0156 6.66467 16.6466 6.03369 17.4219 6.03369C18.1971 6.03369 18.8281 6.66467 18.8281 7.43994C18.8281 8.21521 18.1971 8.84619 17.4219 8.84619Z" fill="#B11E1C" />
+                                                        <path d="M12.5 8.84619C10.5616 8.84619 8.98438 10.4235 8.98438 12.3618C8.98438 14.3002 10.5616 15.8774 12.5 15.8774C14.4384 15.8774 16.0156 14.3002 16.0156 12.3618C16.0156 10.4235 14.4384 8.84619 12.5 8.84619Z" fill="#B11E1C" />
+                                                        <path d="M20.9375 0.361816H4.0625C2.12415 0.361816 0.5 1.98596 0.5 3.92432V20.7993C0.5 22.7377 2.12415 24.3618 4.0625 24.3618H20.9375C22.8759 24.3618 24.5 22.7377 24.5 20.7993V3.92432C24.5 1.98596 22.8759 0.361816 20.9375 0.361816ZM21.6406 17.9868C21.6406 19.9252 20.0634 21.5024 18.125 21.5024H6.875C4.93665 21.5024 3.35938 19.9252 3.35938 17.9868V6.73682C3.35938 4.79846 4.93665 3.22119 6.875 3.22119H18.125C20.0634 3.22119 21.6406 4.79846 21.6406 6.73682V17.9868Z" fill="#B11E1C" />
+                                                    </g>
+                                                    <defs>
+                                                        <clipPath id="clip0_6181_1625">
+                                                            <rect width="24" height="24" fill="white" transform="translate(0.5 0.361816)" />
+                                                        </clipPath>
+                                                    </defs>
+                                                </svg>
+                                            </a>
+                                        <?php endif; ?>
+
+                                        <?php if ($youtube) : ?>
+                                            <a href="<?php echo $youtube; ?>" class="link">
+                                                <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <g clip-path="url(#clip0_6181_1629)">
+                                                        <path d="M10.7056 9.4873L15.3856 12.3619C13.8078 13.33 12.2765 14.2709 10.7056 15.235V9.4873Z" fill="#CE3727" />
+                                                        <path d="M22.2732 0.361816H2.72682C2.13623 0.361816 1.56983 0.596427 1.15222 1.01404C0.734611 1.43165 0.5 1.99805 0.5 2.58863L0.5 22.135C0.5 22.7256 0.734611 23.292 1.15222 23.7096C1.56983 24.1272 2.13623 24.3618 2.72682 24.3618H22.2732C22.8638 24.3618 23.4302 24.1272 23.8478 23.7096C24.2654 23.292 24.5 22.7256 24.5 22.135V2.58863C24.5 1.99805 24.2654 1.43165 23.8478 1.01404C23.4302 0.596427 22.8638 0.361816 22.2732 0.361816ZM19.6495 15.9714C19.3495 16.8932 18.3568 17.4536 17.4432 17.5818C14.157 17.9309 10.843 17.9309 7.55682 17.5818C6.64318 17.4536 5.64773 16.9 5.35045 15.9714C4.88274 13.5882 4.88274 11.1368 5.35045 8.75364C5.65045 7.83045 6.64318 7.27136 7.55682 7.14318C10.843 6.79409 14.157 6.79409 17.4432 7.14318C18.3568 7.27136 19.3523 7.825 19.6495 8.75364C20.1173 11.1368 20.1173 13.5882 19.6495 15.9714Z" fill="#CE3727" />
+                                                    </g>
+                                                    <defs>
+                                                        <clipPath id="clip0_6181_1629">
+                                                            <rect x="0.5" y="0.361816" width="24" height="24" rx="3" fill="white" />
+                                                        </clipPath>
+                                                    </defs>
+                                                </svg>
+                                            </a>
+                                        <?php endif; ?>
+                                    </div>
                                 </div>
-                                <div class="social">
-                                    <a href="#" class="link">
-                                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <g clip-path="url(#clip0_6181_1623)">
-                                                <path d="M21.4455 0.361816H3.55455C2.74443 0.361816 1.96749 0.683634 1.39466 1.25647C0.821817 1.82931 0.5 2.60625 0.5 3.41636V21.3073C0.5 22.1174 0.821817 22.8943 1.39466 23.4672C1.96749 24.04 2.74443 24.3618 3.55455 24.3618H12.3184V14.3759H10.3212V10.3815H12.3018V8.57636C12.3018 6.94262 13.0801 4.39022 16.5051 4.39022L19.5904 4.4026V7.82483H17.3498C16.9855 7.82483 16.4671 8.00625 16.4671 8.7844V10.3818H19.6414L19.277 14.3761H16.3127V24.3618H21.4455C21.8466 24.3618 22.2438 24.2828 22.6144 24.1293C22.985 23.9758 23.3217 23.7508 23.6053 23.4672C23.889 23.1835 24.114 22.8468 24.2675 22.4762C24.421 22.1056 24.5 21.7084 24.5 21.3073V3.41636C24.5 3.01523 24.421 2.61803 24.2675 2.24744C24.114 1.87684 23.889 1.54011 23.6053 1.25647C23.3217 0.972831 22.985 0.747835 22.6144 0.59433C22.2438 0.440824 21.8466 0.361816 21.4455 0.361816Z" fill="#1877F2" />
-                                            </g>
-                                            <defs>
-                                                <clipPath id="clip0_6181_1623">
-                                                    <rect width="24" height="24" fill="white" transform="translate(0.5 0.361816)" />
-                                                </clipPath>
-                                            </defs>
-                                        </svg>
-                                    </a>
-                                    <a href="#" class="link">
-                                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <g clip-path="url(#clip0_6181_1625)">
-                                                <path d="M18.125 4.62744H6.875C5.71191 4.62744 4.76562 5.57373 4.76562 6.73682V17.9868C4.76562 19.1499 5.71191 20.0962 6.875 20.0962H18.125C19.2881 20.0962 20.2344 19.1499 20.2344 17.9868V6.73682C20.2344 5.57373 19.2881 4.62744 18.125 4.62744ZM12.5 17.2837C9.78638 17.2837 7.57812 15.0754 7.57812 12.3618C7.57812 9.64819 9.78638 7.43994 12.5 7.43994C15.2136 7.43994 17.4219 9.64819 17.4219 12.3618C17.4219 15.0754 15.2136 17.2837 12.5 17.2837ZM17.4219 8.84619C16.6466 8.84619 16.0156 8.21521 16.0156 7.43994C16.0156 6.66467 16.6466 6.03369 17.4219 6.03369C18.1971 6.03369 18.8281 6.66467 18.8281 7.43994C18.8281 8.21521 18.1971 8.84619 17.4219 8.84619Z" fill="#B11E1C" />
-                                                <path d="M12.5 8.84619C10.5616 8.84619 8.98438 10.4235 8.98438 12.3618C8.98438 14.3002 10.5616 15.8774 12.5 15.8774C14.4384 15.8774 16.0156 14.3002 16.0156 12.3618C16.0156 10.4235 14.4384 8.84619 12.5 8.84619Z" fill="#B11E1C" />
-                                                <path d="M20.9375 0.361816H4.0625C2.12415 0.361816 0.5 1.98596 0.5 3.92432V20.7993C0.5 22.7377 2.12415 24.3618 4.0625 24.3618H20.9375C22.8759 24.3618 24.5 22.7377 24.5 20.7993V3.92432C24.5 1.98596 22.8759 0.361816 20.9375 0.361816ZM21.6406 17.9868C21.6406 19.9252 20.0634 21.5024 18.125 21.5024H6.875C4.93665 21.5024 3.35938 19.9252 3.35938 17.9868V6.73682C3.35938 4.79846 4.93665 3.22119 6.875 3.22119H18.125C20.0634 3.22119 21.6406 4.79846 21.6406 6.73682V17.9868Z" fill="#B11E1C" />
-                                            </g>
-                                            <defs>
-                                                <clipPath id="clip0_6181_1625">
-                                                    <rect width="24" height="24" fill="white" transform="translate(0.5 0.361816)" />
-                                                </clipPath>
-                                            </defs>
-                                        </svg>
-                                    </a>
-                                    <a href="#" class="link">
-                                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <g clip-path="url(#clip0_6181_1629)">
-                                                <path d="M10.7056 9.4873L15.3856 12.3619C13.8078 13.33 12.2765 14.2709 10.7056 15.235V9.4873Z" fill="#CE3727" />
-                                                <path d="M22.2732 0.361816H2.72682C2.13623 0.361816 1.56983 0.596427 1.15222 1.01404C0.734611 1.43165 0.5 1.99805 0.5 2.58863L0.5 22.135C0.5 22.7256 0.734611 23.292 1.15222 23.7096C1.56983 24.1272 2.13623 24.3618 2.72682 24.3618H22.2732C22.8638 24.3618 23.4302 24.1272 23.8478 23.7096C24.2654 23.292 24.5 22.7256 24.5 22.135V2.58863C24.5 1.99805 24.2654 1.43165 23.8478 1.01404C23.4302 0.596427 22.8638 0.361816 22.2732 0.361816ZM19.6495 15.9714C19.3495 16.8932 18.3568 17.4536 17.4432 17.5818C14.157 17.9309 10.843 17.9309 7.55682 17.5818C6.64318 17.4536 5.64773 16.9 5.35045 15.9714C4.88274 13.5882 4.88274 11.1368 5.35045 8.75364C5.65045 7.83045 6.64318 7.27136 7.55682 7.14318C10.843 6.79409 14.157 6.79409 17.4432 7.14318C18.3568 7.27136 19.3523 7.825 19.6495 8.75364C20.1173 11.1368 20.1173 13.5882 19.6495 15.9714Z" fill="#CE3727" />
-                                            </g>
-                                            <defs>
-                                                <clipPath id="clip0_6181_1629">
-                                                    <rect x="0.5" y="0.361816" width="24" height="24" rx="3" fill="white" />
-                                                </clipPath>
-                                            </defs>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
+                            <?php endif; ?>
+
                             <div class="footer_menu">
                                 <div class="title">
                                     Chứng nhận bởi
@@ -386,9 +354,7 @@ add_shortcode('tgb_footer_main', function () {
             <div class="grid_row">
                 <div class="grid_col-lg-8">
                     <div class="copyright">
-                        Copyright 2025 ©Thế Giới Bảng. All right Reserved. Web Design & Optimization by.
-                        <br>
-                        Sử dụng nội dung và dịch vụ tại thegioibang.com có nghĩa là bạn đồng ý với Thỏa thuật sử dụng và Chính sách bảo mật của chúng tôi.Công ty Cổ phần
+                        <?php echo $copyright; ?>
                     </div>
                 </div>
                 <div class="grid_col-lg-4">
