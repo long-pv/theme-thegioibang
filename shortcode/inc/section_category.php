@@ -66,7 +66,6 @@ add_shortcode('tgb_section_category', function () {
             </div>
         </div>
     </div>
-    </div>
 <?php
     return ob_get_clean();
 });
