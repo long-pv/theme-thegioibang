@@ -22,7 +22,7 @@ add_shortcode('tgb_footer_main', function () {
                 <div class="grid_col-lg-4">
                     <div class="footer_main_col_1">
                         <a href="#" class="logo">
-                            <img src="<?php echo TGB_IMG_URL . 'logo_footer.svg'; ?>" alt="">
+                            <img src="<?php echo TGB_IMG_URL . 'logo_footer.svg'; ?>" alt="logo">
                         </a>
                         <div class="intro">
                             <?php if ($company_name) : ?>
