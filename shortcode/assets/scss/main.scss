@@ -839,8 +839,16 @@ div#masthead {
         &.slick-slider {
             margin: 0px -8px;
 
+            @media screen and (max-width: 849px) {
+                margin: 0px -6px;
+            }
+
             .slick-slide {
                 padding: 0px 8px;
+
+                @media screen and (max-width: 849px) {
+                    padding: 0px 6px;
+                }
             }
 
             .slick-arrow {
@@ -1005,6 +1013,10 @@ div#masthead {
         .col_custom {
             flex: 0 0 auto;
             width: 12.5%;
+
+            @media screen and (max-width: 849px) {
+                width: 25%;
+            }
         }
 
         .item {
@@ -1030,6 +1042,10 @@ div#masthead {
                 font-weight: 600;
                 line-height: 1.4;
                 color: #1D3F35;
+
+                @media screen and (max-width: 849px) {
+                    font-size: 12px;
+                }
             }
         }
     }
@@ -1514,6 +1530,62 @@ div#masthead {
     background-color: #FFFFFF;
     border-radius: 12px;
     overflow: hidden;
+
+    .show_pc {
+        @media screen and (max-width: 849px) {
+            display: none !important;
+        }
+    }
+
+    .show_mb {
+        display: none !important;
+
+        @media screen and (max-width: 849px) {
+            display: block !important;
+        }
+    }
+
+    .banner_main_slider {
+        margin: 0px !important;
+
+        .img_wrap {
+            border-radius: 4px !important;
+        }
+
+        .slick-dots {
+            bottom: 6px !important;
+
+            li {
+                width: 16px;
+                display: inline-flex;
+                align-items: flex-end;
+                margin: 0px 2px;
+
+                button {
+                    background-color: #fff;
+                    width: 100%;
+                    height: 2px;
+                    padding: 0px;
+                    margin: 0px;
+                    border-radius: 2px;
+                    // box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+                    // -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+                    // -moz-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+
+                    &::before {
+                        display: none;
+                    }
+                }
+
+                &.slick-active {
+                    button {
+                        background-color: #255144;
+                        height: 3px;
+                    }
+                }
+            }
+        }
+    }
 
     .grid_row {
         --bs-gutter-x: 16px;

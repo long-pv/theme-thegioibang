@@ -35,7 +35,7 @@ add_shortcode('tgb_livestream_video', function () {
                     $ended = ($now > $end && !empty($end));
                 ?>
                     <div>
-                        <div class="item">
+                        <div class="item" data-mh="video_item">
                             <div class="grid_row">
                                 <div class="grid_col-lg-6">
                                     <div class="img_wrap">
