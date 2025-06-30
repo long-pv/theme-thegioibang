@@ -1758,18 +1758,73 @@ div#masthead {
     padding: 16px 24px;
     background-color: #FAEDCA;
     border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+
+    .pattern {
+        position: absolute;
+        bottom: -6px;
+        left: 0px;
+    }
+
+    .title {
+        margin-bottom: 0px;
+        font-family: 'Inter';
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 1.4;
+        color: #2E2E2E;
+        margin-top: 8px;
+    }
 
     .text_top {
         font-family: 'Inter';
         font-weight: 600;
         font-size: 20px;
-        line-height: 28px;
+        line-height: 1.4;
         color: #2E2E2E;
         margin-bottom: 24px;
 
         strong {
             color: #0B60EA;
             font-weight: 600;
+        }
+    }
+
+    .list_product {
+
+        // slick
+        &.slick-slider {
+            margin: 0px -6px;
+
+            .slick-slide {
+                padding: 0px 6px;
+            }
+        }
+    }
+}
+
+.tgb_show_noti {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .icon {
+        display: inline-flex;
+    }
+
+    .text {
+        font-family: 'Inter';
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 1.4;
+        color: #2E2E2E;
+        margin-bottom: 0px;
+
+        strong {
+            font-weight: 600;
+            font-size: 24px;
+            color: #0B60EA;
         }
     }
 }
