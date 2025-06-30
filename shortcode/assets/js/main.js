@@ -25,6 +25,18 @@
 		infinite: true,
 		arrows: false,
 		dots: false,
+
+		// ↓ cấu hình cho màn < 850 px
+		responsive: [
+			{
+				breakpoint: 850,
+				settings: {
+					slidesToShow: 2.1,
+					slidesToScroll: 1,
+					arrows: false,
+				},
+			},
+		],
 	});
 	$(".tgb_featured .list_product").slick({
 		slidesToShow: 3,
@@ -32,6 +44,18 @@
 		infinite: false,
 		arrows: true,
 		dots: false,
+
+		// ↓ cấu hình cho màn < 850 px
+		responsive: [
+			{
+				breakpoint: 850,
+				settings: {
+					slidesToShow: 2.1,
+					slidesToScroll: 1,
+					arrows: false,
+				},
+			},
+		],
 	});
 
 	$(".tgb_banner_main .banner_main_slider").slick({

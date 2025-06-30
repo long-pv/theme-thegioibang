@@ -1062,12 +1062,20 @@ div#masthead {
     margin-bottom: 16px;
 
     .heading {
+        @media screen and (max-width: 849px) {
+            margin-bottom: 32px;
+        }
+
         .sub_title {
             display: inline-flex;
             align-items: center;
             gap: 4px;
             margin-bottom: 24px;
             position: relative;
+
+            @media screen and (max-width: 849px) {
+                margin-bottom: 16px;
+            }
 
             &::before {
                 content: '';
