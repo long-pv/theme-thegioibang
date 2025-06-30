@@ -65,6 +65,8 @@
 		infinite: true,
 		arrows: false,
 		dots: false,
+		autoplay: true, // tự chạy
+		autoplaySpeed: 3000, // 5 giây
 
 		// ↓ cấu hình cho màn < 850 px
 		responsive: [
@@ -95,27 +97,34 @@
 		const $btn = $wrapper.find(".view_more");
 		const $btnText = $btn.find(".text");
 
-		// ẩn bớt khi vượt quá giới hạn
+		// các label vượt ngưỡng
+		const $hiddenItems = $labels.slice(maxShown);
+		const hasCheckedInHidden = $hiddenItems.find("input:checked").length > 0;
+
+		// 1) nếu vượt quá maxShown
 		if ($labels.length > maxShown) {
-			$labels.slice(maxShown).hide();
-			$btnText.text("Xem thêm");
+			if (!hasCheckedInHidden) {
+				// không có ô đã chọn trong phần ẩn ⇒ gập như cũ
+				$hiddenItems.hide();
+				$btnText.text("Xem thêm");
+			} else {
+				// có ô đã chọn ⇒ mở sẵn
+				$btnText.text("Rút gọn");
+			}
 		} else {
-			$btn.hide(); // đủ ít mục thì khỏi cần nút
+			// 2) ít hơn hoặc bằng maxShown ⇒ khỏi cần nút
+			$btn.hide();
 			return;
 		}
 
-		// bật / tắt
+		// 3) toggle
 		$btn.on("click", function (e) {
 			e.preventDefault();
 
-			const $hiddenItems = $labels.slice(maxShown);
-
 			if ($hiddenItems.is(":visible")) {
-				// đang “mở rộng” ⇒ thu lại
 				$hiddenItems.slideUp(200);
 				$btnText.text("Xem thêm");
 			} else {
-				// đang “thu gọn” ⇒ mở ra
 				$hiddenItems.slideDown(200);
 				$btnText.text("Rút gọn");
 			}

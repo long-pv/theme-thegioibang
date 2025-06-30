@@ -1,6 +1,39 @@
 <?php
 get_header();
 
+$paged = !empty($_GET['paging']) ? intval($_GET['paging']) : 1;
+
+// Thực hiện WP_Query
+$args = array(
+	'post_type' => 'product',
+	'post_status' => 'publish',
+	'posts_per_page' => 16,
+	'paged' => $paged,
+);
+
+if (!empty($_GET['prod_cat'])) {
+	$prod_cat = array_map('intval', $_GET['prod_cat']);
+	$args['tax_query'][] = array(
+		array(
+			'taxonomy' => 'product_cat',
+			'field' => 'term_id',
+			'terms' => $prod_cat,
+		),
+	);
+}
+
+if (!empty($_GET['prod_tags'])) {
+	$prod_tags = array_map('intval', $_GET['prod_tags']);
+	$args['tax_query'][] = array(
+		array(
+			'taxonomy' => 'product_tag',
+			'field' => 'term_id',
+			'terms' => $prod_tags,
+		),
+	);
+}
+
+$query = new WP_Query($args);
 ?>
 
 <div class="container">
@@ -100,6 +133,84 @@ get_header();
 					Hiển thị hơn 100.000 sản phẩm cho từ khóa "<strong>Bảng trắng</strong>".
 				</div>
 			</div>
+
+			<?php if ($query->have_posts()) : ?>
+				<div class="archive_list">
+					<div class="grid_row">
+						<?php
+						while ($query->have_posts()) :
+							$query->the_post();
+
+							$product_id = get_the_ID();
+							$product = wc_get_product($product_id);
+							if (!$product) continue;
+
+							$product_link = get_permalink($product_id);
+							$product_img = get_the_post_thumbnail_url($product_id, 'medium') ?: TGB_IMG_URL . 'img2.png';
+							$product_title = $product->get_name();
+
+							// Chỉ lấy số, không HTML
+							if ($product->is_type('variable')) {
+								$regular_price = floatval($product->get_variation_regular_price('min', true));
+								$sale_price = floatval($product->get_variation_sale_price('min', true));
+							} else {
+								$regular_price = floatval($product->get_regular_price());
+								$sale_price = floatval($product->get_sale_price());
+							}
+							$percent = 0;
+							if ($product->is_on_sale() && $regular_price > 0 && $sale_price > 0) {
+								$percent = round(100 - ($sale_price * 100 / $regular_price));
+							}
+						?>
+							<div class="grid_col_custom">
+								<div class="product_item">
+									<a href="<?php echo $product_link; ?>" class="img_wrap">
+										<img src="<?php echo $product_img; ?>" alt="<?php echo $product_title; ?>">
+									</a>
+									<div class="content">
+										<a href="<?php echo $product_link; ?>" class="d-block" data-mh="title">
+											<h3 class="title line-2"><?php echo $product_title; ?></h3>
+										</a>
+										<div class="price">
+											<?php
+											if ($percent > 0) {
+												echo  wc_price($sale_price);
+											} else {
+												echo $regular_price > 0 ?  wc_price($regular_price) : 'Liên hệ';
+											}
+											?>
+										</div>
+										<?php if ($percent > 0) : ?>
+											<div class="discount">
+												<div class="cent">-<?php echo $percent; ?>%</div>
+												<div class="old_price"><?php echo wc_price($regular_price); ?></div>
+											</div>
+										<?php endif; ?>
+									</div>
+								</div>
+							</div>
+						<?php
+						endwhile;
+						?>
+					</div>
+				</div>
+
+				<?php
+				echo '<div class="pagination">';
+				echo paginate_links(
+					array(
+						'total' => $query->max_num_pages,
+						'current' => max(1, $paged),
+						'format' => '?paging=%#%',
+						'end_size' => 2,
+						'mid_size' => 1,
+						'prev_text' => __('', 'basetheme'),
+						'next_text' => __('', 'basetheme'),
+					)
+				);
+				echo '</div>';
+				?>
+			<?php endif; ?>
 		</div>
 	</div>
 </div>

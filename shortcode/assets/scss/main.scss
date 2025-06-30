@@ -1,5 +1,6 @@
 @import 'grid';
 @import 'vucoder';
+@import 'editor';
 
 @media screen and (min-width: 850px) {
     #masthead .header-nav-main.nav-left {
@@ -1153,6 +1154,7 @@ div#masthead {
     border-radius: 8px;
     overflow: hidden;
     height: 100%;
+    background-color: #fff;
 
     .img_wrap {
         display: flex;
@@ -1229,6 +1231,7 @@ div#masthead {
         padding-top: 2px;
         padding-left: 2px;
         position: relative;
+        background-color: transparent !important;
 
         .icon_sale {
             position: absolute;
@@ -1760,6 +1763,7 @@ div#masthead {
     border-radius: 12px;
     position: relative;
     overflow: hidden;
+    margin-bottom: 24px;
 
     .pattern {
         position: absolute;
@@ -1808,6 +1812,7 @@ div#masthead {
     display: flex;
     align-items: center;
     gap: 8px;
+    margin-bottom: 16px;
 
     .icon {
         display: inline-flex;
@@ -1825,6 +1830,64 @@ div#masthead {
             font-weight: 600;
             font-size: 24px;
             color: #0B60EA;
+        }
+    }
+}
+
+.archive_list {
+    .grid_row {
+        --bs-gutter-x: 16px;
+        row-gap: 16px;
+
+        .grid_col_custom {
+            flex: 0 0 auto;
+            width: 25%;
+        }
+    }
+}
+
+
+.pagination {
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+    display: flex;
+    margin-top: 16px;
+
+    .page-numbers {
+        padding: 2px;
+        color: #2E2E2E !important;
+        text-decoration: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #FFFFFF;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Inter';
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.4;
+
+        &.current {
+            background-color: #255144;
+            color: #fff !important;
+        }
+
+        &.next,
+        &.prev {
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 24px 24px;
+        }
+
+        &.prev {
+            background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 18L9 12L15 6' stroke='%23255144' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+        }
+
+        &.next {
+            background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 18L15 12L9 6' stroke='%23255144' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
         }
     }
 }

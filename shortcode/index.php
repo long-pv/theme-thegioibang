@@ -93,3 +93,31 @@ if (function_exists('acf_add_options_page')) {
         'parent_slug' => 'tgb-theme-settings',
     ]);
 }
+
+
+function tgb_redirect_product_cat_to_shop()
+{
+    // Đừng can thiệp trong admin, AJAX, hay nếu đã ở trang Shop
+    if (is_admin() || wp_doing_ajax() || is_shop()) {
+        return;
+    }
+
+    // Chỉ xử lý cho taxonomy product_cat
+    if (is_product_category()) {
+
+        $term = get_queried_object();                   // Lấy term hiện tại
+        if (empty($term->term_id)) {
+            return;                                     // Phòng hờ edge case
+        }
+
+        $shop_url = wc_get_page_permalink('shop');    // URL trang Shop
+        $target   = add_query_arg(
+            array('prod_cat' => array($term->term_id)),
+            $shop_url
+        );
+
+        wp_safe_redirect($target, 301);               // 301 cho SEO
+        exit;
+    }
+}
+add_action('template_redirect', 'tgb_redirect_product_cat_to_shop', 0);

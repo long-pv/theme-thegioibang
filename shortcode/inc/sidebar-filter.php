@@ -35,12 +35,12 @@ add_shortcode('tgb_sidebar_filter', function () {
                             'hide_empty' => true,
                             'parent' => 0,
                         ));
-                        $product_cat = isset($_GET['product_cat']) ? $_GET['product_cat'] : [];
+                        $prod_cat = isset($_GET['prod_cat']) ? $_GET['prod_cat'] : [];
                         foreach ($categories as $category):
-                            $checked = in_array($category->term_id, $product_cat) ? 'checked' : '';
+                            $checked = in_array($category->term_id, $prod_cat) ? 'checked' : '';
                         ?>
                             <label>
-                                <input type="checkbox" name="product_cat[]" value="<?php echo esc_attr($category->slug); ?>" <?php echo $checked; ?>>
+                                <input type="checkbox" name="prod_cat[]" value="<?php echo $category->term_id; ?>" <?php echo $checked; ?>>
                                 <?php echo $category->name; ?> (<?php echo $category->count ?? 0; ?>)
                                 <span class="icon"></span>
                             </label>
@@ -62,7 +62,7 @@ add_shortcode('tgb_sidebar_filter', function () {
                 <div class="filter_item">
                     <div class="title">Dòng sản phẩm</div>
                     <?php
-                    $selected_tags = isset($_GET['product_tags']) ? $_GET['product_tags'] : [];
+                    $selected_tags = isset($_GET['prod_tags']) ? $_GET['prod_tags'] : [];
 
                     $tags = get_terms([
                         'taxonomy' => 'product_tag',
@@ -77,7 +77,7 @@ add_shortcode('tgb_sidebar_filter', function () {
                                 $checked = in_array($tag->term_id, $selected_tags) ? 'checked' : '';
                             ?>
                                 <label>
-                                    <input type="checkbox" name="product_tags[]"
+                                    <input type="checkbox" name="prod_tags[]"
                                         value="<?php echo esc_attr($tag->term_id); ?>" <?php echo $checked; ?>>
                                     <?php echo esc_html($tag->name); ?>
                                     (<?php echo $tag->count ?? 0; ?>)
@@ -139,9 +139,9 @@ add_shortcode('tgb_sidebar_filter', function () {
                                 <div class="content checkboxes">
                                     <?php foreach ($terms as $term): ?>
                                         <label>
-                                            <input type="checkbox" name="product_attributes[]"
+                                            <input type="checkbox" name="prod_attr[]"
                                                 value="<?php echo esc_attr($term->term_id); ?>"
-                                                <?php echo (isset($_GET['product_attributes']) && in_array($term->term_id, $_GET['product_attributes'])) ? 'checked' : ''; ?>>
+                                                <?php echo (isset($_GET['prod_attr']) && in_array($term->term_id, $_GET['prod_attr'])) ? 'checked' : ''; ?>>
                                             <?php echo esc_html($term->name); ?>
                                             (<?php echo $term->count ?? 0; ?>)
                                             <span class="icon"></span>
@@ -172,12 +172,12 @@ add_shortcode('tgb_sidebar_filter', function () {
                         array(
                             'paging',
                             'title',
-                            'product_cat',
+                            'prod_cat',
                             'min_price',
                             'max_price',
-                            'product_tags',
+                            'prod_tags',
                             'orderby',
-                            'product_attributes',
+                            'prod_attr',
                         )
                     )
                 );
