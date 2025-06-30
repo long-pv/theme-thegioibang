@@ -59,6 +59,26 @@
 		],
 	});
 
+	$(".tgb_top_seller .list_product").slick({
+		slidesToShow: 4,
+		slidesToScroll: 2,
+		infinite: true,
+		arrows: false,
+		dots: false,
+
+		// ↓ cấu hình cho màn < 850 px
+		responsive: [
+			{
+				breakpoint: 850,
+				settings: {
+					slidesToShow: 2.1,
+					slidesToScroll: 1,
+					arrows: false,
+				},
+			},
+		],
+	});
+
 	$(".tgb_banner_main .banner_main_slider").slick({
 		slidesToShow: 1,
 		slidesToScroll: 1,

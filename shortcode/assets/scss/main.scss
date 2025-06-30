@@ -1753,3 +1753,23 @@ div#masthead {
         }
     }
 }
+
+.tgb_top_seller {
+    padding: 16px 24px;
+    background-color: #FAEDCA;
+    border-radius: 12px;
+
+    .text_top {
+        font-family: 'Inter';
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 28px;
+        color: #2E2E2E;
+        margin-bottom: 24px;
+
+        strong {
+            color: #0B60EA;
+            font-weight: 600;
+        }
+    }
+}
