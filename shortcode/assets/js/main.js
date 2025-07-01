@@ -130,4 +130,56 @@
 			}
 		});
 	});
+
+	if ($(".filter_form").length > 0) {
+		const $priceTo = $('input[name="price_to"]'); // ô “Từ”
+		const $priceFrom = $('input[name="price_from"]'); // ô “Đến”
+		const $errorMsg = $(".error_msg");
+
+		/* ---------- 1. Chỉ cho nhập số ---------- */
+		$priceTo.add($priceFrom).on("input", function () {
+			this.value = this.value.replace(/[^0-9]/g, ""); // gỡ mọi ký tự không phải số
+		});
+
+		/* ---------- Hàm hiển thị / ẩn lỗi ---------- */
+		function showError(msg) {
+			$errorMsg.text(msg).show();
+		}
+		function hideError() {
+			$errorMsg.hide();
+		}
+
+		/* ---------- 2,3,4. Kiểm tra logic ---------- */
+		function validate() {
+			const toVal = $priceTo.val().trim();
+			const fromVal = $priceFrom.val().trim();
+
+			// (2) Một ô nhập – ô kia bắt buộc
+			if ((toVal && !fromVal) || (fromVal && !toVal)) {
+				showError("Vui lòng nhập cả hai ô hoặc xoá ô đã nhập.");
+				return false;
+			}
+
+			// Nếu cả hai ô đều có giá trị, kiểm tra (4) From < To
+			if (toVal && fromVal) {
+				if (parseInt(fromVal, 10) <= parseInt(toVal, 10)) {
+					showError("Giá Đến phải lớn hơn Giá Từ.");
+					return false;
+				}
+			}
+
+			hideError(); // Không có lỗi
+			return true;
+		}
+
+		$priceTo
+			.add($priceFrom)
+			.on("blur", validate) // Kiểm tra khi rời ô
+			.on("input", validate); // Kiểm tra realtime (tuỳ thích)
+
+		/* ---------- Chặn submit nếu chưa hợp lệ ---------- */
+		$(".filter_form").on("submit", function (e) {
+			if (!validate()) e.preventDefault();
+		});
+	}
 })(jQuery, window);

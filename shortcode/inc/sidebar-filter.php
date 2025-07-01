@@ -21,9 +21,6 @@ add_shortcode('tgb_sidebar_filter', function () {
 
             <!-- Form lọc sản phẩm -->
             <form method="GET" class="filter_form">
-                <!-- Thêm sắp xếp -->
-                <input type="hidden" name="orderby" value="<?php echo isset($_GET['orderby']) ? $_GET['orderby'] : '' ?>">
-
                 <!-- Lựa chọn danh mục (Radio Button) -->
                 <div class="filter_item">
                     <div class="title">Theo danh mục</div>
@@ -103,22 +100,20 @@ add_shortcode('tgb_sidebar_filter', function () {
 
                 <div class="filter_line"></div>
 
-                <!-- Khoảng giá (Range Slider) -->
-                <!-- <div class="price-slider">
-                    <label for="price-range">Price</label>
-                    <div id="slider-range-labels">
-                        <span id="min-label"></span>
-                        <span id="max-label"></span>
+                <?php
+                $price_to = isset($_GET['price_to']) ? htmlspecialchars($_GET['price_to']) : '';
+                $price_from = isset($_GET['price_from']) ? htmlspecialchars($_GET['price_from']) : '';
+                ?>
+                <div class="filter_item">
+                    <div class="title">Khoảng giá</div>
+                    <div class="price_range">
+                        <input type="text" name="price_to" placeholder="đ Từ" value="<?= $price_to ?>">
+                        <span class="separator"></span>
+                        <input type="text" name="price_from" placeholder="đ Đến" value="<?= $price_from ?>">
                     </div>
-                    <div id="slider-range" data-min="0" data-max="1000"></div>
-                    <div class="price-range-inputs">
-                        <input type="hidden" id="min-price" name="min_price"
-                            value="<?php echo !empty($_GET['min_price']) ? $_GET['min_price'] : '0'; ?>">
-                        <input type="hidden" id="max-price" name="max_price"
-                            value="<?php echo !empty($_GET['max_price']) ? $_GET['max_price'] : '1000'; ?>">
-                    </div>
-                </div> -->
-
+                    <div class="error_msg" style="display: none;"></div>
+                </div>
+                <div class="filter_line"></div>
 
                 <?php
                 $attributes = wc_get_attribute_taxonomies();
@@ -179,6 +174,8 @@ add_shortcode('tgb_sidebar_filter', function () {
                             'prod_tags',
                             'orderby',
                             'prod_attr',
+                            'price_to',
+                            'price_from',
                         )
                     )
                 );
