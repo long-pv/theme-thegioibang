@@ -30,7 +30,7 @@ add_shortcode('tgb_sidebar_filter', function () {
                         $categories = get_terms(array(
                             'taxonomy' => 'product_cat',
                             'hide_empty' => true,
-                            'parent' => 0,
+                            // 'parent' => 0,
                         ));
                         $prod_cat = isset($_GET['prod_cat']) ? $_GET['prod_cat'] : [];
                         foreach ($categories as $category):
@@ -176,6 +176,7 @@ add_shortcode('tgb_sidebar_filter', function () {
                             'prod_attr',
                             'price_to',
                             'price_from',
+                            'search'
                         )
                     )
                 );

@@ -9,7 +9,7 @@ add_shortcode('tgb_search_ui', function () {
     $featured_categories = $header_settings['featured_categories'] ?? null;
 ?>
     <div class="tgb_search_wrapper">
-        <form action="<?php echo esc_url(home_url('/')); ?>" method="get" class="tgb_search_form">
+        <form action="<?php echo get_permalink(wc_get_page_id('shop')); ?>" method="get" class="tgb_search_form">
             <span class="tgb_search_icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M21 21L15.0001 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="#818181" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -17,9 +17,10 @@ add_shortcode('tgb_search_ui', function () {
             </span>
             <input
                 type="text"
-                name="s"
+                name="search"
                 class="tgb_search_input"
-                placeholder="Nhập tên hoặc danh mục bạn muốn tìm kiếm" />
+                placeholder="Nhập tên hoặc danh mục bạn muốn tìm kiếm"
+                value="<?php echo isset($_GET['search']) ? $_GET['search'] : ''; ?>" />
             <button type="submit" class="tgb_search_button">Tìm kiếm</button>
 
             <div class="result">

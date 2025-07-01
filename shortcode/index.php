@@ -56,6 +56,9 @@ add_action('wp_enqueue_scripts', function () {
         file_exists($js_path) ? filemtime($js_path) : time(),
         true
     );
+
+    // ajax admin
+    wp_localize_script('tgb-shortcode-script', 'custom_ajax', array('ajax_url' => admin_url('admin-ajax.php')));
 }, 99);
 
 // Đăng ký Theme Settings Panel với các menu con
@@ -121,3 +124,91 @@ function tgb_redirect_product_cat_to_shop()
     }
 }
 add_action('template_redirect', 'tgb_redirect_product_cat_to_shop', 0);
+
+
+add_action('wp_ajax_tgb_search_suggestion', 'tgb_search_suggestion');
+add_action('wp_ajax_nopriv_tgb_search_suggestion', 'tgb_search_suggestion');
+function tgb_search_suggestion()
+{
+    global $wpdb;
+    $keyword = isset($_POST['keyword']) ? $_POST['keyword'] : '';
+    if (strlen($keyword) < 2) wp_die();
+
+    // Query lấy ID các sản phẩm có title chứa từ khoá
+    $like = '%' . $wpdb->esc_like($keyword) . '%';
+    $product_ids = $wpdb->get_col(
+        $wpdb->prepare(
+            "SELECT ID FROM $wpdb->posts 
+             WHERE post_type='product' 
+               AND post_status='publish'
+               AND post_title LIKE %s 
+             LIMIT 10",
+            $like
+        )
+    );
+
+    // 2. Danh mục sản phẩm WooCommerce (product_cat) - chỉ taxonomy sản phẩm
+    $all_cats = get_terms([
+        'taxonomy'   => 'product_cat',   // <-- Chỉ product_cat
+        'hide_empty' => true,
+    ]);
+    $matched_cats = [];
+    foreach ($all_cats as $cat) {
+        if (mb_stripos($cat->name, $keyword) !== false) {
+            $matched_cats[] = $cat;
+            if (count($matched_cats) >= 10) break;
+        }
+    }
+
+    $shop_url = get_permalink(wc_get_page_id('shop'));
+
+    // 3. Render HTML
+
+    // --- Sản phẩm ---
+    if (!empty($product_ids)) {
+        foreach ($product_ids as $product_id) {
+            $title = get_the_title($product_id);
+            $highlighted = preg_replace(
+                '/' . preg_quote($keyword, '/') . '/iu',
+                '<span class="highlight">$0</span>',
+                $title
+            );
+            $url = add_query_arg('search', $title, $shop_url);
+?>
+            <a href="<?php echo $url; ?>" class="item item-product">
+                <div class="icon"></div>
+                <div class="text">
+                    <?php echo $highlighted; ?>
+                </div>
+            </a>
+        <?php
+        }
+    }
+
+    // --- Danh mục sản phẩm Woo ---
+    if (!empty($matched_cats)) {
+        foreach ($matched_cats as $cat) {
+            $cat_name = $cat->name;
+            $highlighted_cat = preg_replace(
+                '/' . preg_quote($keyword, '/') . '/iu',
+                '<span class="highlight">$0</span>',
+                $cat_name
+            );
+            $cat_url = add_query_arg('prod_cat[]', $cat->term_id, $shop_url);
+        ?>
+            <a href="<?php echo $cat_url; ?>" class="item item-category">
+                <div class="icon"></div>
+                <div class="text">
+                    <?php echo $highlighted_cat; ?>
+                </div>
+            </a>
+<?php
+        }
+    }
+
+    if (empty($product_ids) && empty($matched_cats)) {
+        echo '<div class="item"><div class="text">Không tìm thấy kết quả nào</div></div>';
+    }
+
+    wp_die();
+}

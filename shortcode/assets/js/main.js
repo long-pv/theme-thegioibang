@@ -182,4 +182,23 @@
 			if (!validate()) e.preventDefault();
 		});
 	}
+
+	$(".tgb_search_input").on("input", function () {
+		let keyword = $(this).val().trim();
+		if (keyword.length < 3) {
+			$(".result .list").html("");
+			return;
+		}
+		$.ajax({
+			url: custom_ajax.ajax_url,
+			type: "POST",
+			data: {
+				action: "tgb_search_suggestion",
+				keyword: keyword,
+			},
+			success: function (response) {
+				$(".result .list").html(response);
+			},
+		});
+	});
 })(jQuery, window);
