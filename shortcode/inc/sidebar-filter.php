@@ -121,48 +121,49 @@ add_shortcode('tgb_sidebar_filter', function () {
 
 
                 <?php
-                // Lấy danh sách các thuộc tính
                 $attributes = wc_get_attribute_taxonomies();
 
-                if (!empty($attributes)):
-                    foreach ($attributes as $attribute):
-                        $terms = get_terms(array(
-                            'taxonomy' => 'pa_' . $attribute->attribute_name,
+                if (!empty($attributes)) :
+                    foreach ($attributes as $attribute) :
+                        $taxonomy = 'pa_' . $attribute->attribute_name;
+                        $terms = get_terms([
+                            'taxonomy'   => $taxonomy,
                             'hide_empty' => true,
-                        ));
-                ?>
-                        <?php if (!empty($terms)): ?>
-                            <div class="filter_item">
-                                <div class="title">
-                                    <?php echo $attribute->attribute_label; ?>
-                                </div>
-                                <div class="content checkboxes">
-                                    <?php foreach ($terms as $term): ?>
-                                        <label>
-                                            <input type="checkbox" name="prod_attr[]"
-                                                value="<?php echo esc_attr($term->term_id); ?>"
-                                                <?php echo (isset($_GET['prod_attr']) && in_array($term->term_id, $_GET['prod_attr'])) ? 'checked' : ''; ?>>
-                                            <?php echo esc_html($term->name); ?>
-                                            (<?php echo $term->count ?? 0; ?>)
-                                            <span class="icon"></span>
-                                        </label>
-                                    <?php endforeach; ?>
-                                </div>
+                        ]);
 
-                                <a href="javascript:void(0);" class="view_more">
-                                    <div class="text"> Xem thêm</div>
-                                    <div class="icon">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M6 9L12 15L18 9" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                    </div>
-                                </a>
+                        if (empty($terms)) continue;
+                ?>
+                        <div class="filter_item">
+                            <div class="title"><?php echo $attribute->attribute_label; ?></div>
+                            <div class="content checkboxes">
+                                <?php foreach ($terms as $term) :
+                                    $checked = isset($_GET['prod_attr'][$taxonomy]) && in_array($term->term_id, $_GET['prod_attr'][$taxonomy]);
+                                ?>
+                                    <label>
+                                        <input type="checkbox"
+                                            name="prod_attr[<?php echo $taxonomy; ?>][]"
+                                            value="<?php echo $term->term_id; ?>"
+                                            <?php if ($checked) echo 'checked'; ?>>
+                                        <?php echo $term->name; ?> (<?php echo $term->count; ?>)
+                                        <span class="icon"></span>
+                                    </label>
+                                <?php endforeach; ?>
                             </div>
-                            <div class="filter_line"></div>
+
+                            <a href="javascript:void(0);" class="view_more">
+                                <div class="text">Xem thêm</div>
+                                <div class="icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 9L12 15L18 9" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="filter_line"></div>
                 <?php
-                        endif;
                     endforeach;
-                endif; ?>
+                endif;
+                ?>
 
                 <!-- Nút Submit -->
                 <button type="submit" class="button btn_apply">Áp dụng</button>
