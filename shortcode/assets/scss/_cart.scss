@@ -1,0 +1,46 @@
+.tgb_page_woo_cart .woocommerce {
+    .woocommerce-cart-form {
+        .cart-wrapper {
+            margin: 0px !important;
+            background-color: #FFFFFF;
+            padding: 16px;
+            border-radius: 12px;
+        }
+
+        .shop_table thead th {
+            color: #2E2E2E;
+            font-family: 'Inter';
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.4;
+            border-bottom: 1px solid #EAEAEA;
+        }
+
+        .shop_table {
+            margin: 0px !important;
+
+            td {
+                border-bottom: 1px solid #EAEAEA;
+            }
+
+            .cart_item td {
+                padding: 16px 8px;
+            }
+
+            .actions {
+                padding: 0px;
+                padding-top: 16px;
+                border: none !important;
+
+                .button-continue-shopping {
+                    margin: 0px;
+                    border: 1px solid #255144;
+                    background-color: #fff;
+                    outline: none !important;
+                    padding: 9px 12px;
+                    border-radius: 8px;
+                }
+            }
+        }
+    }
+}

@@ -1,6 +1,7 @@
 @import 'grid';
 @import 'vucoder';
 @import 'editor';
+@import 'cart';
 
 @media screen and (min-width: 850px) {
     #masthead .header-nav-main.nav-left {
@@ -1811,7 +1812,7 @@ div#masthead {
             }
 
             input[type="checkbox"]:checked+.icon {
-                background-image: url("data:image/svg+xml,%3Csvg width='21' height='20' viewBox='0 0 21 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.69 0H6.31C2.67 0 0.5 2.17 0.5 5.81V14.18C0.5 17.83 2.67 20 6.31 20H14.68C18.32 20 20.49 17.83 20.49 14.19V5.81C20.5 2.17 18.33 0 14.69 0ZM15.28 7.7L9.61 13.37C9.47 13.51 9.28 13.59 9.08 13.59C8.88 13.59 8.69 13.51 8.55 13.37L5.72 10.54C5.43 10.25 5.43 9.77 5.72 9.48C6.01 9.19 6.49 9.19 6.78 9.48L9.08 11.78L14.22 6.64C14.51 6.35 14.99 6.35 15.28 6.64C15.57 6.93 15.57 7.4 15.28 7.7Z' fill='%230052FF'/%3E%3C/svg%3E%0A") !important;
+                background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 6C2 3.79086 3.79086 2 6 2H18C20.2091 2 22 3.79086 22 6V18C22 20.2091 20.2091 22 18 22H6C3.79086 22 2 20.2091 2 18V6Z' fill='%233B82F6'/%3E%3Cmask id='mask0_4399_10553' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='3' y='3' width='18' height='18'%3E%3Cpath d='M18.6654 7L9.4987 16.1667L5.33203 12' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_4399_10553)'%3E%3Crect x='2' y='2' width='20' height='20' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A") !important;
             }
 
             // end checkbox style

@@ -212,3 +212,10 @@ function tgb_search_suggestion()
 
     wp_die();
 }
+
+add_filter('body_class', function ($classes) {
+    if (is_cart()) {
+        $classes[] = 'tgb_page_woo_cart';
+    }
+    return $classes;
+}, 99);
