@@ -20,7 +20,7 @@ add_shortcode('tgb_search_ui', function () {
                 name="search"
                 class="tgb_search_input"
                 placeholder="Nhập tên hoặc danh mục bạn muốn tìm kiếm"
-                value="<?php echo isset($_GET['search']) ? $_GET['search'] : ''; ?>" />
+                value="<?php echo isset($_GET['search']) ? $_GET['search'] : ''; ?>" required />
             <button type="submit" class="tgb_search_button">Tìm kiếm</button>
 
             <div class="result">
@@ -29,20 +29,6 @@ add_shortcode('tgb_search_ui', function () {
                 </div>
 
                 <div class="list">
-                    <?php
-                    for ($i = 0; $i < 6; $i++):
-                    ?>
-                        <div class="item">
-                            <div class="icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M21 21L15.0001 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="#818181" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </div>
-                            <div class="text">
-                                bảng trắng
-                            </div>
-                        </div>
-                    <?php endfor; ?>
                 </div>
             </div>
         </form>
@@ -66,24 +52,6 @@ add_shortcode('tgb_search_ui', function () {
                 ?>
             </div>
         <?php endif; ?>
-
-        <script>
-            jQuery(function($) {
-                $('.tgb_search_input').on('input', function() {
-                    var value = $(this).val().trim();
-                    if (value.length > 0) {
-                        $('.result').show();
-                    } else {
-                        $('.result').hide();
-                    }
-                });
-                $(document).on('click', function(event) {
-                    if (!$(event.target).closest('.tgb_search_form').length) {
-                        $('.result').hide();
-                    }
-                });
-            });
-        </script>
     </div>
 <?php
     return ob_get_clean();

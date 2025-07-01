@@ -23,11 +23,23 @@
     }
 }
 
+#header .stuck .header-main {
+    height: 108px !important;
+
+    @media screen and (max-width: 849px) {
+        height: 70px !important;
+    }
+}
+
 div#masthead {
     background: #255144 !important;
-    height: 108px;
+    height: 108px !important;
     padding-top: 16px;
     padding-bottom: 16px;
+
+    @media screen and (max-width: 849px) {
+        height: 70px !important;
+    }
 
     .header-inner.flex-row {
         align-items: flex-start;

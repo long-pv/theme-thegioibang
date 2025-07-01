@@ -183,22 +183,40 @@
 		});
 	}
 
-	$(".tgb_search_input").on("input", function () {
-		let keyword = $(this).val().trim();
-		if (keyword.length < 3) {
-			$(".result .list").html("");
-			return;
+	let debounceTimer;
+
+	$(document).on("click", function (event) {
+		if (!$(event.target).closest(".tgb_search_form").length) {
+			$(".tgb_search_wrapper .result").hide();
 		}
-		$.ajax({
-			url: custom_ajax.ajax_url,
-			type: "POST",
-			data: {
-				action: "tgb_search_suggestion",
-				keyword: keyword,
-			},
-			success: function (response) {
-				$(".result .list").html(response);
-			},
-		});
+	});
+
+	$(document).on("input focus", ".tgb_search_input", function () {
+		let keyword = $(this).val().trim();
+
+		debounceTimer = setTimeout(function () {
+			if (keyword.length < 3) {
+				$(".result .list").html("");
+				$(".tgb_search_wrapper .result").hide();
+				return;
+			}
+
+			$(".tgb_search_wrapper .result").show();
+
+			$.ajax({
+				url: custom_ajax.ajax_url,
+				type: "POST",
+				data: {
+					action: "tgb_search_suggestion",
+					keyword: keyword,
+				},
+				beforeSend: function () {
+					$(".tgb_search_wrapper .result .list").html("<div>Đang tìm kiếm...</div>");
+				},
+				success: function (response) {
+					$(".tgb_search_wrapper .result .list").html(response);
+				},
+			});
+		}, 500);
 	});
 })(jQuery, window);
