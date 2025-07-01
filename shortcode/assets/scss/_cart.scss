@@ -1,4 +1,86 @@
 .tgb_page_woo_cart .woocommerce {
+
+    @media screen and (min-width: 850px) {
+
+        .row .row-large:not(.row-collapse),
+        .container .row-large:not(.row-collapse) {
+            margin-left: -8px;
+            margin-right: -8px;
+        }
+
+
+        .row-large>.col {
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+
+        .row-divided>.col+.col:not(.large-12) {
+            border-left: none;
+        }
+    }
+
+    .cart-sidebar {
+        margin: 0px !important;
+        background-color: #FFFFFF;
+        padding: 16px;
+        border-radius: 12px;
+
+        .checkout_coupon {
+            .widget-title {
+                display: none;
+            }
+
+            .coupon {
+                display: flex;
+                align-items: center;
+
+                input {
+                    margin: 0px;
+                }
+            }
+        }
+
+
+        .cart_totals {
+
+            table:not(.shop_table) {
+                margin: 0px;
+            }
+
+            th.product-name {
+                color: #255144;
+                font-family: 'Inter';
+                font-size: 20px;
+                font-weight: 600;
+                line-height: 1.4;
+                padding-bottom: 10px;
+                padding-top: 0px;
+                border-bottom: 1px solid #EAEAEA;
+            }
+
+            .shop_table th {
+                color: #2E2E2E;
+                font-family: 'Inter';
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 1.4;
+                border-bottom: 1px solid #EAEAEA;
+                padding: 16px 8px 16px 0px;
+            }
+
+            .shop_table td {
+                color: #2E2E2E;
+                font-family: 'Inter';
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 1.4;
+                border-bottom: 1px solid #EAEAEA;
+                padding: 16px 0px 16px 8px;
+            }
+        }
+    }
+
+
     .woocommerce-cart-form {
         .cart-wrapper {
             margin: 0px !important;
@@ -14,6 +96,7 @@
             font-weight: 500;
             line-height: 1.4;
             border-bottom: 1px solid #EAEAEA;
+            padding: 0px 8px 18px;
         }
 
         .shop_table {
@@ -39,6 +122,11 @@
                     outline: none !important;
                     padding: 9px 12px;
                     border-radius: 8px;
+                    color: #2E2E2E;
+                    font-family: 'Inter';
+                    font-size: 16px;
+                    font-weight: 500;
+                    line-height: 1.4;
                 }
             }
         }

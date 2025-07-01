@@ -219,4 +219,6 @@
 			});
 		}, 500);
 	});
+
+	$(".tgb_page_woo_cart .shop_table .button-continue-shopping").text("Tiếp tục xem sản phẩm");
 })(jQuery, window);
