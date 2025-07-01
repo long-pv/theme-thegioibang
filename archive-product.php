@@ -17,16 +17,16 @@ if (!empty($_GET['search'])) {
 	$args['s'] = $search;
 }
 
+$price_to   =  !empty($_GET['price_to']) ? intval($_GET['price_to']) : '';
+$price_from = !empty($_GET['price_from']) ? intval($_GET['price_from']) : '';
+
 $check_archive = false;
 $term_cat_id = 0;
 $allowed_params = ['prod_cat', 'paging'];
 if (!empty($_GET['prod_cat'])) {
 	$prod_cat = array_map('intval', $_GET['prod_cat']);
 
-	if (
-		count($prod_cat) === 1 &&
-		empty(array_diff(array_keys($_GET), $allowed_params))
-	) {
+	if (count($prod_cat) === 1 && empty(array_diff(array_keys($_GET), $allowed_params)) && !$price_to && !$price_from) {
 		$term_cat_id = $prod_cat[0];
 		$term    = get_term_by('id', $term_cat_id, 'product_cat');
 		if ($term && ! is_wp_error($term)) {
@@ -68,8 +68,6 @@ if (!empty($_GET['prod_attr']) && is_array($_GET['prod_attr'])) {
 	}
 }
 
-$price_to   =  !empty($_GET['price_to']) ? intval($_GET['price_to']) : '';
-$price_from = !empty($_GET['price_from']) ? intval($_GET['price_from']) : '';
 if ($price_from && $price_to) {
 	// Khoảng giá
 	$args['meta_query'][] = array(
@@ -120,7 +118,7 @@ $query = new WP_Query($args);
 					<img class="pattern" src="<?php echo TGB_IMG_URL . 'pt_1.png'; ?>" alt="">
 
 					<div class="text_top">
-						Top bán chạy liên quan tới “<strong>Bảng trắng</strong>”
+						Top bán chạy liên quan tới “<strong><?php echo $search; ?></strong>”
 					</div>
 
 					<div class="grid_row">
@@ -204,7 +202,7 @@ $query = new WP_Query($args);
 						</svg>
 					</div>
 					<div class="text">
-						Hiển thị hơn 100.000 sản phẩm cho từ khóa "<strong>Bảng trắng</strong>".
+						Hiển thị hơn 100.000 sản phẩm cho từ khóa "<strong><?php echo $search; ?></strong>"
 					</div>
 				</div>
 			<?php endif; ?>
