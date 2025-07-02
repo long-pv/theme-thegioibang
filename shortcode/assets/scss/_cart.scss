@@ -24,6 +24,8 @@
         background-color: #FFFFFF;
         padding: 16px;
         border-radius: 12px;
+        position: relative;
+        padding-bottom: 72px;
 
         .checkout_coupon {
             .widget-title {
@@ -42,8 +44,36 @@
 
 
         .cart_totals {
+            position: unset !important;
+
+            .wc-proceed-to-checkout {
+                margin: 0px;
+                position: absolute;
+                bottom: 16px;
+                left: 0px;
+                width: 100%;
+                padding: 0px 16px;
+            }
+
+            .checkout-button {
+                margin: 0px;
+                background-color: #CE3727 !important;
+                height: 40px;
+                color: #fff;
+                font-family: 'Inter';
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 1.4;
+                padding: 9px 20px;
+                border-radius: 8px;
+                box-shadow: none !important;
+            }
 
             table:not(.shop_table) {
+                margin: 0px;
+            }
+
+            .shop_table {
                 margin: 0px;
             }
 
@@ -76,6 +106,49 @@
                 line-height: 1.4;
                 border-bottom: 1px solid #EAEAEA;
                 padding: 16px 0px 16px 8px;
+            }
+        }
+
+        .coupon {
+            gap: 8px;
+            padding: 16px 0px;
+            border-bottom: 1px solid #EAEAEA;
+
+            #coupon_code {
+                flex: 1 1 auto;
+                height: 40px;
+                border: 1px solid #EAEAEA;
+                outline: none;
+                background-color: #FFFFFF;
+                border-radius: 8px;
+                padding: 8px 12px;
+                color: #2E2E2E;
+                font-family: 'Inter';
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 1.4;
+                box-shadow: none !important;
+
+                &::placeholder {
+                    color: #C0C0C0;
+                }
+            }
+
+            input[name="apply_coupon"] {
+                flex: 1;
+                height: 40px;
+                min-width: 90px;
+                border: 1px solid #255144;
+                outline: none;
+                padding: 9px 12px;
+                color: #2E2E2E;
+                font-family: 'Inter';
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 1.4;
+                box-shadow: none !important;
+                background-color: #FFFFFF;
+                border-radius: 8px;
             }
         }
     }
