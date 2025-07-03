@@ -217,5 +217,10 @@ add_filter('body_class', function ($classes) {
     if (is_cart()) {
         $classes[] = 'tgb_page_woo_cart';
     }
+
+    if (is_singular('product')) {
+        $classes[] = 'tgb_single_product';
+    }
+
     return $classes;
 }, 99);

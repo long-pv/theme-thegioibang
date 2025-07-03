@@ -280,9 +280,9 @@ remove_action( 'admin_notices', 'flatsome_maintenance_admin_notice' );
 add_action('woocommerce_after_add_to_cart_button','nt_add_button_dang_ky_tu_van', 2);
 function nt_add_button_dang_ky_tu_van(){
     ?>
-        <a href="#tuvansanpham" class="button primary nt-dang-ky-tu-van"><span>ĐĂNG KÝ</span><i>Tư vấn sản phẩm</i></a>
+        <a href="#tuvansanpham" class="button primary nt-dang-ky-tu-van">Tư vấn sản phẩm</a>
         <div id="tuvansanpham" class="lightbox-by-id lightbox-content mfp-hide lightbox-white " style="max-width:600px ;padding:20px"> <?php echo do_shortcode('[contact-form-7 id="e8521a5" title="Form liên hệ 1"]') ?> </div>
-        <a href="#review_product_single" class="button secondary hinhanh_tt"><span>Xem ảnh <i>thực tế</i></a>
+        <a href="#review_product_single" class="button secondary hinhanh_tt">Xem ảnh thực tế</a>
     <?php
 	
 }
