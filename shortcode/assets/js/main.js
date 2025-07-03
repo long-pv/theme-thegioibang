@@ -81,6 +81,26 @@
 		],
 	});
 
+	$(".you_may_like .list_product").slick({
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		infinite: false,
+		arrows: true,
+		dots: false,
+
+		// ↓ cấu hình cho màn < 850 px
+		responsive: [
+			{
+				breakpoint: 850,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 1,
+					arrows: false,
+				},
+			},
+		],
+	});
+
 	$(".tgb_banner_main .banner_main_slider").slick({
 		slidesToShow: 1,
 		slidesToScroll: 1,
@@ -221,4 +241,5 @@
 	});
 
 	$(".tgb_page_woo_cart .shop_table .button-continue-shopping").text("Tiếp tục xem sản phẩm");
+	// $(".tgb_single_product #tab-description").addClass("editor");
 })(jQuery, window);
