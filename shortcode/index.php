@@ -222,5 +222,9 @@ add_filter('body_class', function ($classes) {
         $classes[] = 'tgb_single_product';
     }
 
+    if (is_singular('post')) {
+        $classes[] = 'tgb_single_post';
+    }
+
     return $classes;
 }, 99);

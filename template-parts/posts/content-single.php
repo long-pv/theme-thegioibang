@@ -1,3 +1,5 @@
+<!-- long xemer -->
+
 <div class="entry-content single-page">
 
 	<?php the_content(); ?>
