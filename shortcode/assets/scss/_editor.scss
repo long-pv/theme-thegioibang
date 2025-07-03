@@ -1,6 +1,11 @@
 .editor {
     white-space: inherit;
     word-wrap: break-word;
+    color: #2E2E2E;
+    font-family: 'Inter';
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
 
     &>* {
         &:last-child {

@@ -489,6 +489,8 @@
     #tab-reviews {
         #comments {
             .woocommerce-pagination {
+                position: relative !important;
+
                 .nav-pagination.links {
                     justify-content: flex-start;
                     align-items: center;
@@ -542,6 +544,61 @@
                         }
                     }
                 }
+            }
+        }
+    }
+
+    #product-sidebar {
+        padding: 16px !important;
+        border-radius: 12px !important;
+        background-color: #fff !important;
+        margin-top: 16px;
+        margin-bottom: 16px;
+
+        .heading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+
+            .title {
+                color: #2E2E2E;
+                font-family: 'Inter';
+                font-size: 20px;
+                font-weight: 600;
+                line-height: 1.4;
+                width: auto;
+                margin-bottom: 0px;
+            }
+
+            .btn_link {
+                display: inline-flex;
+                align-items: center;
+                gap: 4px;
+
+                .icon {
+                    display: inline-flex;
+                }
+
+                .text {
+                    font-family: 'Inter';
+                    font-size: 16px;
+                    font-weight: 500;
+                    line-height: 1.4;
+                    color: #255144;
+                }
+            }
+        }
+
+        .custom-related-products {
+            .grid_row {
+                --bs-gutter-x: 16px;
+                row-gap: 16px;
+            }
+
+            .col_custom {
+                flex: 0 0 auto;
+                width: 20%;
             }
         }
     }
