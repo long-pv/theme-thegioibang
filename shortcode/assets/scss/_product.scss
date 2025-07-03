@@ -285,6 +285,34 @@
     }
 
     .nt-product-icon {
-        // 
+        padding: 16px;
+        background: #D8E6FD;
+        border-radius: 8px;
+        gap: 16px;
+        display: flex;
+        flex-direction: column;
+
+        .icon-box {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            margin: 0px;
+            padding: 0px;
+
+            .icon-box-img {
+                display: inline-flex;
+                width: auto !important;
+
+                img {
+                    width: 24px;
+                    object-fit: cover;
+                }
+            }
+
+            .icon-box-text {
+                padding: 0px;
+                margin: 0px;
+            }
+        }
     }
 }
