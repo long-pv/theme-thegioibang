@@ -186,7 +186,7 @@
 				<div class="heading">
 					<h2 class="title">Sản phẩm liên quan</h2>
 					<div class="view_all">
-						<a href="<?php echo $cat_link; ?>" class="btn_link">
+						<a href="<?php echo get_permalink(wc_get_page_id('shop')); ?>" class="btn_link">
 							<span class="text">
 								Xem thêm
 							</span>
