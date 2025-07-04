@@ -1,7 +1,6 @@
-<!-- long xemer -->
-<div class="heading_title">
-	<?php the_title(); ?>
-</div>
+<!-- <div class="heading_title">
+	<?php //the_title(); ?>
+</div> -->
 
 <div class="post_info">
 	<div class="date">

@@ -1,38 +1,4 @@
-.tgb_single_post {
-    // .page-title.blog-featured-title {
-    //     display: none !important;
-    // }
-
-    .entry-header .entry-header-text {
-        padding: 0px;
-    }
-
-    h1.entry-title {
-        color: #255144;
-        font-family: 'Inter';
-        font-size: 24px;
-        font-weight: 700;
-        line-height: 1.4;
-        margin-bottom: 12px;
-    }
-
-    .post.type-post {
-        margin-bottom: 0px;
-    }
-
-    #comments {
-        display: none !important;
-    }
-
-    @media screen and (min-width: 850px) {
-        .row-divided>.col+.col:not(.large-12) {
-            border-left: none;
-        }
-    }
-
-    .blog-featured-title+#main .post-sidebar {
-        padding-top: 0px;
-    }
+.archive.category {
 
     .widgets-framed .widget,
     #secondary .widget {
@@ -70,11 +36,11 @@
                     flex-direction: column;
 
                     img {
-                        aspect-ratio: 306 / 187;
+                        aspect-ratio: 306 / 187 !important;
                         border-radius: 8px;
                         margin-bottom: 8px;
-                        contain-intrinsic-size: unset !important;
                         object-fit: cover;
+                        contain-intrinsic-size: unset !important;
                     }
 
                     .wpp-post-title {
@@ -115,77 +81,4 @@
             }
         }
     }
-
-    .article-inner {
-        padding: 16px !important;
-        background-color: #fff !important;
-        border-radius: 12px !important;
-    }
-
-    .entry-content.single-page {
-        border-top: 1px solid #EAEAEA;
-        padding-top: 16px;
-        padding-bottom: 16px;
-    }
-
-    .blog-single {
-        .heading_title {
-            color: #255144;
-            font-family: 'Inter';
-            font-size: 24px;
-            font-weight: 700;
-            line-height: 1.4;
-            margin-bottom: 12px;
-        }
-    }
-
-    .post_info {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        margin-bottom: 16px;
-
-        .line {
-            height: 20px;
-            width: 1px;
-            background-color: #EAEAEA;
-        }
-
-        .date {
-            display: flex;
-            gap: 4px;
-            align-items: center;
-
-            .icon {
-                display: inline-flex;
-            }
-
-            .text {
-                color: #2E2E2E;
-                font-family: 'Inter';
-                font-size: 14px;
-                font-weight: 500;
-                line-height: 1.4;
-            }
-        }
-
-        .social {
-            display: flex;
-            gap: 8px;
-            align-items: center;
-
-            .text {
-                color: #2E2E2E;
-                font-family: 'Inter';
-                font-size: 14px;
-                font-weight: 500;
-                line-height: 1.4;
-            }
-
-            a {
-                display: inline-flex;
-            }
-        }
-    }
-
 }
