@@ -1,0 +1,176 @@
+.tgb_single_post {
+    .page-title.blog-featured-title {
+        display: none !important;
+    }
+
+    .post.type-post {
+        margin-bottom: 0px;
+    }
+
+    #comments {
+        display: none !important;
+    }
+
+    @media screen and (min-width: 850px) {
+        .row-divided>.col+.col:not(.large-12) {
+            border-left: none;
+        }
+    }
+
+    .blog-featured-title+#main .post-sidebar {
+        padding-top: 0px;
+    }
+
+    .widgets-framed .widget,
+    #secondary .widget {
+        padding: 16px !important;
+        background-color: #fff !important;
+        border-radius: 12px !important;
+        border: none !important;
+        box-shadow: none !important;
+
+        .widget-title {
+            color: #255144;
+            font-family: 'Inter';
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 1.4;
+            display: block;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #EAEAEA;
+
+            &::after {
+                display: none;
+            }
+        }
+
+
+        .textwidget {
+            h2 {
+                display: none !important;
+            }
+
+
+            .wpp-list {
+                li {
+                    display: flex;
+                    flex-direction: column;
+
+                    img {
+                        aspect-ratio: 306 / 187;
+                        border-radius: 8px;
+                        margin-bottom: 8px;
+                    }
+
+                    .wpp-post-title {
+                        color: #255144;
+                        font-family: 'Inter';
+                        font-size: 14px;
+                        font-weight: 600;
+                        line-height: 1.4;
+                        display: flex;
+                        margin-bottom: 4px;
+                    }
+
+                    .wpp-date {
+                        display: flex;
+                        align-items: center;
+                        gap: 4px;
+                        color: #2E2E2E;
+                        font-family: 'Inter';
+                        font-size: 14px;
+                        font-weight: 500;
+                        line-height: 1.4;
+
+                        &::before {
+                            content: '';
+                            background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 6V12L16 14M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z' stroke='%23818181' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                            background-position: center center;
+                            height: 24px;
+                            width: 24px;
+                        }
+
+                        .far {
+                            display: none !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .article-inner {
+        padding: 16px !important;
+        background-color: #fff !important;
+        border-radius: 12px !important;
+    }
+
+    .entry-content.single-page {
+        border-top: 1px solid #EAEAEA;
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+
+    .blog-single {
+        .heading_title {
+            color: #255144;
+            font-family: 'Inter';
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1.4;
+            margin-bottom: 12px;
+        }
+    }
+
+    .post_info {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 16px;
+
+        .line {
+            height: 20px;
+            width: 1px;
+            background-color: #EAEAEA;
+        }
+
+        .date {
+            display: flex;
+            gap: 4px;
+            align-items: center;
+
+            .icon {
+                display: inline-flex;
+            }
+
+            .text {
+                color: #2E2E2E;
+                font-family: 'Inter';
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 1.4;
+            }
+        }
+
+        .social {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+
+            .text {
+                color: #2E2E2E;
+                font-family: 'Inter';
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 1.4;
+            }
+
+            a {
+                display: inline-flex;
+            }
+        }
+    }
+
+}
