@@ -242,4 +242,6 @@
 
 	$(".tgb_page_woo_cart .shop_table .button-continue-shopping").text("Tiếp tục xem sản phẩm");
 	// $(".tgb_single_product #tab-description").addClass("editor");
+
+	$(".tgb_single_product .wpgs-image").slick("slickSetOption", "arrows", false, true);
 })(jQuery, window);

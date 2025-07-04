@@ -1,5 +1,13 @@
 .tgb_single_product .product {
 
+    .wpgs-wrapper {
+        overflow: auto !important;
+    }
+
+    .images.wpgs-wrapper {
+        padding: 20px 0px !important;
+    }
+
     .product-gallery {
         .woocommerce-product-gallery__lightbox {
             height: 40px;
@@ -11,6 +19,8 @@
             background-position: center center !important;
             background-size: 24px 24px !important;
             background-repeat: no-repeat !important;
+            margin-top: 16px;
+            margin-right: 16px;
 
             .icon-zoom-in {
                 display: none !important;
@@ -19,6 +29,123 @@
 
         .yith-wcwl-add-button {
             display: none !important;
+        }
+
+        .wpgs-thumb.slick-initialized.slick-slider.slick-vertical .slick-track {
+            padding: 0px !important;
+        }
+
+        .wpgs-thumb.slick-initialized.slick-slider.slick-vertical span.slick-next.slick-arrow {
+            width: 40px !important;
+            height: 40px !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+            bottom: -20px !important;
+            margin: 0px !important;
+
+            &::before {
+                margin: 0px !important;
+            }
+        }
+
+        .wpgs-thumb.slick-initialized.slick-slider.slick-vertical span.slick-prev.slick-arrow {
+            width: 40px !important;
+            height: 40px !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+            top: -20px !important;
+            margin: 0px !important;
+
+            &::before {
+                margin: 0px !important;
+            }
+        }
+
+        .wpgs-thumb {
+            .thumbnail_image {
+                border: none !important;
+                box-shadow: none !important;
+
+                img {
+                    aspect-ratio: 100 / 100;
+                    padding: 0px;
+                    border-radius: 8px;
+                    border: 1px solid #fff;
+                    object-fit: cover;
+                }
+
+                &.slick-current {
+                    img {
+                        border: 1px solid #255144;
+                    }
+                }
+            }
+
+
+            .slick-arrow {
+                border: none;
+                width: 40px !important;
+                height: 40px !important;
+                border-radius: 50%;
+                cursor: pointer;
+                overflow: hidden;
+                transition: all 0.3s;
+                background-color: #fff !important;
+                z-index: 500;
+                box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
+
+                &::before {
+                    content: '' !important;
+                    opacity: 1 !important;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 24px;
+                    height: 24px;
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+
+                &.slick-disabled {
+                    display: none !important;
+                }
+
+                &.slick-prev {
+                    left: -20px;
+
+                    &::before {
+                        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18 15L12 9L6 15' stroke='%231D3F35' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+                    }
+                }
+
+                &.slick-next {
+                    right: -20px;
+
+                    &::before {
+                        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 9L12 15L18 9' stroke='%231D3F35' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+                    }
+                }
+            }
+        }
+
+        .wpgs-image {
+            .slick-arrow {
+                display: none !important;
+            }
+        }
+
+        .wpgs_image {
+            img {
+                aspect-ratio: 100 / 100 !important;
+                padding: 0px;
+                border-radius: 8px;
+                border: 1px solid #EAEAEA;
+                object-fit: cover;
+            }
+
+
         }
     }
 
@@ -414,7 +541,19 @@
         }
     }
 
+    .product-info {
+        padding-top: 20px;
+    }
+
+    .product-gallery {
+        margin: 0px !important;
+        padding-right: 16px !important;
+    }
+
     .Outstanding_Features {
+        padding-top: 20px;
+        border-top: none !important;
+
         .widget-title.shop-sidebars {
             color: #255144;
             font-family: 'Inter';
@@ -440,6 +579,7 @@
         padding: 16px !important;
         border-radius: 12px !important;
         background-color: #fff !important;
+        padding-top: 0px !important;
     }
 
     .product-page-sections {
