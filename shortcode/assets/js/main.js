@@ -244,4 +244,12 @@
 	// $(".tgb_single_product #tab-description").addClass("editor");
 
 	$(".tgb_single_product .wpgs-image").slick("slickSetOption", "arrows", false, true);
+
+	$(document).on("click", ".tgb_sidebar_filter .btn_filter_mb", function () {
+		$("body").toggleClass("filter_open");
+	});
+
+	$(document).on("click", ".tgb_sidebar_filter .sidebar-filter .icon_mb", function () {
+		$("body").toggleClass("filter_open");
+	});
 })(jQuery, window);
