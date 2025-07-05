@@ -46,7 +46,7 @@ add_shortcode('tgb_section_category', function ($atts, $content = null) {
                 </div>
             </div>
 
-            <div class="view_all">
+            <div class="tgb_view_all">
                 <a href="<?php echo $cat_link; ?>" class="btn_link">
                     <span class="text">
                         Xem thêm

@@ -1,76 +1,3 @@
-.tgb_section_category {
-    border-radius: 8px;
-    margin-top: 16px;
-    margin-bottom: 16px;
-    overflow: hidden;
-
-    .heading {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        justify-content: space-between;
-        padding: 16px 24px;
-        background-color: #CAE7DE;
-
-        .title {
-            display: flex;
-            gap: 8px;
-            align-items: center;
-            margin-bottom: 0px;
-
-            .icon {
-                display: inline-flex;
-            }
-
-            .text {
-                font-family: 'Inter';
-                font-size: 20px;
-                font-weight: 600;
-                line-height: 1.4;
-                color: #255144;
-            }
-        }
-
-        .btn_link {
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-
-            .icon {
-                display: inline-flex;
-            }
-
-            .text {
-                font-family: 'Inter';
-                font-size: 16px;
-                font-weight: 500;
-                line-height: 1.4;
-                color: #255144;
-            }
-        }
-    }
-
-
-    .list {
-        padding: 24px;
-        background: #fff;
-
-        .grid_row {
-            --bs-gutter-x: 16px;
-            row-gap: 16px;
-
-            .col_custom {
-                flex: 0 0 auto;
-                width: 20%;
-            }
-        }
-    }
-}
-
-
-
-
-
 .tgb_top_seller {
     padding: 16px 24px;
     background-color: #FAEDCA;
@@ -204,4 +131,10 @@
 
 .tgb_search_form .result.is-shown {
     display: block;
+}
+
+.post-type-archive-product {
+    .category-filtering {
+        display: none !important;
+    }
 }

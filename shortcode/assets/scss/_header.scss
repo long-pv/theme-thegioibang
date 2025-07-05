@@ -538,6 +538,14 @@ div#masthead {
         width: 40px !important;
         flex-shrink: 0 !important;
         margin: 0px !important;
+
+        .header_logo.header-logo {
+            display: none !important;
+        }
+
+        .header-logo-dark {
+            display: block !important;
+        }
     }
 
     #logo img {

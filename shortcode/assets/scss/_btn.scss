@@ -1,0 +1,25 @@
+.tgb_view_all {
+    display: flex;
+
+    .btn_link {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+
+        .icon {
+            display: inline-flex;
+        }
+
+        .text {
+            font-family: 'Inter';
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.4;
+            color: #255144;
+
+            @media screen and (max-width: 849px) {
+                display: none !important;
+            }
+        }
+    }
+}

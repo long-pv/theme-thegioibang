@@ -1,0 +1,54 @@
+.tgb_section_category {
+    border-radius: 8px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    overflow: hidden;
+
+    .heading {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        justify-content: space-between;
+        padding: 16px 24px;
+        background-color: #CAE7DE;
+
+        .title {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            margin-bottom: 0px;
+
+            .icon {
+                display: inline-flex;
+            }
+
+            .text {
+                font-family: 'Inter';
+                font-size: 20px;
+                font-weight: 600;
+                line-height: 1.4;
+                color: #255144;
+            }
+        }
+    }
+
+
+    .list {
+        padding: 24px;
+        background: #fff;
+
+        .grid_row {
+            --bs-gutter-x: 16px;
+            row-gap: 16px;
+
+            .col_custom {
+                flex: 0 0 auto;
+                width: 20%;
+
+                @media screen and (max-width: 849px) {
+                    width: 50%;
+                }
+            }
+        }
+    }
+}

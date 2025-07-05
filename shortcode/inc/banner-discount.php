@@ -13,7 +13,7 @@ add_shortcode('tgb_banner_discount', function () {
                 <?php
                 foreach ($banner_discount as $item) :
                 ?>
-                    <div class="grid_col-6">
+                    <div class="grid_col-lg-6">
                         <div class="item">
                             <div class="img_wrap">
                                 <img src="<?php echo $item['image'] ?? ''; ?>" alt="">

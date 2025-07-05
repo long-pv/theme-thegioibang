@@ -6,6 +6,7 @@ add_shortcode('tgb_livestream_video', function () {
     ob_start();
 
     $livestream = get_field('livestream', 'option') ?? [];
+    $livestream_view_all = get_field('livestream_view_all', 'option') ?? '#';
     $now = current_time('Y-m-d H:i:s');
 ?>
     <div class="tgb_livestream_video">
@@ -19,6 +20,19 @@ add_shortcode('tgb_livestream_video', function () {
                 <div class="text">
                     <?php _e('Livestream - Video'); ?>
                 </div>
+            </div>
+
+            <div class="tgb_view_all">
+                <a href="<?php echo $livestream_view_all; ?>" class="btn_link">
+                    <span class="text">
+                        Xem thêm
+                    </span>
+                    <span class="icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 18L15 12L9 6" stroke="#255144" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </span>
+                </a>
             </div>
         </div>
 

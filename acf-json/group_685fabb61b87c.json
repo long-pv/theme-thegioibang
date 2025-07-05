@@ -99,6 +99,27 @@
             ]
         },
         {
+            "key": "field_6868e1c010036",
+            "label": "Livestream view all",
+            "name": "livestream_view_all",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_685faea595630",
             "label": "Livestream",
             "name": "livestream",
@@ -668,5 +689,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1751247592
+    "modified": 1751704031
 }

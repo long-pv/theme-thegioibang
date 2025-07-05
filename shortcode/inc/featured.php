@@ -7,7 +7,7 @@ add_shortcode('tgb_featured', function () {
 
 ?>
     <div class="tgb_featured">
-        <div class="grid_row">
+        <div class="grid_row grid_row_1">
             <div class="grid_col-lg-6">
                 <?php
                 $best_selling_products = get_field('best_selling_products', 'option') ?? null;

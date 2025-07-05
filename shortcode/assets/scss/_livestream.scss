@@ -6,11 +6,16 @@
     margin-bottom: 16px;
 
     .heading {
+        margin-bottom: 18px;
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        align-items: center;
+
         .title {
             display: flex;
             gap: 8px;
             align-items: center;
-            margin-bottom: 18px;
 
             .icon {
                 display: inline-flex;
