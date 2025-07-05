@@ -1,0 +1,161 @@
+.product_item {
+    border: 1px solid #EAEAEA;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 100%;
+    background-color: #fff;
+
+    .img_wrap {
+        display: flex;
+        position: relative;
+        height: 0px;
+        padding-bottom: 100%;
+
+        img {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .content {
+        padding: 8px 8px 16px 8px;
+        background-color: #fff;
+
+        .title {
+            font-family: 'Inter';
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.4;
+            color: #1D3F35;
+            margin-bottom: 4px;
+        }
+
+        .price,
+        .price * {
+            font-family: 'Inter';
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.4;
+            color: #CE3727;
+            margin-bottom: 6px;
+        }
+
+        .discount {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+
+            .cent {
+                padding: 0px 6px;
+                background-color: #FCE4D3;
+                font-family: 'Inter';
+                font-size: 12px;
+                font-weight: 600;
+                line-height: 1.4;
+                color: #CE3727;
+                display: inline-flex;
+                align-items: center;
+                border-radius: 999px;
+            }
+
+            .old_price,
+            .old_price * {
+                color: #2E2E2E;
+                text-decoration: line-through;
+                font-size: 12px;
+                font-weight: 500;
+                font-family: 'Inter';
+            }
+        }
+    }
+
+    &.product_item_sale {
+        border: none;
+        border-radius: 0px;
+        overflow: unset;
+        padding-top: 2px;
+        padding-left: 2px;
+        position: relative;
+        background-color: transparent !important;
+
+        .icon_sale {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 99;
+        }
+
+        .img_wrap {
+            display: flex;
+            position: relative;
+            height: 0px;
+            padding-bottom: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+
+            img {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .content {
+            padding: 0px;
+            padding-top: 8px;
+            background-color: transparent;
+
+            .title {
+                font-family: 'Inter';
+                font-size: 16px;
+                font-weight: 700;
+                line-height: 1.4;
+                color: #1D3F35;
+                margin-bottom: 4px;
+            }
+
+            .price {
+                font-family: 'Inter';
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 1.4;
+                color: #CE3727;
+                margin-bottom: 6px;
+            }
+
+            .discount {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+
+                .cent {
+                    padding: 0px 6px;
+                    background-color: #FFFFFF;
+                    font-family: 'Inter';
+                    font-size: 12px;
+                    font-weight: 600;
+                    line-height: 1.4;
+                    color: #1D3F35;
+                    display: inline-flex;
+                    align-items: center;
+                    border-radius: 999px;
+                }
+
+                .old_price {
+                    color: #2E2E2E;
+                    text-decoration: line-through;
+                    font-size: 12px;
+                    font-weight: 500;
+                    font-family: 'Inter';
+                }
+            }
+        }
+    }
+}
