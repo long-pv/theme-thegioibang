@@ -12,7 +12,7 @@ class nc_change_location{
             	
 			) );
 		});
-		add_action('get_footer', array($this, 'nc_popup_callback'));
+		add_action('wp_footer', array($this, 'nc_popup_callback'));
 		add_shortcode( 'nc_change_location',  array($this, 'nc_change_location') );
 	}
 

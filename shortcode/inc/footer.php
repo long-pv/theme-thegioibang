@@ -222,7 +222,7 @@ add_shortcode('tgb_footer_main', function () {
                     </div>
                 </div>
                 <div class="grid_col-lg-4">
-                    <div class="location">
+                    <div class="footer_location">
                         <?php echo do_shortcode('[nc_change_location]'); ?>
                     </div>
                 </div>
