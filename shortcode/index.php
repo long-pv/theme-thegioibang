@@ -228,3 +228,9 @@ add_filter('body_class', function ($classes) {
 
     return $classes;
 }, 99);
+
+function register_my_custom_menu()
+{
+    register_nav_menu('menu-right', __('Menu right'));
+}
+add_action('after_setup_theme', 'register_my_custom_menu');

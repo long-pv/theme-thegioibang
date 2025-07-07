@@ -201,8 +201,9 @@ div#masthead {
 // end
 
 // Shortcode: [tgb_header_bottom]
-#wide-nav>.flex-row>.flex-left {
-    width: 100%;
+#wide-nav>.flex-row>.flex-left,
+#wide-nav>.flex-row>.flex-right {
+    width: 50%;
     min-width: unset !important;
     max-width: unset !important;
     margin-right: 0px !important;
