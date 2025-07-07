@@ -33,6 +33,10 @@
                 }
 
                 &.icon_phone {
+                    @media screen and (max-width: 849px) {
+                        display: none;
+                    }
+
                     &>a {
                         padding-left: 44px !important;
 
@@ -154,6 +158,24 @@
                             }
                         }
                     }
+
+                    @media screen and (max-width: 849px) {
+                        width: 100vw;
+                        right: unset;
+                        left: -15px;
+                        max-width: 500px;
+                        padding: 0px;
+                        max-height: 300px;
+                        overflow-y: auto;
+
+                        &>li {
+                            width: 100%;
+                        }
+
+                        &::before {
+                            display: none !important;
+                        }
+                    }
                 }
 
                 &:hover {
@@ -180,6 +202,14 @@
                     display: none !important;
                 }
             }
+        }
+    }
+}
+
+#wide-nav {
+    .flex-col.show-for-medium.flex-grow {
+        .nav.header-bottom-nav.nav-center {
+            justify-content: flex-start !important;
         }
     }
 }
