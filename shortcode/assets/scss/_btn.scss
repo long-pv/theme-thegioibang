@@ -5,6 +5,7 @@
         display: inline-flex;
         align-items: center;
         gap: 4px;
+        transition: all 0.3s;
 
         .icon {
             display: inline-flex;
@@ -16,9 +17,24 @@
             font-weight: 500;
             line-height: 1.4;
             color: #255144;
+            transition: all 0.3s;
 
             @media screen and (max-width: 849px) {
                 display: none !important;
+            }
+        }
+
+        &:hover {
+            .text {
+                color: #CE3727;
+            }
+
+            .icon {
+                svg {
+                    path {
+                        stroke: #CE3727;
+                    }
+                }
             }
         }
     }

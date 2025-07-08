@@ -22,14 +22,16 @@ add_shortcode('tgb_featured', function () {
                     <div class="heading">
                         <h2 class="title"><?php echo esc_html($title); ?></h2>
                         <div class="desc"><?php echo esc_html($description); ?></div>
-                        <a href="<?php echo esc_url($url); ?>" class="btn_link">
-                            <span class="text">Xem thêm</span>
-                            <span class="icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M9 18L15 12L9 6" stroke="#255144" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </span>
-                        </a>
+                        <div class="tgb_view_all">
+                            <a href="<?php echo esc_url($url); ?>" class="btn_link">
+                                <span class="text">Xem thêm</span>
+                                <span class="icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 18L15 12L9 6" stroke="#255144" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </span>
+                            </a>
+                        </div>
                     </div>
 
                     <div class="list_product">
@@ -105,14 +107,17 @@ add_shortcode('tgb_featured', function () {
                     <div class="heading">
                         <h2 class="title"><?php echo esc_html($title); ?></h2>
                         <div class="desc"><?php echo esc_html($description); ?></div>
-                        <a href="<?php echo esc_url($url); ?>" class="btn_link">
-                            <span class="text">Xem thêm</span>
-                            <span class="icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M9 18L15 12L9 6" stroke="#255144" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </span>
-                        </a>
+
+                        <div class="tgb_view_all">
+                            <a href="<?php echo esc_url($url); ?>" class="btn_link">
+                                <span class="text">Xem thêm</span>
+                                <span class="icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 18L15 12L9 6" stroke="#255144" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </span>
+                            </a>
+                        </div>
                     </div>
 
                     <div class="list_product">

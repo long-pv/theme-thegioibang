@@ -82,7 +82,7 @@
 							if (!empty($product_list)):
 							?>
 								<div class="you_may_like">
-									<h3 class="heading_title">Bạn cũng có thể thích…</h3>
+									<h3 class="heading_title">Phụ kiện tặng kèm</h3>
 									<div class="list_product">
 										<?php
 										foreach ($product_list as $product_id) :
@@ -185,7 +185,7 @@
 			<section class="custom-related-products">
 				<div class="heading">
 					<h2 class="title">Sản phẩm liên quan</h2>
-					<div class="view_all">
+					<div class="tgb_view_all">
 						<a href="<?php echo get_permalink(wc_get_page_id('shop')); ?>" class="btn_link">
 							<span class="text">
 								Xem thêm
