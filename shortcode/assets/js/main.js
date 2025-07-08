@@ -237,7 +237,7 @@
 					$(".tgb_search_wrapper .result .list").html(response);
 				},
 			});
-		}, 500);
+		}, 100);
 	});
 
 	$(".tgb_page_woo_cart .shop_table .button-continue-shopping").text("Tiếp tục xem sản phẩm");
