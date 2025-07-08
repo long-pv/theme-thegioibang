@@ -56,7 +56,7 @@ add_shortcode('tgb_featured', function () {
                                 }
                         ?>
                                 <div>
-                                    <div class="product_item product_item_sale">
+                                    <div class="product_item">
                                         <a href="<?php echo $product_link; ?>" class="img_wrap">
                                             <img src="<?php echo $product_img; ?>" alt="<?php echo esc_attr($product_title); ?>">
                                         </a>

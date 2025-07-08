@@ -24,25 +24,27 @@ add_shortcode('tgb_list_cat', function () {
 
         <div class="list">
             <div class="grid_row">
-                <?php foreach ($list_category as $cat_id) :
-                    $cat = get_term($cat_id, 'product_cat');
-                    if (is_wp_error($cat) || !$cat) continue;
-                    $cat_name = $cat->name;
-                    $cat_link = get_term_link($cat);
-
-                    // Lấy ảnh thumbnail của category
-                    $thumbnail_id = get_term_meta($cat_id, 'thumbnail_id', true);
-                    $image_url = $thumbnail_id ? wp_get_attachment_url($thumbnail_id) : (TGB_IMG_URL . 'img3.png');
+                <?php foreach ($list_category as $item) :
+                    $image_url = $item['icon'] ?? "";
+                    $cat_id = $item['category'] ?? "";
+                    if ($image_url && $cat_id) :
+                        $cat = get_term($cat_id, 'product_cat');
+                        if (is_wp_error($cat) || !$cat) continue;
+                        $cat_name = $cat->name;
+                        $cat_link = get_term_link($cat);
                 ?>
-                    <div class="col_custom">
-                        <a href="<?php echo $cat_link; ?>" class="item">
-                            <img src="<?php echo $image_url; ?>" alt="<?php echo $cat_name; ?>">
-                            <h3 class="title line-1">
-                                <?php echo $cat_name; ?>
-                            </h3>
-                        </a>
-                    </div>
-                <?php endforeach; ?>
+                        <div class="col_custom">
+                            <a href="<?php echo $cat_link; ?>" class="item">
+                                <img src="<?php echo $image_url; ?>" alt="<?php echo $cat_name; ?>">
+                                <h3 class="title line-1">
+                                    <?php echo $cat_name; ?>
+                                </h3>
+                            </a>
+                        </div>
+                <?php
+                    endif;
+                endforeach;
+                ?>
             </div>
         </div>
     </div>

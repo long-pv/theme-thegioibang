@@ -14,6 +14,8 @@
 }
 
 #header {
+    z-index: 99999999;
+
     .gap2s {
         display: none !important;
     }

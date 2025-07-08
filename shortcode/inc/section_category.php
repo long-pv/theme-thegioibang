@@ -5,10 +5,14 @@
 add_shortcode('tgb_section_category', function ($atts, $content = null) {
     $atts = shortcode_atts([
         'category_id' => '',
+        'title'       => '', // Tiêu đề tuỳ chỉnh
+        'banner'       => '',
     ], $atts);
 
     // Lấy category ID
     $cat_id = intval($atts['category_id']);
+    $title = !empty($atts['title']) ? $atts['title'] : '';
+    $banner = !empty($atts['banner']) ? $atts['banner'] : '';
     if (!$cat_id) return;
 
     // Lấy tên category
@@ -16,10 +20,14 @@ add_shortcode('tgb_section_category', function ($atts, $content = null) {
     $cat_name = $cat ? $cat->name : 'Danh mục';
     $cat_link = get_term_link($cat_id, 'product_cat');
 
+    if (!$title) {
+        $title = $cat_name;
+    }
+
     // Query 10 sản phẩm mới nhất trong category này
     $query = new WP_Query([
         'post_type'      => 'product',
-        'posts_per_page' => 10,
+        'posts_per_page' => $banner ? 9 : 10,
         'tax_query'      => [
             [
                 'taxonomy' => 'product_cat',
@@ -41,7 +49,7 @@ add_shortcode('tgb_section_category', function ($atts, $content = null) {
                 </div>
                 <div class="text">
                     <?php
-                    echo $cat_name;
+                    echo $title;
                     ?>
                 </div>
             </div>
@@ -62,6 +70,13 @@ add_shortcode('tgb_section_category', function ($atts, $content = null) {
 
         <div class="list">
             <div class="grid_row">
+                <?php if ($banner): ?>
+                    <div class="col_custom">
+                        <div class="banner">
+                            <img src="<?php echo $banner; ?>" alt="banner <?php echo $title; ?>">
+                        </div>
+                    </div>
+                <?php endif; ?>
                 <?php if ($query->have_posts()) :
                     while ($query->have_posts()) : $query->the_post();
                         $product_id = get_the_ID();
