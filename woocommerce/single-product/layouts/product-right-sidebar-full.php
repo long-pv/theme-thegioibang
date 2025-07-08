@@ -52,28 +52,28 @@
 								<?php
 								$dvsp = get_field('dvsp');
 								if ($dvsp) {
-								?><div class="nt-product-icon"><?php
-																foreach ($dvsp as $key_dv) {
-																?>
+								?>
+									<div class="nt-product-icon">
+										<?php
+										foreach ($dvsp as $key_dv) {
+										?>
 											<div class="icon-box featured-box icon-box-left text-left has-block tooltipstered">
-												<div class="icon-box-img" style="width: 60px">
-													<div class="icon">
-														<div class="icon-inner" style="color:rgb(0, 89, 97);">
-															<img src="<?php echo $key_dv['icon_sp'] ?>">
-														</div>
+												<div class="icon-box-img" style="width: 24px;">
+													<div class="icon" style="width: 24px;">
+														<img src="<?php echo $key_dv['icon_sp'] ?>">
 													</div>
 												</div>
 												<div class="icon-box-text last-reset"><?php echo $key_dv['mota_sp'] ?></div>
 											</div>
 										<?php
-																}
-										?>
-									</div><?php
-										} else {
-											echo do_shortcode('[block id="19906"]');
 										}
-
-											?>
+										?>
+									</div>
+								<?php
+								} else {
+									echo do_shortcode('[block id="19906"]');
+								}
+								?>
 							</div>
 
 							<?php

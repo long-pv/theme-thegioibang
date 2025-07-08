@@ -454,8 +454,12 @@
                 width: auto !important;
 
                 img {
-                    width: 24px;
+                    width: 24px !important;
                     object-fit: cover;
+                }
+
+                svg {
+                    width: 24px !important;
                 }
             }
 
