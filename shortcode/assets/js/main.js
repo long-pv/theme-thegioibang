@@ -262,4 +262,9 @@
 		});
 
 	$("#pa_khu-vuc").closest(".value").hide();
+
+	$('.filter_form input[type="checkbox"]').on("change", function () {
+		let form_filter = $(this).closest("form");
+		form_filter.submit();
+	});
 })(jQuery, window);

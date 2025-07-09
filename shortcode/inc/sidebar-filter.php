@@ -49,15 +49,20 @@ add_shortcode('tgb_sidebar_filter', function () {
                             // 'parent' => 0,
                         ));
                         $prod_cat = isset($_GET['prod_cat']) ? $_GET['prod_cat'] : [];
+                        $count_cat = count($prod_cat) ?? 0;
                         foreach ($categories as $category):
-                            $checked = in_array($category->term_id, $prod_cat) ? 'checked' : '';
+                            if (($count_cat == 1 && $prod_cat[0] == $category->term_id) || $count_cat > 1 || $count_cat == 0) :
+                                $checked = in_array($category->term_id, $prod_cat) ? 'checked' : '';
                         ?>
-                            <label>
-                                <input type="checkbox" name="prod_cat[]" value="<?php echo $category->term_id; ?>" <?php echo $checked; ?>>
-                                <?php echo $category->name; ?> (<?php echo $category->count ?? 0; ?>)
-                                <span class="icon"></span>
-                            </label>
-                        <?php endforeach; ?>
+                                <label>
+                                    <input type="checkbox" class="filter_cat" name="prod_cat[]" value="<?php echo $category->term_id; ?>" <?php echo $checked; ?>>
+                                    <?php echo $category->name; ?> (<?php echo $category->count ?? 0; ?>)
+                                    <span class="icon"></span>
+                                </label>
+                        <?php
+                            endif;
+                        endforeach;
+                        ?>
                     </div>
 
                     <a href="javascript:void(0);" class="view_more">
