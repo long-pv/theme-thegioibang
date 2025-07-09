@@ -187,15 +187,16 @@ function ip_post_likes($content)
 {
     if (is_singular('product') || is_singular('post')) {
         ob_start();
+        if ($current_user):
         ?>
-        <div class="yes-likes">
-            <div class="title-like">Chào <?php echo $current_user->nickname; ?>! Bạn thấy nội dung này thế nào? </div>
-            <div class="ok-like">
-                <a href="<?php echo add_query_arg('post_action', 'like'); ?>"><i class="far fa-thumbs-up"></i> Hữu ích <?php echo ip_get_like_count('likes') ?></a>
-                <!-- <a href="<?php echo add_query_arg('post_action', 'dislike'); ?>"><i class="far fa-thumbs-down"></i> Tạm được <?php echo ip_get_like_count('dislikes') ?></a> -->
+            <div class="yes-likes">
+                <div class="title-like">Chào <?php echo $current_user->nickname; ?>! Bạn thấy nội dung này thế nào? </div>
+                <div class="ok-like">
+                    <a href="<?php echo add_query_arg('post_action', 'like'); ?>"><i class="far fa-thumbs-up"></i> Hữu ích <?php echo ip_get_like_count('likes') ?></a>
+                </div>
             </div>
-        </div>
     <?php
+        endif;
         $output = ob_get_clean();
         return $content . $output;
     } else {
@@ -301,7 +302,7 @@ function nt_add_button_dang_ky_tu_van()
     <?php if ($link_zalo_oa) : ?>
         <a target="_blank" href="<?php echo $link_zalo_oa; ?>" class="button primary nt-dang-ky-tu-van">Tư vấn sản phẩm</a>
     <?php endif; ?>
-    <a href="#tab-reviews" class="button secondary hinhanh_tt">Xem ảnh thực tế</a>
+    <div href="#tab-reviews" class="button secondary hinhanh_tt">Xem ảnh thực tế</div>
 <?php
 }
 

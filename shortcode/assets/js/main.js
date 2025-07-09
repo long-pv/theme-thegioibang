@@ -241,9 +241,6 @@
 	});
 
 	$(".tgb_page_woo_cart .shop_table .button-continue-shopping").text("Tiếp tục xem sản phẩm");
-	// $(".tgb_single_product #tab-description").addClass("editor");
-
-	$(".tgb_single_product .wpgs-image").slick("slickSetOption", "arrows", false, true);
 
 	$(document).on("click", ".tgb_sidebar_filter .btn_filter_mb", function () {
 		$("body").toggleClass("filter_open");
@@ -256,12 +253,13 @@
 	$(document)
 		.find(".hinhanh_tt")
 		.on("click", function () {
-			e.preventDefault();
 			$("html, body").animate(
 				{
-					scrollTop: $$(document).find("#tab-reviews").offset().top,
+					scrollTop: $(document).find("#tab-reviews").offset().top,
 				},
 				1000
 			);
 		});
+
+	$("#pa_khu-vuc").closest(".value").hide();
 })(jQuery, window);

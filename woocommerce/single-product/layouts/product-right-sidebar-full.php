@@ -174,92 +174,87 @@
 			// dynamic_sidebar('product-sidebar');
 			?>
 			<?php
-			global $product;
-			if (! $product):
-				$product_list = wc_get_related_products($product->get_id(), 5);
+			$product_list = wc_get_related_products(get_the_ID(), 5);
 
-				if (!empty($product_list)):
+			if (!empty($product_list)):
 			?>
-					<section class="custom-related-products">
-						<div class="heading">
-							<h2 class="title">Sản phẩm liên quan</h2>
-							<div class="tgb_view_all">
-								<a href="<?php echo get_permalink(wc_get_page_id('shop')); ?>" class="btn_link">
-									<span class="text">
-										Xem thêm
-									</span>
-									<span class="icon">
-										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<path d="M9 18L15 12L9 6" stroke="#255144" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-										</svg>
-									</span>
-								</a>
-							</div>
+				<section class="custom-related-products">
+					<div class="heading">
+						<h2 class="title">Sản phẩm liên quan</h2>
+						<div class="tgb_view_all">
+							<a href="<?php echo get_permalink(wc_get_page_id('shop')); ?>" class="btn_link">
+								<span class="text">
+									Xem thêm
+								</span>
+								<span class="icon">
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M9 18L15 12L9 6" stroke="#255144" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+								</span>
+							</a>
 						</div>
+					</div>
+					<div class="grid_row">
+						<?php
+						foreach ($product_list as $product_id) :
+							$item = wc_get_product($product_id);
+							if (! $item) continue;
 
+							$link  = get_permalink($product_id);
+							$img   = get_the_post_thumbnail_url($product_id, 'medium') ?: TGB_IMG_URL . 'img2.png';
+							$title = $item->get_name();
 
-						<div class="grid_row">
-							<?php
-							foreach ($product_list as $product_id) :
-								$item = wc_get_product($product_id);
-								if (! $item) continue;
+							// Giá (chỉ lấy số, không HTML)
+							if ($item->is_type('variable')) {
+								$regular = (float) $item->get_variation_regular_price('min', true);
+								$sale    = (float) $item->get_variation_sale_price('min', true);
+							} else {
+								$regular = (float) $item->get_regular_price();
+								$sale    = (float) $item->get_sale_price();
+							}
 
-								$link  = get_permalink($product_id);
-								$img   = get_the_post_thumbnail_url($product_id, 'medium') ?: TGB_IMG_URL . 'img2.png';
-								$title = $item->get_name();
+							$percent = ($item->is_on_sale() && $regular > 0 && $sale > 0)
+								? round(100 - ($sale * 100 / $regular))
+								: 0;
+						?>
+							<div class="col_custom">
+								<div class="product_item <?php echo $percent ? 'product_item_sale' : ''; ?>">
+									<?php if ($percent) : ?>
+										<img class="icon_sale" src="<?php echo TGB_IMG_URL . 'icon_sale.png'; ?>" alt="">
+									<?php endif; ?>
 
-								// Giá (chỉ lấy số, không HTML)
-								if ($item->is_type('variable')) {
-									$regular = (float) $item->get_variation_regular_price('min', true);
-									$sale    = (float) $item->get_variation_sale_price('min', true);
-								} else {
-									$regular = (float) $item->get_regular_price();
-									$sale    = (float) $item->get_sale_price();
-								}
+									<a href="<?php echo esc_url($link); ?>" class="img_wrap">
+										<img src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr($title); ?>">
+									</a>
 
-								$percent = ($item->is_on_sale() && $regular > 0 && $sale > 0)
-									? round(100 - ($sale * 100 / $regular))
-									: 0;
-							?>
-								<div class="col_custom">
-									<div class="product_item <?php echo $percent ? 'product_item_sale' : ''; ?>">
-										<?php if ($percent) : ?>
-											<img class="icon_sale" src="<?php echo TGB_IMG_URL . 'icon_sale.png'; ?>" alt="">
-										<?php endif; ?>
-
-										<a href="<?php echo esc_url($link); ?>" class="img_wrap">
-											<img src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr($title); ?>">
+									<div class="content">
+										<a href="<?php echo esc_url($link); ?>" class="d-block" data-mh="title">
+											<h3 class="title line-2"><?php echo esc_html($title); ?></h3>
 										</a>
 
-										<div class="content">
-											<a href="<?php echo esc_url($link); ?>" class="d-block" data-mh="title">
-												<h3 class="title line-2"><?php echo esc_html($title); ?></h3>
-											</a>
-
-											<div class="price">
-												<?php
-												if ($percent) {
-													echo wc_price($sale);
-												} else {
-													echo $regular > 0 ? wc_price($regular) : 'Liên hệ';
-												}
-												?>
-											</div>
-
-											<?php if ($percent) : ?>
-												<div class="discount">
-													<div class="cent">-<?php echo $percent; ?>%</div>
-													<div class="old_price"><?php echo wc_price($regular); ?></div>
-												</div>
-											<?php endif; ?>
+										<div class="price">
+											<?php
+											if ($percent) {
+												echo wc_price($sale);
+											} else {
+												echo $regular > 0 ? wc_price($regular) : 'Liên hệ';
+											}
+											?>
 										</div>
+
+										<?php if ($percent) : ?>
+											<div class="discount">
+												<div class="cent">-<?php echo $percent; ?>%</div>
+												<div class="old_price"><?php echo wc_price($regular); ?></div>
+											</div>
+										<?php endif; ?>
 									</div>
 								</div>
-							<?php endforeach; ?>
-						</div><!-- /.product_slider -->
-					</section><!-- /.custom-related-products -->
+							</div>
+						<?php endforeach; ?>
+					</div><!-- /.product_slider -->
+				</section><!-- /.custom-related-products -->
 			<?php
-				endif;
 			endif;
 			?>
 		</div>

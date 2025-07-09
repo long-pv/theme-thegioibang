@@ -59,7 +59,7 @@ add_action('wp_enqueue_scripts', function () {
 
     // ajax admin
     wp_localize_script('tgb-shortcode-script', 'custom_ajax', array('ajax_url' => admin_url('admin-ajax.php')));
-}, 99);
+}, 999);
 
 // Đăng ký Theme Settings Panel với các menu con
 if (function_exists('acf_add_options_page')) {

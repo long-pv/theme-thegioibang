@@ -1,4 +1,4 @@
-.tgb_single_product .product {
+.tgb_single_product {
     .col-info .product-info span.woocommerce-Price-currencySymbol {
         font-size: 16px !important;
         margin-top: 0px !important;
@@ -399,7 +399,9 @@
     }
 
     .woocommerce-variation-price,
-    .woocommerce-variation-price * {
+    .woocommerce-variation-price *,
+    .product-info .price,
+    .product-info .price * {
         // display: none !important;
         color: #CE3727;
         font-family: 'Inter';
@@ -420,6 +422,7 @@
         gap: 12px;
         color: #EAEAEA;
         font-size: 20px;
+        margin-bottom: 16px;
 
         .link-product {
             img {
@@ -821,9 +824,12 @@
             flex-basis: 50%;
         }
     }
-}
 
-.tgb_single_product {
+    .product-type-simple form.cart {
+        width: 100%;
+        display: block;
+    }
+
     &.single-product .row.row-collapse.row_bg_top {
         border: none !important;
         margin: 15px 0px !important;
