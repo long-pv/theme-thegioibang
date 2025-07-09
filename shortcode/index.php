@@ -134,18 +134,31 @@ function tgb_search_suggestion()
     $keyword = isset($_POST['keyword']) ? $_POST['keyword'] : '';
     if (strlen($keyword) < 2) wp_die();
 
-    // Query lấy ID các sản phẩm có title chứa từ khoá
-    $like = '%' . $wpdb->esc_like($keyword) . '%';
-    $product_ids = $wpdb->get_col(
-        $wpdb->prepare(
-            "SELECT ID FROM $wpdb->posts 
-             WHERE post_type='product' 
-               AND post_status='publish'
-               AND post_title LIKE %s 
-             LIMIT 10",
-            $like
-        )
-    );
+    // Tách từ khoá thành các từ riêng
+    $keywords = preg_split('/\s+/', $keyword);
+    $keywords = array_filter($keywords); // loại bỏ khoảng trắng thừa
+
+    // Tạo mảng điều kiện LIKE
+    $like_clauses = [];
+    foreach ($keywords as $word) {
+        $like = '%' . $wpdb->esc_like($word) . '%';
+        $like_clauses[] = $wpdb->prepare("post_title LIKE %s", $like);
+    }
+
+    // Gộp điều kiện bằng AND
+    $where_like = implode(' AND ', $like_clauses);
+
+    // Tạo câu truy vấn hoàn chỉnh
+    $sql = "
+        SELECT ID FROM $wpdb->posts
+        WHERE post_type = 'product'
+        AND post_status = 'publish'
+        AND $where_like
+        LIMIT 15
+    ";
+
+    // Thực thi truy vấn
+    $product_ids = $wpdb->get_col($sql);
 
     // 2. Danh mục sản phẩm WooCommerce (product_cat) - chỉ taxonomy sản phẩm
     $all_cats = get_terms([
@@ -168,11 +181,17 @@ function tgb_search_suggestion()
     if (!empty($product_ids)) {
         foreach ($product_ids as $product_id) {
             $title = get_the_title($product_id);
+
+            $pattern = '/' . implode('|', array_map(function ($word) {
+                return preg_quote($word, '/');
+            }, $keywords)) . '/iu';
+
             $highlighted = preg_replace(
-                '/' . preg_quote($keyword, '/') . '/iu',
+                $pattern,
                 '<span class="highlight">$0</span>',
                 $title
             );
+
             $url = add_query_arg('search', $title, $shop_url);
 ?>
             <a href="<?php echo $url; ?>" class="item item-product">
