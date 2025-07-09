@@ -301,25 +301,8 @@ function nt_add_button_dang_ky_tu_van()
     <?php if ($link_zalo_oa) : ?>
         <a target="_blank" href="<?php echo $link_zalo_oa; ?>" class="button primary nt-dang-ky-tu-van">Tư vấn sản phẩm</a>
     <?php endif; ?>
-    <span class="button secondary hinhanh_tt">Xem ảnh thực tế</span>
-
-    <script>
-        document.querySelectorAll(".hinhanh_tt").forEach(function(el) {
-            el.addEventListener("click", function() {
-                console.log("xxxx");
-                var reviews = document.getElementById("reviews");
-
-                if (reviews && header) {
-                    window.scrollTo({
-                        top: reviews.offsetTop,
-                        behavior: "smooth"
-                    });
-                }
-            });
-        });
-    </script>
+    <a href="#tab-reviews" class="button secondary hinhanh_tt">Xem ảnh thực tế</a>
 <?php
-
 }
 
 require get_theme_file_path('shortcode/index.php');

@@ -252,4 +252,16 @@
 	$(document).on("click", ".tgb_sidebar_filter .sidebar-filter .icon_mb", function () {
 		$("body").toggleClass("filter_open");
 	});
+
+	$(document)
+		.find(".hinhanh_tt")
+		.on("click", function () {
+			e.preventDefault();
+			$("html, body").animate(
+				{
+					scrollTop: $$(document).find("#tab-reviews").offset().top,
+				},
+				1000
+			);
+		});
 })(jQuery, window);
