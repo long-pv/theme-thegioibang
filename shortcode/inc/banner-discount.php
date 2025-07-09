@@ -16,7 +16,9 @@ add_shortcode('tgb_banner_discount', function () {
                     <div class="grid_col-lg-6">
                         <div class="item">
                             <div class="img_wrap">
+                                <?php echo $item['url'] ? '<a target="_blank" href="' . $item['url'] . '">' : ''; ?>
                                 <img src="<?php echo $item['image'] ?? ''; ?>" alt="">
+                                <?php echo $item['url'] ? '</a>' : ''; ?>
                             </div>
                         </div>
                     </div>

@@ -136,8 +136,6 @@
 											</div>
 										<?php
 										endforeach;
-									else:
-										echo '<div>Không có sản phẩm upsell.</div>';
 										?>
 									</div>
 								</div>

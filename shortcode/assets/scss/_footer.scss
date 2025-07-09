@@ -3,6 +3,10 @@
     background-color: #fff;
     border-radius: 12px;
 
+    @media screen and (max-width: 849px) {
+        margin-bottom: 70px;
+    }
+
     .footer_menu_main {
         margin-bottom: 32px;
 

@@ -45,6 +45,27 @@
                     "preview_size": "medium"
                 },
                 {
+                    "key": "field_686dc8df1a1a7",
+                    "label": "Image 1 link",
+                    "name": "image_1_link",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
                     "key": "field_685facdfa3b28",
                     "label": "Image 2",
                     "name": "image_2",
@@ -71,6 +92,27 @@
                     "preview_size": "medium"
                 },
                 {
+                    "key": "field_686dc8f41a1a8",
+                    "label": "Image 2 link",
+                    "name": "image_2_link",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
                     "key": "field_685face3a3b29",
                     "label": "Image 3",
                     "name": "image_3",
@@ -95,29 +137,29 @@
                     "mime_types": "",
                     "allow_in_bindings": 0,
                     "preview_size": "medium"
+                },
+                {
+                    "key": "field_686dc9091a1a9",
+                    "label": "Image 3 link",
+                    "name": "image_3_link",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
                 }
             ]
-        },
-        {
-            "key": "field_6868e1c010036",
-            "label": "Livestream view all",
-            "name": "livestream_view_all",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
         },
         {
             "key": "field_685faea595630",
@@ -283,7 +325,7 @@
             "label": "List Category",
             "name": "list_category",
             "aria-label": "",
-            "type": "repeater",
+            "type": "taxonomy",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -292,69 +334,17 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "row",
-            "pagination": 0,
-            "min": 0,
-            "max": 0,
-            "collapsed": "field_686cfb5fccebe",
-            "button_label": "Add Row",
-            "rows_per_page": 20,
-            "sub_fields": [
-                {
-                    "key": "field_686cfb5fccebe",
-                    "label": "Icon",
-                    "name": "icon",
-                    "aria-label": "",
-                    "type": "image",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "url",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": "",
-                    "allow_in_bindings": 0,
-                    "preview_size": "medium",
-                    "parent_repeater": "field_685ff3a4053e1"
-                },
-                {
-                    "key": "field_686cfb68ccebf",
-                    "label": "Category",
-                    "name": "category",
-                    "aria-label": "",
-                    "type": "taxonomy",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "taxonomy": "product_cat",
-                    "add_term": 0,
-                    "save_terms": 0,
-                    "load_terms": 0,
-                    "return_format": "id",
-                    "field_type": "select",
-                    "allow_null": 0,
-                    "allow_in_bindings": 1,
-                    "bidirectional": 0,
-                    "multiple": 0,
-                    "bidirectional_target": [],
-                    "parent_repeater": "field_685ff3a4053e1"
-                }
-            ]
+            "taxonomy": "product_cat",
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "field_type": "multi_select",
+            "allow_null": 1,
+            "allow_in_bindings": 0,
+            "bidirectional": 0,
+            "multiple": 0,
+            "bidirectional_target": []
         },
         {
             "key": "field_685ff8759668e",
@@ -719,6 +709,28 @@
                     "allow_in_bindings": 0,
                     "preview_size": "medium",
                     "parent_repeater": "field_6861eac489173"
+                },
+                {
+                    "key": "field_686dc941317f3",
+                    "label": "URL",
+                    "name": "url",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_6861eac489173"
                 }
             ]
         }
@@ -741,5 +753,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1751973322
+    "modified": 1752025425
 }
