@@ -7,12 +7,14 @@ add_shortcode('tgb_section_category', function ($atts, $content = null) {
         'category_id' => '',
         'title'       => '', // Tiêu đề tuỳ chỉnh
         'banner'       => '',
+        'url'       => '',
     ], $atts);
 
     // Lấy category ID
     $cat_id = intval($atts['category_id']);
     $title = !empty($atts['title']) ? $atts['title'] : '';
     $banner = !empty($atts['banner']) ? $atts['banner'] : '';
+    $banner_url = !empty($atts['url']) ? $atts['url'] : '';
     if (!$cat_id) return;
 
     // Lấy tên category
@@ -73,7 +75,9 @@ add_shortcode('tgb_section_category', function ($atts, $content = null) {
                 <?php if ($banner): ?>
                     <div class="col_custom">
                         <div class="banner">
+                            <?php echo $banner_url ? '<a target="_blank" href="' . $banner_url . '">' : ''; ?>
                             <img src="<?php echo $banner; ?>" alt="banner <?php echo $title; ?>">
+                            <?php echo $banner_url ? '</a>' : ''; ?>
                         </div>
                     </div>
                 <?php endif; ?>
