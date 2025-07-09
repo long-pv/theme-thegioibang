@@ -2,12 +2,13 @@
 get_header();
 
 $paged = !empty($_GET['paging']) ? intval($_GET['paging']) : 1;
+$show_item = isset($_GET['show_item']) ? $_GET['show_item'] : 16;
 
 // Thực hiện WP_Query
 $args = array(
 	'post_type' => 'product',
 	'post_status' => 'publish',
-	'posts_per_page' => 16,
+	'posts_per_page' => intval($show_item),
 	'paged' => $paged,
 );
 
@@ -22,11 +23,10 @@ $price_from = !empty($_GET['price_from']) ? intval($_GET['price_from']) : '';
 
 $check_archive = false;
 $term_cat_id = 0;
-$allowed_params = ['prod_cat', 'paging', 'price_to', 'price_from'];
 if (!empty($_GET['prod_cat'])) {
 	$prod_cat = array_map('intval', $_GET['prod_cat']);
 
-	if (count($prod_cat) === 1 && empty(array_diff(array_keys($_GET), $allowed_params))) {
+	if (count($prod_cat) === 1) {
 		$term_cat_id = $prod_cat[0];
 		$term    = get_term_by('id', $term_cat_id, 'product_cat');
 		if ($term && ! is_wp_error($term)) {
@@ -296,21 +296,40 @@ $query = new WP_Query($args);
 					</div>
 				</div>
 
-				<?php
-				echo '<div class="pagination">';
-				echo paginate_links(
-					array(
-						'total' => $query->max_num_pages,
-						'current' => max(1, $paged),
-						'format' => '?paging=%#%',
-						'end_size' => 2,
-						'mid_size' => 1,
-						'prev_text' => __('', 'basetheme'),
-						'next_text' => __('', 'basetheme'),
-					)
-				);
-				echo '</div>';
-				?>
+
+
+				<div class="archive_bottom">
+					<?php
+					$show_item = isset($_GET['show_item']) ? (int) $_GET['show_item'] : 16;
+					$options = [10, 16, 24, 28];
+					?>
+					<div class="products_show">
+						<div class="text">Sản phẩm hiển thị</div>
+						<select id="show_item" name="show_item">
+							<?php foreach ($options as $opt): ?>
+								<option value="<?php echo $opt; ?>" <?php selected($show_item, $opt); ?>>
+									<?php echo $opt; ?>/ Trang
+								</option>
+							<?php endforeach; ?>
+						</select>
+					</div>
+
+					<?php
+					echo '<div class="pagination">';
+					echo paginate_links(
+						array(
+							'total' => $query->max_num_pages,
+							'current' => max(1, $paged),
+							'format' => '?paging=%#%',
+							'end_size' => 2,
+							'mid_size' => 1,
+							'prev_text' => __('', 'basetheme'),
+							'next_text' => __('', 'basetheme'),
+						)
+					);
+					echo '</div>';
+					?>
+				</div>
 			<?php else: ?>
 				<div style="    text-align: center;font-weight: 700;">Không có kết quả nào.</div>
 			<?php endif; ?>

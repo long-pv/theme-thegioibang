@@ -150,3 +150,42 @@
         display: none !important;
     }
 }
+
+.archive_bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+
+    .products_show {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .text {
+            font-family: 'Inter';
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 1.4;
+            color: #2E2E2E;
+            flex-shrink: 0;
+        }
+
+        select {
+            margin: 0px;
+            height: 36px;
+            padding: 8px 28px 8px 12px;
+            border: 1px solid #DCDCDC !important;
+            border-radius: 8px !important;
+            outline: none !important;
+            box-shadow: none !important;
+            font-family: 'Inter';
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 1.4;
+            color: #2E2E2E;
+        }
+    }
+}

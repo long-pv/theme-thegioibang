@@ -37,6 +37,10 @@ add_shortcode('tgb_sidebar_filter', function () {
 
             <!-- Form lọc sản phẩm -->
             <form method="GET" class="filter_form">
+                <?php
+                $show_item = isset($_GET['show_item']) ? $_GET['show_item'] : 16;
+                ?>
+                <input type="hidden" name="show_item" value="<?php echo $show_item; ?>">
                 <!-- Lựa chọn danh mục (Radio Button) -->
                 <div class="filter_item">
                     <div class="title">Theo danh mục</div>

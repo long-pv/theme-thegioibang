@@ -267,4 +267,10 @@
 		let form_filter = $(this).closest("form");
 		form_filter.submit();
 	});
+
+	$("#show_item").on("change", function () {
+		let val_show_item = $(this).val();
+		$('.filter_form input[name="show_item"]').val(val_show_item);
+		$(".filter_form").submit();
+	});
 })(jQuery, window);
