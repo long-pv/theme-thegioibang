@@ -78,6 +78,25 @@ if ($price_from && $price_to) {
 	);
 }
 
+// sort: sale_only
+if (!empty($_GET['sort']) && $_GET['sort'] == 'sale_only') {
+	$sale_ids = wc_get_product_ids_on_sale();
+	$args['post__in'] = !empty($sale_ids) ? $sale_ids : array(0);
+}
+
+// sort: best_seller
+if (!empty($_GET['sort']) && $_GET['sort'] == 'best_seller') {
+	$args['orderby'] = 'meta_value_num';
+	$args['meta_key'] = 'total_sales';
+	$args['order'] = 'DESC';
+}
+
+// sort: newest
+if (!empty($_GET['sort']) && $_GET['sort'] == 'newest') {
+	$args['orderby'] = 'date';
+	$args['order']   = 'DESC';
+}
+
 if (!empty($args['tax_query'])) {
 	$args['tax_query']['relation'] = 'AND';
 }
