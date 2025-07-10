@@ -4454,7 +4454,7 @@ li.variable-item.button-variable-item.selected {
   position: absolute;
   background-color: transparent;
   border-radius: 100%;
-  border: 2px solid #03b955;
+  border: 2px solid #255144;
   -webkit-animation: phonering-alo-circle-anim 1.2s infinite ease-in-out;
   animation: phonering-alo-circle-anim 1.2s infinite ease-in-out;
   transition: all .5s;
@@ -4469,7 +4469,7 @@ li.variable-item.button-variable-item.selected {
     top: 26px;
     left: 26px;
     position: absolute;
-    background-color: #03b955;
+    background-color: #255144;
     border-radius: 100%;
     border: 2px solid transparent;
     -webkit-animation: phonering-alo-circle-fill-anim 2.3s infinite ease-in-out;
@@ -4479,7 +4479,7 @@ li.variable-item.button-variable-item.selected {
     -ms-transform-origin: 50% 50%;
 }
 .hotline-phone-ring-img-circle {
-    background-color: #03b955;
+    background-color: #255144;
     width: 40px;
     height: 40px;
     border: 1px solid white!important;
