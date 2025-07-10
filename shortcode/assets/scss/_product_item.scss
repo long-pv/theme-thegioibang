@@ -45,7 +45,8 @@
         }
 
         .price,
-        .price * {
+        .price *,
+        .price .woocommerce-Price-currencySymbol {
             font-family: 'Inter' !important;
             font-size: 16px !important;
             font-weight: 600 !important;

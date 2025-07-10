@@ -108,7 +108,6 @@
 										?>
 											<div>
 												<div class="product_item">
-													<img class="icon_sale" src="<?php echo TGB_IMG_URL . 'icon_sale.png'; ?>" alt="">
 													<a href="<?php echo $product_link; ?>" class="img_wrap">
 														<img src="<?php echo $product_img; ?>" alt="<?php echo esc_attr($product_title); ?>">
 													</a>

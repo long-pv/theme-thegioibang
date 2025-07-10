@@ -30,14 +30,17 @@ add_shortcode('tgb_search_ui', function () {
 
                 <div class="list">
                     <?php
+                    $shop_url = get_permalink(wc_get_page_id('shop'));
                     $product_suggestions = get_field('product_suggestions', 'option') ?? [];
                     if ($product_suggestions) {
                         foreach ($product_suggestions as $product_id) {
+                            $title = get_the_title($product_id);
+                            $url = add_query_arg('search', $title, $shop_url);
                     ?>
-                            <a href="<?php echo get_permalink($product_id); ?>" class="item item-product">
+                            <a href="<?php echo $url; ?>" class="item item-product">
                                 <div class="icon"></div>
                                 <div class="text">
-                                    <?php echo get_the_title($product_id); ?>
+                                    <?php echo $title; ?>
                                 </div>
                             </a>
                     <?php

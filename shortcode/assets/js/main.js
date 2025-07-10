@@ -212,11 +212,18 @@
 	});
 
 	var product_suggestions_html = $(".tgb_search_wrapper .result .list").html();
+	var product_result_html = "";
 
 	$(document).on("focus", ".tgb_search_input", function () {
 		let keyword = $(this).val().trim();
 		if (keyword.length < 3) {
 			$(".tgb_search_wrapper .result .list").html(product_suggestions_html);
+		} else {
+			if (product_result_html) {
+				$(".tgb_search_wrapper .result .list").html(product_result_html);
+			} else {
+				$(this).val($(this).val()).trigger("input");
+			}
 		}
 		$(".tgb_search_wrapper .result").show();
 	});
@@ -244,6 +251,7 @@
 				},
 				success: function (response) {
 					$(".tgb_search_wrapper .result .list").html(response);
+					product_result_html = response;
 				},
 			});
 		}, 300);
