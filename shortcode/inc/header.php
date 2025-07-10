@@ -29,6 +29,21 @@ add_shortcode('tgb_search_ui', function () {
                 </div>
 
                 <div class="list">
+                    <?php
+                    $product_suggestions = get_field('product_suggestions', 'option') ?? [];
+                    if ($product_suggestions) {
+                        foreach ($product_suggestions as $product_id) {
+                    ?>
+                            <a href="<?php echo get_permalink($product_id); ?>" class="item item-product">
+                                <div class="icon"></div>
+                                <div class="text">
+                                    <?php echo get_the_title($product_id); ?>
+                                </div>
+                            </a>
+                    <?php
+                        }
+                    }
+                    ?>
                 </div>
             </div>
         </form>

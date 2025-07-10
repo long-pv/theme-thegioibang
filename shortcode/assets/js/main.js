@@ -211,13 +211,22 @@
 		}
 	});
 
-	$(document).on("input focus", ".tgb_search_input", function () {
+	var product_suggestions_html = $(".tgb_search_wrapper .result .list").html();
+
+	$(document).on("focus", ".tgb_search_input", function () {
+		let keyword = $(this).val().trim();
+		if (keyword.length < 3) {
+			$(".tgb_search_wrapper .result .list").html(product_suggestions_html);
+		}
+		$(".tgb_search_wrapper .result").show();
+	});
+
+	$(document).on("input", ".tgb_search_input", function () {
 		let keyword = $(this).val().trim();
 
 		debounceTimer = setTimeout(function () {
 			if (keyword.length < 3) {
-				$(".result .list").html("");
-				$(".tgb_search_wrapper .result").hide();
+				$(".tgb_search_wrapper .result .list").html(product_suggestions_html);
 				return;
 			}
 
