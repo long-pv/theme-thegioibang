@@ -507,6 +507,68 @@ div#masthead {
     border-top: 1px solid #C0C0C0;
     display: none;
 
+    .header_mb_list_cat {
+        background-color: #fff;
+        border-bottom: 1px solid #C0C0C0;
+        display: none;
+
+        .heading {
+            padding: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .text {
+                font-family: 'Inter';
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 1.4;
+                color: #255144;
+            }
+
+            .icon {
+                display: inline-flex;
+            }
+        }
+
+        .content {
+            padding: 16px;
+            background-color: #fff;
+            max-height: 60vh;
+            overflow-y: auto;
+
+            .grid_row {
+                --bs-gutter-x: 0px;
+                row-gap: 0px;
+            }
+
+            .item {
+                padding: 8px;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+
+                img {
+                    max-width: 100%;
+                    width: 100%;
+                    height: auto;
+                    object-fit: cover;
+                    aspect-ratio: 110 / 95;
+                }
+
+                .title {
+                    font-family: 'Inter';
+                    font-size: 12px;
+                    font-weight: 600;
+                    line-height: 1.4;
+                    color: #1D3F35;
+                }
+            }
+        }
+    }
 
     .grid_row {
         --bs-gutter-x: 16px;
@@ -538,6 +600,7 @@ div#masthead {
                 font-weight: 600;
                 line-height: 1.4;
                 color: #1D3F35;
+                text-align: center;
             }
         }
     }

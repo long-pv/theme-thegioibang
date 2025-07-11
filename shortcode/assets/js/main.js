@@ -1,5 +1,13 @@
 (function ($, window) {
 	const maxShown = 5; // số mục hiển thị ban đầu
+
+	$("#mb_header_item_cat").on("click", function () {
+		$(".header_mb_list_cat").toggle();
+	});
+	$("#header_mb_list_cat_close").on("click", function () {
+		$(".header_mb_list_cat").hide();
+	});
+
 	// ...
 	$(".livestream_slider").slick({
 		slidesToShow: 3.3,

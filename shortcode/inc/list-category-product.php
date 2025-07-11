@@ -36,7 +36,7 @@ add_shortcode('tgb_list_cat', function () {
                         <div class="col_custom">
                             <a href="<?php echo $cat_link; ?>" class="item">
                                 <img src="<?php echo $image_url; ?>" alt="<?php echo $cat_name; ?>">
-                                <h3 class="title line-1">
+                                <h3 class="title">
                                     <?php echo $cat_name; ?>
                                 </h3>
                             </a>
