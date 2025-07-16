@@ -5,6 +5,17 @@
         position: unset;
     }
 
+    #tab-description,
+    #tab-reviews {
+        padding: 16px 0px 0px !important;
+    }
+
+    #tab-description {
+        font-size: 14px;
+        color: #2E2E2E;
+        line-height: 1.4;
+    }
+
     .wpgs-wrapper {
         overflow: auto !important;
     }
@@ -684,6 +695,10 @@
         border-radius: 12px !important;
         background-color: #fff !important;
 
+        @media screen and (max-width: 849px) {
+            padding: 16px !important;
+        }
+
         .section-title {
             padding: 0px !important;
             margin-bottom: 8px !important;
@@ -837,6 +852,10 @@
             .col_custom {
                 flex: 0 0 auto;
                 width: 20%;
+
+                @media screen and (max-width: 849px) {
+                    width: 50%;
+                }
             }
         }
     }

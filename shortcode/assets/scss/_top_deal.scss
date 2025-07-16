@@ -8,6 +8,11 @@
     margin-top: 16px;
     margin-bottom: 16px;
 
+    @media screen and (max-width: 849px) {
+        padding: 16px;
+        background-image: url('../images/bg_top_deal_mb.png');
+    }
+
     .heading {
         @media screen and (max-width: 849px) {
             margin-bottom: 32px;

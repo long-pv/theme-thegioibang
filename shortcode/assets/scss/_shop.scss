@@ -113,6 +113,10 @@
         overflow: hidden;
         margin-bottom: 16px;
 
+        @media screen and (max-width: 849px) {
+            display: none;
+        }
+
         img {
             position: absolute;
             left: 0px;
@@ -135,6 +139,10 @@
 .archive_product_container {
     margin-top: 24px;
     margin-bottom: 24px;
+
+    @media screen and (max-width: 849px) {
+        margin-top: 0px;
+    }
 }
 
 .tgb_search_form .result {
@@ -190,8 +198,10 @@
     }
 }
 
-#tab-description {
-    font-size: 14px;
-    color: #2E2E2E;
-    line-height: 1.4;
+.post-type-archive-product {
+    .shop-page-title.category-page-title {
+        @media screen and (max-width: 849px) {
+            display: none !important;
+        }
+    }
 }

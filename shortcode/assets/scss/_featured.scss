@@ -17,6 +17,10 @@
         overflow: hidden;
         height: 100%;
 
+        @media screen and (max-width: 849px) {
+            padding: 16px;
+        }
+
         &.featured_inner_even {
             background-image: url('../images/bg_feedtured_2.png');
         }
@@ -33,6 +37,18 @@
 
         .heading {
             margin-bottom: 32px;
+            position: relative;
+
+            @media screen and (max-width: 849px) {
+                padding-right: 30px;
+
+                .tgb_view_all {
+                    position: absolute;
+                    right: 0px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
 
             .title {
                 font-family: 'Inter';
