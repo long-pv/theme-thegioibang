@@ -16,7 +16,7 @@ global $flatsome_opt;
         <div class="hotline-phone-ring-img-circle">
             <a href="https://zalo.me/<?= the_field('cta_zalo_oa', 'option') ?>" target="_blank">
                 <!-- <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/icon_Zalo.png" alt=""> -->
-                <img src="<?php echo TGB_IMG_URL . 'zalo.png' ?>" alt="">
+                <img src="<?php echo TGB_IMG_URL . 'zalo1.png' ?>" alt="">
             </a>
         </div>
     </div>
@@ -29,7 +29,7 @@ global $flatsome_opt;
             <div class="call_pop">
                 <a id="callnowbutton" href="#popup_call">
                     <!-- <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/call.png" alt=""> -->
-                    <img src="<?php echo TGB_IMG_URL . 'phone.png' ?>" alt="">
+                    <img src="<?php echo TGB_IMG_URL . 'phone1.png' ?>" alt="">
                 </a>
             </div>
         </div>

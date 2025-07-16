@@ -606,9 +606,16 @@ div#masthead {
     }
 }
 
+.stuck #logo img {
+    @media screen and (min-width: 850px) {
+        max-height: 90px !important;
+        width: 100%;
+    }
+}
+
 @media screen and (max-width: 849px) {
     .tgb_header_mb {
-        display: block !important;
+        display: block;
     }
 
     #logo {

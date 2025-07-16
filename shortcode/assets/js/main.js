@@ -1,5 +1,30 @@
 (function ($, window) {
 	const maxShown = 5; // số mục hiển thị ban đầu
+	let lastScrollTop = 0;
+
+	const $menu = $(".tgb_header_mb");
+
+	// Đảm bảo thanh cố định ở dưới cùng
+	$menu.css({
+		position: "fixed",
+		bottom: "0",
+		width: "100%",
+		transition: "transform 0.3s ease",
+	});
+
+	$(window).on("scroll", function () {
+		let st = $(this).scrollTop();
+
+		if (st > lastScrollTop) {
+			// Scroll xuống => ẩn: trượt xuống ngoài màn hình
+			$menu.css("transform", "translateY(100%)");
+		} else {
+			// Scroll lên => hiện: trượt lên lại vị trí cũ
+			$menu.css("transform", "translateY(0)");
+		}
+
+		lastScrollTop = st;
+	});
 
 	$("#mb_header_item_cat").on("click", function () {
 		$(".header_mb_list_cat").toggle();
@@ -117,6 +142,27 @@
 		dots: true,
 		autoplay: true, // tự chạy
 		autoplaySpeed: 5000, // 5 giây
+	});
+
+	$(".tgb_banner_discount_slider").slick({
+		slidesToShow: 2,
+		slidesToScroll: 1,
+		infinite: true,
+		arrows: false,
+		dots: true,
+		autoplay: true,
+		autoplaySpeed: 5000,
+
+		responsive: [
+			{
+				breakpoint: 850,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					arrows: false,
+				},
+			},
+		],
 	});
 
 	$(".filter_item").each(function () {

@@ -7,6 +7,50 @@
         row-gap: 12px;
     }
 
+    .tgb_banner_discount_slider {
+
+        &.slick-slider {
+            @media screen and (min-width: 850px) {
+                margin: 0px -6px;
+
+                .slick-slide {
+                    padding: 0px 6px;
+                }
+            }
+        }
+
+        .slick-dots {
+            bottom: 6px !important;
+
+            li {
+                width: 16px;
+                display: inline-flex;
+                align-items: flex-end;
+                margin: 0px 2px;
+
+                button {
+                    background-color: #fff;
+                    width: 100%;
+                    height: 2px;
+                    padding: 0px;
+                    margin: 0px;
+                    border-radius: 2px;
+
+                    &::before {
+                        display: none;
+                    }
+                }
+
+                &.slick-active {
+                    button {
+                        background-color: #255144;
+                        height: 3px;
+                    }
+                }
+            }
+        }
+    }
+
     .img_wrap {
         padding-bottom: 28%;
         height: 0px;

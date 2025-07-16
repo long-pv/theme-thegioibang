@@ -9,12 +9,12 @@ add_shortcode('tgb_banner_discount', function () {
     if ($banner_discount) :
 ?>
         <div class="tgb_banner_discount">
-            <div class="grid_row grid_row_1">
+            <div class="tgb_banner_discount_slider">
                 <?php
                 foreach ($banner_discount as $item) :
                 ?>
-                    <div class="grid_col-lg-6">
-                        <div class="item">
+                    <div>
+                        <div class="tgb_banner_discount_item">
                             <div class="img_wrap">
                                 <?php echo $item['url'] ? '<a target="_blank" href="' . $item['url'] . '">' : ''; ?>
                                 <img src="<?php echo $item['image'] ?? ''; ?>" alt="">
