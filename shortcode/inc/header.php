@@ -116,71 +116,54 @@ add_shortcode('tgb_header_bottom', function () {
                                 foreach ($menu as $item):
                                     $title = $item['link']['title'] ?? '';
                                     $url = $item['link']['url'] ?? '';
-                                    $show_submenu = $item['show_submenu'] ?? '';
+                                    $products = $item['products'] ?? '';
                                 ?>
                                     <li>
                                         <a href="<?php echo $url; ?>">
                                             <?php echo $title; ?>
                                         </a>
-
                                         <?php
-                                        if ($show_submenu):
-                                            $sub_menu = $item['sub_menu'] ?? [];
+                                        if ($products):
+                                            if ($products && is_array($products)):
+                                                $args = array(
+                                                    'post_type' => 'product',
+                                                    'post__in' => $products,
+                                                    'orderby' => 'post__in',
+                                                    'posts_per_page' => -1
+                                                );
+                                                $query = new WP_Query($args);
                                         ?>
-                                            <ul class="sub_menu">
-                                                <?php
-                                                foreach ($sub_menu as $item_2) :
-                                                    $title = $item_2['link']['title'] ?? '';
-                                                    $url = $item_2['link']['url'] ?? '';
-                                                    $products = $item_2['products'] ?? null;
-                                                ?>
-                                                    <li>
-                                                        <a href="<?php echo $url; ?>">
-                                                            <?php echo $title; ?>
-                                                        </a>
-
+                                                <div class="list_product">
+                                                    <div class="title">
+                                                        <?php echo $title; ?>
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M9 18L15 12L9 6" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                                        </svg>
+                                                    </div>
+                                                    <div class="grid_row">
                                                         <?php
-                                                        if ($products && is_array($products)):
-                                                            $args = array(
-                                                                'post_type' => 'product',
-                                                                'post__in' => $products,
-                                                                'orderby' => 'post__in',
-                                                                'posts_per_page' => -1
-                                                            );
-                                                            $query = new WP_Query($args);
+                                                        while ($query->have_posts()): $query->the_post();
+                                                            global $product;
+                                                            $image_url = get_the_post_thumbnail_url(get_the_ID(), 'medium');
                                                         ?>
-                                                            <div class="list_product">
-                                                                <div class="title">
-                                                                    <?php echo $title; ?>
-                                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                        <path d="M9 18L15 12L9 6" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                                                    </svg>
-                                                                </div>
-                                                                <div class="grid_row">
-                                                                    <?php
-                                                                    while ($query->have_posts()): $query->the_post();
-                                                                        global $product;
-                                                                        $image_url = get_the_post_thumbnail_url(get_the_ID(), 'medium');
-                                                                    ?>
-                                                                        <div class="col_custom">
-                                                                            <a href="#" class="item">
-                                                                                <img src="<?php echo $image_url; ?>" alt="<?php the_title(); ?>">
-                                                                                <div class="text">
-                                                                                    <?php the_title(); ?>
-                                                                                </div>
-                                                                            </a>
-                                                                        </div>
-                                                                    <?php
-                                                                    endwhile;
-                                                                    wp_reset_postdata();
-                                                                    ?>
-                                                                </div>
+                                                            <div class="col_custom">
+                                                                <a href="#" class="item">
+                                                                    <img src="<?php echo $image_url; ?>" alt="<?php the_title(); ?>">
+                                                                    <div class="text">
+                                                                        <?php the_title(); ?>
+                                                                    </div>
+                                                                </a>
                                                             </div>
-                                                        <?php endif; ?>
-                                                    </li>
-                                                <?php endforeach; ?>
-                                            </ul>
-                                        <?php endif; ?>
+                                                        <?php
+                                                        endwhile;
+                                                        wp_reset_postdata();
+                                                        ?>
+                                                    </div>
+                                                </div>
+                                        <?php
+                                            endif;
+                                        endif;
+                                        ?>
                                     </li>
                                 <?php endforeach; ?>
                             </ul>

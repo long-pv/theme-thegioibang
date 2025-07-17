@@ -10,6 +10,10 @@
     background-repeat: no-repeat;
     background-image: none;
 
+    .list_image_image_hover {
+        opacity: 0;
+    }
+
     &:hover {
         border: 1px solid #255144;
         background-color: #F4F4F4;
@@ -18,6 +22,14 @@
         .content .title {
             transform: all 0.3s;
             color: #CE3727 !important;
+        }
+
+        .list_image_image_hover {
+            opacity: 1;
+        }
+
+        .list_image_image_main {
+            opacity: 0;
         }
     }
 
@@ -34,6 +46,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: opacity 0.5s ease-in-out;
         }
     }
 

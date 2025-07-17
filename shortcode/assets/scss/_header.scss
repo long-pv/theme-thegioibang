@@ -365,6 +365,7 @@ div#masthead {
                     gap: 8px;
                     padding: 0px;
                     background-color: #fff;
+                    height: auto !important;
 
                     img {
                         width: 85px;
@@ -402,22 +403,8 @@ div#masthead {
                         background-color: #F4F4F4;
                     }
 
-                    &>.sub_menu {
+                    &>.list_product {
                         display: block;
-                    }
-                }
-
-                &>ul {
-                    &>li {
-                        &:hover {
-                            &>a {
-                                background-color: #F4F4F4;
-                            }
-
-                            &>.list_product {
-                                display: block;
-                            }
-                        }
                     }
                 }
             }

@@ -41,7 +41,7 @@
                     "rows_per_page": 20,
                     "sub_fields": [
                         {
-                            "key": "field_685968fd9c16a",
+                            "key": "field_685969789c16d",
                             "label": "Link",
                             "name": "link",
                             "aria-label": "",
@@ -59,11 +59,11 @@
                             "parent_repeater": "field_685968f49c169"
                         },
                         {
-                            "key": "field_685969069c16b",
-                            "label": "Show sub menu",
-                            "name": "show_submenu",
+                            "key": "field_6859699f9c16f",
+                            "label": "Products",
+                            "name": "products",
                             "aria-label": "",
-                            "type": "true_false",
+                            "type": "relationship",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -72,93 +72,25 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "message": "",
-                            "default_value": 0,
-                            "allow_in_bindings": 0,
-                            "ui_on_text": "",
-                            "ui_off_text": "",
-                            "ui": 1,
-                            "parent_repeater": "field_685968f49c169"
-                        },
-                        {
-                            "key": "field_685969689c16c",
-                            "label": "Sub menu",
-                            "name": "sub_menu",
-                            "aria-label": "",
-                            "type": "repeater",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_685969069c16b",
-                                        "operator": "==",
-                                        "value": "1"
-                                    }
-                                ]
+                            "post_type": [
+                                "product"
                             ],
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "layout": "row",
-                            "pagination": 0,
-                            "min": 0,
-                            "max": 0,
-                            "collapsed": "",
-                            "button_label": "Add Row",
-                            "rows_per_page": 20,
-                            "sub_fields": [
-                                {
-                                    "key": "field_685969789c16d",
-                                    "label": "Link",
-                                    "name": "link",
-                                    "aria-label": "",
-                                    "type": "link",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "return_format": "array",
-                                    "allow_in_bindings": 0,
-                                    "parent_repeater": "field_685969689c16c"
-                                },
-                                {
-                                    "key": "field_6859699f9c16f",
-                                    "label": "Products",
-                                    "name": "products",
-                                    "aria-label": "",
-                                    "type": "post_object",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "post_type": [
-                                        "product"
-                                    ],
-                                    "post_status": [
-                                        "publish"
-                                    ],
-                                    "taxonomy": "",
-                                    "return_format": "id",
-                                    "multiple": 1,
-                                    "allow_null": 0,
-                                    "allow_in_bindings": 1,
-                                    "bidirectional": 0,
-                                    "ui": 1,
-                                    "bidirectional_target": [],
-                                    "parent_repeater": "field_685969689c16c"
-                                }
+                            "post_status": [
+                                "publish"
                             ],
+                            "taxonomy": "",
+                            "filters": [
+                                "search"
+                            ],
+                            "return_format": "id",
+                            "min": "",
+                            "max": "",
+                            "allow_in_bindings": 1,
+                            "elements": [
+                                "featured_image"
+                            ],
+                            "bidirectional": 0,
+                            "bidirectional_target": [],
                             "parent_repeater": "field_685968f49c169"
                         }
                     ]
@@ -394,5 +326,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1751903012
+    "modified": 1752769595
 }

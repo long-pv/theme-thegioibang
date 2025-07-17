@@ -1,7 +1,106 @@
 {
     "key": "group_65f7eba43339b",
-    "title": "Dịch vụ sản phẩm",
+    "title": "Cài đặt sản phẩm",
     "fields": [
+        {
+            "key": "field_687923345c9cd",
+            "label": "Use 2 images",
+            "name": "use_2_images",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_687923b75c9d0",
+            "label": "List image",
+            "name": "list_image",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_687923345c9cd",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_687923cd5c9d1",
+                    "label": "Image Main",
+                    "name": "image_main",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Size: 400 x 400",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "allow_in_bindings": 0,
+                    "preview_size": "medium"
+                },
+                {
+                    "key": "field_687923f85c9d2",
+                    "label": "Image Hover",
+                    "name": "image_hover",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Size: 400 x 400",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "allow_in_bindings": 0,
+                    "preview_size": "medium"
+                }
+            ]
+        },
         {
             "key": "field_65f7ee88e760b",
             "label": "Dịch vụ sản phẩm",
@@ -92,5 +191,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1750774449
+    "modified": 1752769650
 }
