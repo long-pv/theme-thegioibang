@@ -599,10 +599,10 @@ div#masthead {
     }
 }
 
-.stuck #logo img {
+#logo img {
     @media screen and (min-width: 850px) {
         max-height: 90px !important;
-        width: 100%;
+        width: 100% !important;
     }
 }
 

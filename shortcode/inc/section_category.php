@@ -71,7 +71,7 @@ add_shortcode('tgb_section_category', function ($atts, $content = null) {
         </div>
 
         <div class="list">
-            <div class="grid_row">
+            <div class="grid_row tgb_section_cat_pc">
                 <?php if ($banner): ?>
                     <div class="col_custom">
                         <div class="banner">
@@ -94,6 +94,60 @@ add_shortcode('tgb_section_category', function ($atts, $content = null) {
                 ?>
                     <p>Không có sản phẩm nào.</p>
                 <?php endif; ?>
+            </div>
+
+            <div class="tgb_section_cat_mb">
+                <div class="grid_row">
+                    <?php if ($banner): ?>
+                        <div class="col_custom">
+                            <div class="banner">
+                                <?php echo $banner_url ? '<a target="_blank" href="' . $banner_url . '">' : ''; ?>
+                                <img src="<?php echo $banner; ?>" alt="banner <?php echo $title; ?>">
+                                <?php echo $banner_url ? '</a>' : ''; ?>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                    <?php
+                    $index = 1;
+                    if ($query->have_posts()) :
+                        while ($query->have_posts()) : $query->the_post();
+                            $product_id = get_the_ID();
+                            $item_sale = 0;
+                            echo '<div class="col_custom">';
+                            include TGB_SHORTCODE_PATH . '/inc/product_loop.php';
+                            echo '</div>';
+
+                            if ($banner) {
+                                break;
+                            } else {
+                                if ($index == 2) {
+                                    break;
+                                }
+                            }
+                            $index++;
+
+                        endwhile;
+                        wp_reset_postdata();
+                    endif; ?>
+                </div>
+
+                <div class="tgb_section_cat_mb_slider">
+                    <?php
+                    $index = 1;
+                    if ($query->have_posts()) :
+                        while ($query->have_posts()) : $query->the_post();
+                            if (($banner && $index > 1 && $index < 7) || (!$banner && $index > 2 && $index < 8)) {
+                                $product_id = get_the_ID();
+                                $item_sale = 0;
+                                echo '<div class="col_custom">';
+                                include TGB_SHORTCODE_PATH . '/inc/product_loop.php';
+                                echo '</div>';
+                            }
+                            $index++;
+                        endwhile;
+                        wp_reset_postdata();
+                    endif; ?>
+                </div>
             </div>
         </div>
     </div>

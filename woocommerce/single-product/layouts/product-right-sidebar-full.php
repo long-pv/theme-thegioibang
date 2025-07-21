@@ -149,11 +149,11 @@
 							</a>
 						</div>
 					</div>
-					<div class="grid_row">
+					<div class="related_products_slider">
 						<?php
 						foreach ($product_list as $product_id) :
 							$item_sale = 0;
-							echo '<div class="col_custom">';
+							echo '<div>';
 							include TGB_SHORTCODE_PATH . '/inc/product_loop.php';
 							echo '</div>';
 						endforeach;

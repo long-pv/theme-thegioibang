@@ -110,11 +110,11 @@ function nt_link_product( $woocommerce_template_loop_product_title ) {
 			 $units_sold = get_post_meta( $product->get_id(), 'total_sales', true );
  				
 			?>
-			| <span class="sold"><?= $units_sold ?> đã bán</span> | 
-						<span class="link-product">
+			<!-- | <span class="sold"><?= $units_sold ?> đã bán</span> | 
+						<span class="link-product"> -->
 				<!-- <li><span>Xem Sản Phẩm Tại</span></li> -->
 				
-				
+				| 
 				<?php if(!empty($shopee)): ?>
 					<span class="shopee"> <a href="<?php echo $shopee; ?>" target="_blank"> <img src="<?= get_stylesheet_directory_uri() ?>/images/shopee.png" alt=""></a> </span>
 				<?php endif; ?>

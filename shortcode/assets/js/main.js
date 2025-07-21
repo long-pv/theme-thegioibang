@@ -93,6 +93,14 @@
 		],
 	});
 
+	$(".tgb_section_cat_mb_slider").slick({
+		slidesToShow: 2,
+		slidesToScroll: 1,
+		infinite: false,
+		arrows: true,
+		dots: false,
+	});
+
 	$(".tgb_top_seller .list_product").slick({
 		slidesToShow: 4,
 		slidesToScroll: 2,
@@ -110,6 +118,26 @@
 					slidesToShow: 2.1,
 					slidesToScroll: 1,
 					arrows: false,
+				},
+			},
+		],
+	});
+
+	$(".related_products_slider").slick({
+		slidesToShow: 5,
+		slidesToScroll: 1,
+		infinite: false,
+		arrows: false,
+		dots: false,
+
+		// ↓ cấu hình cho màn < 850 px
+		responsive: [
+			{
+				breakpoint: 850,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 1,
+					arrows: true,
 				},
 			},
 		],
