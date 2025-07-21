@@ -279,6 +279,11 @@ div#masthead {
         padding-top: 16px;
         padding-bottom: 32px;
 
+        .list_menu_inner {
+            height: calc(480px - 16px - 32px);
+            overflow-y: auto;
+        }
+
         ul {
             padding: 0px;
             margin: 0px;
@@ -324,7 +329,8 @@ div#masthead {
                 top: 0px;
                 padding: 16px;
                 overflow-y: auto;
-                height: calc(480px - 16px - 32px);
+                min-height: calc(480px - 16px - 32px);
+                height: 100%;
 
                 &::before {
                     content: '';

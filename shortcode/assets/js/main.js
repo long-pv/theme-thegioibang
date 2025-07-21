@@ -68,6 +68,7 @@
 					slidesToShow: 2.1,
 					slidesToScroll: 1,
 					arrows: false,
+					infinite: false,
 				},
 			},
 		],

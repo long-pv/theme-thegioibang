@@ -609,7 +609,8 @@
                     ],
                     "taxonomy": "",
                     "filters": [
-                        "search"
+                        "search",
+                        "taxonomy"
                     ],
                     "return_format": "id",
                     "min": "",
@@ -722,7 +723,8 @@
                     ],
                     "taxonomy": "",
                     "filters": [
-                        "search"
+                        "search",
+                        "taxonomy"
                     ],
                     "return_format": "id",
                     "min": "",
@@ -826,5 +828,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1752031535
+    "modified": 1753105925
 }
