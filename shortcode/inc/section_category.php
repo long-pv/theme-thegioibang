@@ -21,13 +21,14 @@ add_shortcode('tgb_section_category', function ($atts, $content = null) {
     $cat = get_term($cat_id, 'product_cat');
     $cat_name = $cat ? $cat->name : 'Danh mục';
     $cat_link = get_term_link($cat_id, 'product_cat');
+    $latest_products = get_field('latest_products', 'product_cat_' . $cat_id) ?? [];
 
     if (!$title) {
         $title = $cat_name;
     }
 
     // Query 10 sản phẩm mới nhất trong category này
-    $query = new WP_Query([
+    $args = [
         'post_type'      => 'product',
         'posts_per_page' => $banner ? 9 : 10,
         'tax_query'      => [
@@ -37,7 +38,15 @@ add_shortcode('tgb_section_category', function ($atts, $content = null) {
                 'terms'    => $cat_id,
             ]
         ]
-    ]);
+    ];
+
+    // Nếu có latest_products, thì thêm post__in và order theo mảng
+    if (!empty($latest_products) && is_array($latest_products)) {
+        $args['post__in'] = $latest_products;
+        $args['orderby'] = 'post__in';
+    }
+
+    $query = new WP_Query($args);
 
     ob_start();
 ?>

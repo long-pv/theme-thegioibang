@@ -24,11 +24,10 @@
             ],
             "taxonomy": "",
             "filters": [
-                "search",
-                "taxonomy"
+                "search"
             ],
             "return_format": "id",
-            "min": 0,
+            "min": "",
             "max": 10,
             "allow_in_bindings": 0,
             "elements": "",
@@ -54,5 +53,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1753173237
+    "modified": 1753198593
 }
