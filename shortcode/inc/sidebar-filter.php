@@ -47,11 +47,16 @@ add_shortcode('tgb_sidebar_filter', function () {
 
                     <div class="content checkboxes">
                         <?php
-                        $categories = get_terms(array(
-                            'taxonomy' => 'product_cat',
-                            'hide_empty' => true,
-                            // 'parent' => 0,
-                        ));
+                        $filter_categories = get_field('filter_categories', 'option') ?? [];
+                        if ($filter_categories) {
+                            $categories = $filter_categories;
+                        } else {
+                            $categories = get_terms(array(
+                                'taxonomy' => 'product_cat',
+                                'hide_empty' => true,
+                            ));
+                        }
+
                         $prod_cat = isset($_GET['prod_cat']) ? $_GET['prod_cat'] : [];
                         $count_cat = count($prod_cat) ?? 0;
                         foreach ($categories as $category):

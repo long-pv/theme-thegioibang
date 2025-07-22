@@ -319,11 +319,11 @@
                 },
                 {
                     "key": "field_685ff11728eff",
-                    "label": "Link",
+                    "label": "Link youtube",
                     "name": "link",
                     "aria-label": "",
                     "type": "text",
-                    "instructions": "",
+                    "instructions": "Get video link on URL bar",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -828,5 +828,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1753105925
+    "modified": 1753197328
 }

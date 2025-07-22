@@ -56,8 +56,8 @@
 	$(".tgb_top_deal .product_slider").slick({
 		slidesToShow: 5,
 		slidesToScroll: 3,
-		infinite: true,
-		arrows: false,
+		infinite: false,
+		arrows: true,
 		dots: false,
 
 		// ↓ cấu hình cho màn < 850 px
@@ -67,7 +67,7 @@
 				settings: {
 					slidesToShow: 2.1,
 					slidesToScroll: 1,
-					arrows: false,
+					arrows: true,
 					infinite: false,
 				},
 			},
@@ -104,8 +104,8 @@
 	$(".tgb_top_seller .list_product").slick({
 		slidesToShow: 4,
 		slidesToScroll: 2,
-		infinite: true,
-		arrows: false,
+		infinite: false,
+		arrows: true,
 		dots: false,
 		autoplay: true, // tự chạy
 		autoplaySpeed: 3000, // 5 giây
@@ -117,7 +117,7 @@
 				settings: {
 					slidesToShow: 2.1,
 					slidesToScroll: 1,
-					arrows: false,
+					arrows: true,
 				},
 			},
 		],

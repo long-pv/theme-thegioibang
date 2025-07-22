@@ -44,7 +44,7 @@ add_shortcode('tgb_livestream_video', function () {
                     $image = $item['image'] ?? '';
                     $start = $item['start_time'] ?? '';
                     $end = $item['end_time'] ?? '';
-                    $link = $item['link'] ?? '#';
+                    $link = $item['link'] ?? '';
                     $is_live = ($now >= $start && $now <= $end);
                     $ended = ($now > $end && !empty($end));
                 ?>
@@ -70,7 +70,7 @@ add_shortcode('tgb_livestream_video', function () {
                                 </div>
                                 <div class="grid_col-lg-6">
                                     <div class="content">
-                                        <a href="<?php echo $link ?? '#'; ?>" class="title line-2">
+                                        <a href="javascript:void(0);" class="title line-2">
                                             <?php echo $title; ?>
                                         </a>
                                         <?php if ($ended): ?>
@@ -97,6 +97,11 @@ add_shortcode('tgb_livestream_video', function () {
                                     </div>
                                 </div>
                             </div>
+
+                            <?php if ($link): ?>
+                                <a href="<?php echo $link; ?>" class="open-video" rel="noopener">
+                                </a>
+                            <?php endif; ?>
                         </div>
                     </div>
                 <?php endforeach; ?>
