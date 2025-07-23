@@ -13,12 +13,52 @@ $use_2_images = get_field('use_2_images', $product_id) ?? false;
 
 // Chỉ lấy số, không HTML
 if ($product->is_type('variable')) {
-    $regular_price = floatval($product->get_variation_regular_price('min', true));
-    $sale_price = floatval($product->get_variation_sale_price('min', true));
+    // Lấy giá trị từ cookie 'attribute'
+    $selected_attribute = isset($_COOKIE['attribute']) ? sanitize_text_field($_COOKIE['attribute']) : '';
+
+    if ($selected_attribute) {
+        // Có giá trị cookie → lọc theo khu vực
+        $matched_regular_prices = [];
+        $matched_sale_prices = [];
+
+        foreach ($product->get_children() as $variation_id) {
+            $variation = wc_get_product($variation_id);
+
+            if (! $variation || ! $variation->is_purchasable()) {
+                continue;
+            }
+
+            $attributes = $variation->get_attributes();
+
+            if (isset($attributes['pa_khu-vuc']) && $attributes['pa_khu-vuc'] === $selected_attribute) {
+                $regular = floatval($variation->get_regular_price());
+                $sale    = floatval($variation->get_sale_price());
+
+                if ($regular) $matched_regular_prices[] = $regular;
+                if ($sale) $matched_sale_prices[] = $sale;
+            }
+        }
+
+        if (! empty($matched_regular_prices)) {
+            $regular_price = min($matched_regular_prices);
+            $sale_price = ! empty($matched_sale_prices) ? min($matched_sale_prices) : $regular_price;
+        } else {
+            // Không tìm thấy biến thể phù hợp → fallback mặc định
+            $regular_price = floatval($product->get_variation_regular_price('min', true));
+            $sale_price = floatval($product->get_variation_sale_price('min', true));
+        }
+    } else {
+        // Không có cookie hoặc cookie rỗng → fallback mặc định
+        $regular_price = floatval($product->get_variation_regular_price('min', true));
+        $sale_price = floatval($product->get_variation_sale_price('min', true));
+    }
 } else {
+    // Sản phẩm đơn
     $regular_price = floatval($product->get_regular_price());
     $sale_price = floatval($product->get_sale_price());
 }
+
+// tính % giảm giá
 $percent = 0;
 if ($product->is_on_sale() && $regular_price > 0 && $sale_price > 0) {
     $percent = round(100 - ($sale_price * 100 / $regular_price));
