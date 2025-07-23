@@ -7,7 +7,7 @@
             "label": "Latest products",
             "name": "latest_products",
             "aria-label": "",
-            "type": "relationship",
+            "type": "post_object",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -23,15 +23,12 @@
                 "publish"
             ],
             "taxonomy": "",
-            "filters": [
-                "search"
-            ],
             "return_format": "id",
-            "min": "",
-            "max": 10,
-            "allow_in_bindings": 0,
-            "elements": "",
+            "multiple": 1,
+            "allow_null": 0,
+            "allow_in_bindings": 1,
             "bidirectional": 0,
+            "ui": 1,
             "bidirectional_target": []
         }
     ],
@@ -44,7 +41,7 @@
             }
         ]
     ],
-    "menu_order": -10,
+    "menu_order": 1,
     "position": "acf_after_title",
     "style": "default",
     "label_placement": "top",
@@ -53,5 +50,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1753198593
+    "modified": 1753283098
 }
