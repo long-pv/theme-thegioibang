@@ -73,6 +73,7 @@
 								} else {
 									echo do_shortcode('[block id="19906"]');
 								}
+								wp_reset_postdata();
 								?>
 							</div>
 
@@ -94,7 +95,10 @@
 										?>
 									</div>
 								</div>
-							<?php endif; ?>
+							<?php
+							endif;
+							wp_reset_postdata();
+							?>
 						</div>
 					</div>
 				</div>
@@ -162,6 +166,7 @@
 				</section><!-- /.custom-related-products -->
 			<?php
 			endif;
+			wp_reset_postdata();
 			?>
 		</div>
 	</div>

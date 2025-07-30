@@ -103,3 +103,5 @@ if ($product->is_on_sale() && $regular_price > 0 && $sale_price > 0) {
         <?php endif; ?>
     </div>
 </div>
+<?php
+wp_reset_postdata();
