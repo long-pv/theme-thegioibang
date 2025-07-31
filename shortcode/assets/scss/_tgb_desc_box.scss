@@ -5,6 +5,7 @@
     width: 100%;
     margin-top: 32px;
     margin-bottom: 80px;
+    border-radius: 8px;
 
     @media (max-width: 849px) {
         padding: 24px 16px;
@@ -53,8 +54,10 @@
                 gap: 16px;
 
                 .img_wrap {
+                    flex-shrink: 0;
+
                     img {
-                        width: 60px;
+                        width: 40px;
                         height: auto;
                         overflow: hidden;
                     }

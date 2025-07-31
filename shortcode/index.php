@@ -276,48 +276,65 @@ function ban_custom_description_callback()
     ?>
 
     <!-- HTML thoải mái ở đây -->
-    <div class="tgb_desc_box">
-        <div class="grid_row">
-            <div class="grid_col-lg-6">
-                <div class="content">
-                    <h2 class="title">
-                        Bạn chọn bảng tân hà chứ
-                    </h2>
-                    <div class="desc">
-                        NSX duy nhất được chuyển giao từ đan mạch
-                    </div>
+    <?php
+    $featured_frame = get_field('featured_frame', 'option') ?? [];
+    if ($featured_frame):
+        $title = $featured_frame['title'] ?? "";
+        $description = $featured_frame['description'] ?? "";
+        $featured_image = $featured_frame['featured_image'] ?? "";
+        $list = $featured_frame['list'] ?? [];
+    ?>
+        <div class="tgb_desc_box">
+            <div class="grid_row">
+                <div class="grid_col-lg-6">
+                    <div class="content">
+                        <?php if ($title): ?>
+                            <h2 class="title">
+                                <?php echo $title; ?>
+                            </h2>
+                        <?php endif; ?>
 
-                    <div class="list_box">
-                        <div class="grid_row">
-                            <?php for ($i = 0; $i < 4; $i++) : ?>
-                                <div class="grid_col-lg-6">
-                                    <div class="item">
-                                        <div class="img_wrap">
-                                            <img class="pattern" src="<?php echo TGB_IMG_URL . 'pt_1.png'; ?>" alt="">
-                                        </div>
-                                        <div class="content">
-                                            <div class="title">
-                                                Hơn 30 năm
+                        <?php if ($description): ?>
+                            <div class="desc">
+                                <?php echo $description; ?>
+                            </div>
+                        <?php endif; ?>
+
+                        <?php if ($list): ?>
+                            <div class="list_box">
+                                <div class="grid_row">
+                                    <?php foreach ($list as $item) : ?>
+                                        <div class="grid_col-lg-6">
+                                            <div class="item">
+                                                <div class="img_wrap">
+                                                    <img src="<?php echo $item['icon']; ?>" alt="<?php echo $item['title']; ?>">
+                                                </div>
+                                                <div class="content">
+                                                    <div class="title">
+                                                        <?php echo $item['title']; ?>
+                                                    </div>
+                                                    <div class="desc">
+                                                        <?php echo $item['description']; ?>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="desc">
-                                                hình thành nghiên cứu và phát triển sản phẩm
-                                            </div>
                                         </div>
-                                    </div>
+                                    <?php endforeach; ?>
                                 </div>
-                            <?php endfor; ?>
-                        </div>
+                            </div>
+                        <?php endif; ?>
                     </div>
                 </div>
-            </div>
-            <div class="grid_col-lg-6">
-                <div class="img_right">
-                    <img class="pattern" src="<?php echo TGB_IMG_URL . 'pt_1.png'; ?>" alt="">
+                <div class="grid_col-lg-6">
+                    <div class="img_right">
+                        <?php if ($featured_image): ?>
+                            <img src="<?php echo $featured_image; ?>" alt="">
+                        <?php endif; ?>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
+    <?php endif; ?>
 <?php
     echo ob_get_clean(); // Kết thúc và in toàn bộ nội dung ra
 }
