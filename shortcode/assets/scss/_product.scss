@@ -1,4 +1,8 @@
 .tgb_single_product {
+    .pswp {
+        display: none !important;
+    }
+
     .col-info .product-info span.woocommerce-Price-currencySymbol {
         // font-size: 16px !important;
         margin-top: 0px !important;
