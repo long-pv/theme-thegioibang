@@ -11,9 +11,10 @@
         padding: 24px 16px;
     }
 
-    .grid_row {
+    &>.grid_row {
         --bs-gutter-x: 60px;
         row-gap: 40px;
+        align-items: center;
 
         @media (max-width: 849px) {
             --bs-gutter-x: 16px;
@@ -57,7 +58,7 @@
                     flex-shrink: 0;
 
                     img {
-                        width: 40px;
+                        width: 60px;
                         height: auto;
                         overflow: hidden;
                     }
