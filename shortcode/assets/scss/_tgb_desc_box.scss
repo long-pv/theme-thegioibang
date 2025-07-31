@@ -1,0 +1,94 @@
+.tgb_desc_box {
+    padding: 24px 40px;
+    background: #254C3D;
+    background: linear-gradient(90deg, rgba(37, 76, 61, 1) 0%, rgba(57, 168, 115, 1) 100%);
+    width: 100%;
+    margin-top: 32px;
+    margin-bottom: 80px;
+
+    @media (max-width: 849px) {
+        padding: 24px 16px;
+    }
+
+    .grid_row {
+        --bs-gutter-x: 60px;
+        row-gap: 40px;
+
+        @media (max-width: 849px) {
+            --bs-gutter-x: 16px;
+        }
+    }
+
+    .content {
+        color: #fff;
+
+        .title {
+            font-family: 'Inter';
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1.4;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .desc {
+            margin-bottom: 24px;
+            font-weight: 400;
+            font-family: 'Inter';
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.4;
+            color: #fff;
+        }
+
+        .list_box {
+            .grid_row {
+                --bs-gutter-x: 16px;
+                row-gap: 16px;
+            }
+
+            .item {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+
+                .img_wrap {
+                    img {
+                        width: 60px;
+                        height: auto;
+                        overflow: hidden;
+                    }
+                }
+
+                .content {
+                    .desc {
+                        margin-bottom: 0px;
+                        font-family: 'Inter';
+                        font-size: 14px;
+                        font-weight: 400;
+                        line-height: 1.4;
+                        color: #fff;
+                    }
+
+                    .title {
+                        font-family: 'Inter';
+                        font-size: 18px;
+                        font-weight: 700;
+                        line-height: 1.4;
+                        color: #fff;
+                        margin-bottom: 8px;
+                    }
+                }
+            }
+        }
+    }
+
+    .img_right {
+        text-align: center;
+
+        img {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+}

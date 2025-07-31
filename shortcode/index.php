@@ -221,7 +221,7 @@ function tgb_search_suggestion()
                     <?php echo $highlighted_cat; ?>
                 </div>
             </a>
-<?php
+    <?php
         }
     }
 
@@ -253,3 +253,71 @@ function register_my_custom_menu()
     register_nav_menu('menu-right', __('Menu right'));
 }
 add_action('after_setup_theme', 'register_my_custom_menu');
+
+// add content product
+add_filter('woocommerce_product_tabs', 'ban_override_tab_description', 98);
+function ban_override_tab_description($tabs)
+{
+    if (isset($tabs['description'])) {
+        $tabs['description']['callback'] = 'ban_custom_description_callback';
+    }
+    return $tabs;
+}
+
+function ban_custom_description_callback()
+{
+    global $post;
+
+    // Bắt đầu output buffering để viết HTML thoải mái
+    ob_start();
+
+    // Mô tả gốc
+    echo apply_filters('the_content', $post->post_content);
+    ?>
+
+    <!-- HTML thoải mái ở đây -->
+    <div class="tgb_desc_box">
+        <div class="grid_row">
+            <div class="grid_col-lg-6">
+                <div class="content">
+                    <h2 class="title">
+                        Bạn chọn bảng tân hà chứ
+                    </h2>
+                    <div class="desc">
+                        NSX duy nhất được chuyển giao từ đan mạch
+                    </div>
+
+                    <div class="list_box">
+                        <div class="grid_row">
+                            <?php for ($i = 0; $i < 4; $i++) : ?>
+                                <div class="grid_col-lg-6">
+                                    <div class="item">
+                                        <div class="img_wrap">
+                                            <img class="pattern" src="<?php echo TGB_IMG_URL . 'pt_1.png'; ?>" alt="">
+                                        </div>
+                                        <div class="content">
+                                            <div class="title">
+                                                Hơn 30 năm
+                                            </div>
+                                            <div class="desc">
+                                                hình thành nghiên cứu và phát triển sản phẩm
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endfor; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid_col-lg-6">
+                <div class="img_right">
+                    <img class="pattern" src="<?php echo TGB_IMG_URL . 'pt_1.png'; ?>" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+<?php
+    echo ob_get_clean(); // Kết thúc và in toàn bộ nội dung ra
+}
