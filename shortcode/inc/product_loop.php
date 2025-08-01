@@ -1,8 +1,11 @@
 <?php
-$product = wc_get_product($product_id ?? 0);
-if (!$product) {
+if (function_exists('wc_get_product') && did_action('woocommerce_init')) {
+    $product = wc_get_product($product_id ?? 0);
+} else {
     return;
 }
+
+if (! $product) return;
 
 $product_link = get_permalink($product_id);
 $product_img = get_the_post_thumbnail_url($product_id, 'medium') ?: TGB_IMG_URL . 'img2.png';
