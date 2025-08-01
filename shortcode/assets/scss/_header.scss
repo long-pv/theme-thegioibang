@@ -171,6 +171,11 @@ div#masthead {
         padding: 0px 12px;
         position: relative;
 
+        @media (min-width: 850px) and (max-width: 1599.98px) {
+            font-size: 12px;
+            padding: 0px 8px;
+        }
+
         &::after {
             content: '';
             position: absolute;

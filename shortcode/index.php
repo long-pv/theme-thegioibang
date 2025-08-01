@@ -281,8 +281,9 @@ function ban_custom_description_callback()
     if ($featured_frame):
         $title = $featured_frame['title'] ?? "";
         $description = $featured_frame['description'] ?? "";
-        $featured_image = $featured_frame['featured_image'] ?? "";
+        // $featured_image = $featured_frame['featured_image'] ?? "";
         $list = $featured_frame['list'] ?? [];
+        $iframe_youtube = $featured_frame['iframe_youtube'] ?? '';
     ?>
         <div class="tgb_desc_box">
             <div class="grid_row">
@@ -326,11 +327,21 @@ function ban_custom_description_callback()
                     </div>
                 </div>
                 <div class="grid_col-lg-6">
-                    <div class="img_right">
-                        <?php if ($featured_image): ?>
-                            <img src="<?php echo $featured_image; ?>" alt="">
-                        <?php endif; ?>
-                    </div>
+                    <?php if ($iframe_youtube) : ?>
+                        <div class="video-iframe">
+                            <iframe
+                                id="player-yt"
+                                src="<?php echo $iframe_youtube; ?>?autoplay=0&controls=1&mute=1&rel=0&showinfo=0"
+                                frameborder="0"
+                                allowfullscreen
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                title="Video YouTube"
+                                width="640"
+                                height="360">
+                            </iframe>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
