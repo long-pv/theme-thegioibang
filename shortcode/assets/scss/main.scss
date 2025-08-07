@@ -19,3 +19,15 @@
 @import 'sec_cat';
 @import 'menu-right';
 @import 'tgb_desc_box';
+
+@mixin line-clamp($lines) {
+    -webkit-line-clamp: $lines;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.line-1 {
+    @include line-clamp(1);
+}

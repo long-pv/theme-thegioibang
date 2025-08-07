@@ -189,9 +189,9 @@ add_shortcode('tgb_footer_main', function () {
                                                                                 <?php echo $item_3['address']; ?>
                                                                             </div>
 
-                                                                            <a href="tel:<?php echo $item_3['phone']; ?>" class="phone">
+                                                                            <div class="phone">
                                                                                 <?php echo $item_3['phone']; ?>
-                                                                            </a>
+                                                                            </div>
                                                                         </div>
                                                             <?php
                                                                     endif;
