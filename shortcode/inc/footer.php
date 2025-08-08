@@ -182,16 +182,20 @@ add_shortcode('tgb_footer_main', function () {
                                                             $list = $item_2['list'] ?? '';
                                                             if ($list) :
                                                                 foreach ($list as $item_3) :
-                                                                    if ($item_3['address'] && $item_3['phone']) :
+                                                                    if ($item_3['address'] || $item_3['phone']) :
                                                             ?>
                                                                         <div class="item">
-                                                                            <div class="content">
-                                                                                <?php echo $item_3['address']; ?>
-                                                                            </div>
+                                                                            <?php if ($item_3['address']): ?>
+                                                                                <div class="content">
+                                                                                    <?php echo $item_3['address']; ?>
+                                                                                </div>
+                                                                            <?php endif; ?>
 
-                                                                            <div class="phone">
-                                                                                <?php echo $item_3['phone']; ?>
-                                                                            </div>
+                                                                            <?php if ($item_3['phone']): ?>
+                                                                                <div class="phone">
+                                                                                    <?php echo $item_3['phone']; ?>
+                                                                                </div>
+                                                                            <?php endif; ?>
                                                                         </div>
                                                             <?php
                                                                     endif;

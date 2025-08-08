@@ -168,13 +168,13 @@ div#masthead {
         line-height: 1.4;
         color: #FFFFFF;
         text-decoration: none;
-        padding: 0px 12px;
+        padding: 0px 8px;
         position: relative;
         @include line-clamp(1);
 
         @media (min-width: 850px) and (max-width: 1599.98px) {
-            font-size: 12px;
-            padding: 0px 8px;
+            font-size: 10px;
+            padding: 0px 5px;
         }
 
         &::after {
